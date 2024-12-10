@@ -93,21 +93,23 @@ export default defineNuxtConfig({
           content: 'index, follow',
         },
       ],
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '/favicon.ico',
-        },
-        {
-          rel: 'canonical',
-          href: 'https://digitalseal.studio',
-        },
-      ],
+
       script: [
         {
           src: 'https://docs.opencv.org/master/opencv.js',
           async: true,
+        },
+        {
+          src: `https://www.googletagmanager.com/gtag/js?id=G-SPT6210FEJ`,
+          async: true,
+        },
+        {
+          children: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SPT6210FEJ');
+          `,
         },
       ],
     },
@@ -166,10 +168,10 @@ export default defineNuxtConfig({
 
   robots: {
     allow: '/',
-    sitemap: 'https://your-domain.com/sitemap.xml',
+    sitemap: 'https://sealsdigital.com/sitemap.xml',
   },
 
   sitemap: {
-    urls: ['https://example.com'],
+    urls: ['https://sealsdigital.com'],
   },
 })

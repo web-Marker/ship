@@ -3,12 +3,11 @@
     <div
       class="z-[2] mx-auto mb-5 flex w-max rounded-lg bg-zinc-100 p-1 relative"
     >
-      <!-- 滑动的背景块 -->
       <div
         class="absolute transition-transform duration-300 ease-in-out bg-white rounded-lg"
         :style="{
           transform: `translateX(${activeTab * 100}%)`,
-          width: 'calc(50% - 4px)',
+          width: 'calc(100% - 8px)',
           height: 'calc(100% - 8px)',
           top: '4px',
           left: '4px',
@@ -33,15 +32,15 @@
   </div>
 
   <!--activeTab 等于1-->
-  <div v-else class="flex flex-col bg-gray-100">
+  <!-- <div v-else class="flex flex-col bg-gray-100">
     <LandingExtractstamp />
-  </div>
+  </div> -->
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const tabs = ref(['Generate Stamp', 'Extract the Stamp'])
+const tabs = ref(['Generate Stamp'])
 const activeTab = ref(0)
 </script>
 <style scoped></style>

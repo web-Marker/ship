@@ -53,7 +53,7 @@
                 <div class="mb-6">
                   <button
                     type="submit"
-                    class="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90"
+                    class="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm px-9 py-4 text-base font-medium text-white duration-300 hover:bg-black/90 bg-black"
                     :disabled="loading"
                   >
                     {{ loading ? 'Signing in...' : 'Sign in' }}
@@ -104,7 +104,7 @@
 
               <p class="text-center text-base font-medium text-body-color pt-3">
                 Don't you have an account?
-                <NuxtLink to="/signup" class="text-primary hover:underline"
+                <NuxtLink to="/signup" class="text-black hover:underline"
                   >Sign up</NuxtLink
                 >
               </p>

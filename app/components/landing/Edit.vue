@@ -1863,6 +1863,8 @@ const addWatermark = (
 }
 
 const { handlePayment } = usePayment()
+const { trackEvent } = useAnalytics()
+
 // 添加登录状态检查
 const checkAuth = async () => {
   const session = await useUserSession()
@@ -1877,6 +1879,14 @@ const checkAuth = async () => {
 
 // 确认保存
 const confirmSave = async () => {
+  // 跟踪按钮点击
+  try {
+    trackEvent('download_button_click', {
+      button_name: 'seal_download',
+      button_type: 'main_download',
+    })
+  } catch (error) {}
+
   if (!(await checkAuth())) return
 
   payLoading.value = true
@@ -1889,6 +1899,12 @@ const confirmSave = async () => {
     if (paymentStatus.value?.subscription) {
       console.log('User has active subscription')
       drawStampUtils.saveStampAsPNG(512)
+      trackEvent('download_success', {
+        download_type: paymentStatus.value?.subscription
+          ? 'subscription'
+          : 'one_time',
+        payment_status: 'paid',
+      })
       return
     }
 
@@ -1910,10 +1926,18 @@ const confirmSave = async () => {
     handlePayment('one_time', () => {
       console.log('支付成功回调执行，开始下载图片')
       drawStampUtils.saveStampAsPNG(512)
+      trackEvent('download_after_payment', {
+        payment_type: 'one_time',
+        download_type: 'seal',
+      })
     })
   } catch (error) {
     console.error('Save error:', error)
     ElMessage.error('Failed to process the request')
+    trackEvent('download_error', {
+      error_type: error.message || 'unknown',
+      payment_status: 'failed',
+    })
   } finally {
     payLoading.value = false
   }

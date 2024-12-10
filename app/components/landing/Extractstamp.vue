@@ -318,42 +318,29 @@ const removeColor = index => {
   selectedColors.value.splice(index, 1)
 }
 
-const rgbToHsv = (r, g, b) => {
-  r /= 255
-  g /= 255
-  b /= 255
+// 首先添加一个函数来判断两个颜色是否相似
+const areColorsSimlar = (hsv1, hsv2, tolerance) => {
+  // 将容差值转换为合适的范围
+  const hueTolerance = Math.min(25, tolerance * 0.25) // 色相容差较小
+  const satTolerance = Math.min(50, tolerance * 0.8) // 饱和度容差适中
+  const valTolerance = Math.min(50, tolerance * 0.8) // 明度容差适中
 
-  const max = Math.max(r, g, b)
-  const min = Math.min(r, g, b)
-  let h,
-    s,
-    v = max
-
-  const d = max - min
-  s = max === 0 ? 0 : d / max
-
-  if (max === min) {
-    h = 0
-  } else {
-    switch (max) {
-      case r:
-        h = (g - b) / d + (g < b ? 6 : 0)
-        break
-      case g:
-        h = (b - r) / d + 2
-        break
-      case b:
-        h = (r - g) / d + 4
-        break
-    }
-    h /= 6
+  // 计算色相差异（考虑环形特性）
+  let hueDiff = Math.abs(hsv1.h - hsv2.h)
+  if (hueDiff > 90) {
+    hueDiff = 180 - hueDiff
   }
 
-  return {
-    h: Math.round(h * 180),
-    s: Math.round(s * 255),
-    v: Math.round(v * 255),
+  // 色相差异必须在容差范围内
+  if (hueDiff > hueTolerance) {
+    return false
   }
+
+  // 检查饱和度和明度的差异
+  const satDiff = Math.abs(hsv1.s - hsv2.s)
+  const valDiff = Math.abs(hsv1.v - hsv2.v)
+
+  return satDiff <= satTolerance && valDiff <= valTolerance
 }
 
 const extractSeal = async () => {
@@ -371,101 +358,43 @@ const extractSeal = async () => {
     const mask = new cv.Mat.zeros(hsv.rows, hsv.cols, cv.CV_8UC1)
 
     for (const color of selectedColors.value) {
-      const hsv_color = rgbToHsv(color.r, color.g, color.b)
+      const target_hsv = rgbToHsv(color.r, color.g, color.b)
+      const colorMask = new cv.Mat.zeros(hsv.rows, hsv.cols, cv.CV_8UC1)
 
-      const hueRange = Math.min(30, tolerance.value * 0.3)
-      const satRange = Math.min(100, tolerance.value * 1.2)
-      const valRange = Math.min(100, tolerance.value * 1.2)
+      // 遍历图像的每个像素
+      for (let i = 0; i < hsv.rows; i++) {
+        for (let j = 0; j < hsv.cols; j++) {
+          const pixel = hsv.ucharPtr(i, j)
+          const pixel_hsv = {
+            h: pixel[0],
+            s: pixel[1],
+            v: pixel[2],
+          }
 
-      const lowH = (hsv_color.h - hueRange + 180) % 180
-      const highH = (hsv_color.h + hueRange) % 180
-
-      const lowS = Math.max(0, hsv_color.s - satRange)
-      const highS = Math.min(255, hsv_color.s + satRange)
-
-      const lowV = Math.max(0, hsv_color.v - valRange)
-      const highV = Math.min(255, hsv_color.v + valRange)
-
-      const colorMask = new cv.Mat()
-
-      if (lowH > highH) {
-        const mask1 = new cv.Mat()
-        const mask2 = new cv.Mat()
-
-        const low1 = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [
-          0,
-          lowS,
-          lowV,
-          0,
-        ])
-        const high1 = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [
-          highH,
-          highS,
-          highV,
-          255,
-        ])
-
-        const low2 = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [
-          lowH,
-          lowS,
-          lowV,
-          0,
-        ])
-        const high2 = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [
-          179,
-          highS,
-          highV,
-          255,
-        ])
-
-        cv.inRange(hsv, low1, high1, mask1)
-        cv.inRange(hsv, low2, high2, mask2)
-        cv.bitwise_or(mask1, mask2, colorMask)
-
-        low1.delete()
-        high1.delete()
-        low2.delete()
-        high2.delete()
-        mask1.delete()
-        mask2.delete()
-      } else {
-        const low = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [
-          lowH,
-          lowS,
-          lowV,
-          0,
-        ])
-        const high = new cv.Mat(hsv.rows, hsv.cols, hsv.type(), [
-          highH,
-          highS,
-          highV,
-          255,
-        ])
-        cv.inRange(hsv, low, high, colorMask)
-        low.delete()
-        high.delete()
+          // 检查颜色是否相似
+          if (areColorsSimlar(target_hsv, pixel_hsv, tolerance.value)) {
+            colorMask.ucharPtr(i, j)[0] = 255
+          }
+        }
       }
 
       cv.bitwise_or(mask, colorMask, mask)
       colorMask.delete()
     }
 
+    // 使用较小的核进行形态学操作
     const kernelSize = Math.max(
-      3,
-      Math.min(7, Math.floor(tolerance.value / 25))
+      2,
+      Math.min(5, Math.floor(tolerance.value / 25))
     )
     const kernel = cv.getStructuringElement(
       cv.MORPH_ELLIPSE,
       new cv.Size(kernelSize, kernelSize)
     )
-    const kernelBig = cv.getStructuringElement(
-      cv.MORPH_ELLIPSE,
-      new cv.Size(kernelSize + 2, kernelSize + 2)
-    )
 
+    // 轻微的形态学操作
     cv.morphologyEx(mask, mask, cv.MORPH_CLOSE, kernel)
     cv.morphologyEx(mask, mask, cv.MORPH_OPEN, kernel)
-    cv.morphologyEx(mask, mask, cv.MORPH_CLOSE, kernelBig)
 
     const dst = new cv.Mat()
     src.copyTo(dst, mask)
@@ -477,7 +406,6 @@ const extractSeal = async () => {
     // 将处理后的图像绘制到临时canvas
     cv.imshow(tempCanvas.value, dst)
 
-    // cv.imshow(outputCanvas.value, dst)
     // 设置输出canvas的尺寸
     outputCanvas.value.width = dst.cols
     outputCanvas.value.height = dst.rows
@@ -501,21 +429,73 @@ const extractSeal = async () => {
 
     outputCanvas.value.style.display = 'block'
 
+    // 清理内存
     src.delete()
     hsv.delete()
     mask.delete()
     kernel.delete()
-    kernelBig.delete()
     dst.delete()
-    hasGeneratedSeal.value = true // 设置已生成印章标志
+
+    hasGeneratedSeal.value = true
   } catch (error) {
     console.error('Error processing image:', error)
     ElMessage.error('Error processing image: ' + error.message)
   }
 }
+
+// 修改后的 rgbToHsv 函数
+const rgbToHsv = (r, g, b) => {
+  r /= 255
+  g /= 255
+  b /= 255
+
+  const max = Math.max(r, g, b)
+  const min = Math.min(r, g, b)
+  const diff = max - min
+
+  let h = 0
+  const s = max === 0 ? 0 : diff / max
+  const v = max
+
+  if (diff !== 0) {
+    if (max === r) {
+      h = ((g - b) / diff) % 6
+    } else if (max === g) {
+      h = (b - r) / diff + 2
+    } else {
+      h = (r - g) / diff + 4
+    }
+    h *= 60
+    if (h < 0) h += 360
+  }
+
+  return {
+    h: Math.round(h / 2), // 转换到 OpenCV 的 0-179 范围
+    s: Math.round(s * 255),
+    v: Math.round(v * 255),
+  }
+}
+
 const resetColors = () => {
   selectedColors.value = []
   hasGeneratedSeal.value = false // 重置生成印章标志
+
+  // 清空输出canvas
+  if (outputCanvas.value) {
+    const outputCtx = outputCanvas.value.getContext('2d')
+    outputCtx.clearRect(
+      0,
+      0,
+      outputCanvas.value.width,
+      outputCanvas.value.height
+    )
+  }
+
+  // 清空临时canvas
+  if (tempCanvas.value) {
+    const tempCtx = tempCanvas.value.getContext('2d')
+    tempCtx.clearRect(0, 0, tempCanvas.value.width, tempCanvas.value.height)
+  }
 }
 
 // 添加 watch

@@ -7,16 +7,15 @@ const { handlePayment } = usePayment()
 const pricing = [
   {
     name: 'Single Seal',
-    price: '$1.9',
+    price: '$1.99',
     popular: false,
     features: [
-      'Create/Download 1 watermark-free seal',
-      'One-on-one customer support',
+      'Create 1 watermark-free seal',
+      'Standard seal templates',
       'High-quality PNG format',
-      'Standard seal template',
-      'Basic support via email', // Added to balance height
-      'Single device access', // Added to balance height
-      '24-hour delivery guaranteed', // Added to balance height
+      'Basic email support',
+      'Single device access',
+      '24-hour delivery guaranteed',
     ],
     button: {
       text: 'Get Started',
@@ -30,13 +29,12 @@ const pricing = [
     },
     popular: true,
     features: [
-      'Unlimited seal creation and extraction',
+      'Unlimited seal creation',
+      'All premium templates',
       'Watermark-free downloads',
       'Priority customer support',
-      'Access to all seal templates',
-      'Cloud storage for seal designs',
-      'Multi-device access', // Added to balance height
-      'Instant delivery', // Added to balance height
+      'Multi-device access',
+      'Instant delivery',
     ],
     button: {
       text: 'Get Started',
@@ -51,12 +49,11 @@ const pricing = [
     popular: false,
     features: [
       'Fully customized seal design',
-      'Exclusive seal style development',
-      'Corporate VI matching',
-      'Dedicated one-on-one service',
+      'Exclusive template creation',
+      'Dedicated design service',
       'Unlimited revisions',
-      'Exclusive seal templates',
-      'Contact support for quotation',
+      'Commercial usage rights',
+      'Priority support',
     ],
     button: {
       text: 'Contact us',
