@@ -1,6 +1,2 @@
 // app.config.ts
-export default defineAppConfig({
-  nuxtIcon: {
-    class: '',
-  },
-})
+export default defineAppConfig({})

@@ -13,9 +13,7 @@ definePageMeta({
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">
-          Contact Nuxtship Creator
-        </h2>
+        <h2 class="font-medium text-2xl text-gray-800">Contact Creator</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
           Have something to say? I am here to help. Fill up the form or send
           email.

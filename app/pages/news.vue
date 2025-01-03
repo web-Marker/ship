@@ -41,12 +41,8 @@ const team = [
 <template>
   <LandingContainer>
     <LandingSectionhead>
-      <template #title>
-        About
-      </template>
-      <template #desc>
-        We are a small passionate team.
-      </template>
+      <template #title> About </template>
+      <template #desc> We are a small passionate team. </template>
     </LandingSectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
@@ -67,9 +63,9 @@ const team = [
             :width="item.avatar.width"
             :height="item.avatar.height"
             format="avif"
-            alt="Team"
+            alt="free seal maker"
             class="w-full h-full object-cover rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-          >
+          />
         </div>
 
         <div class="mt-4 text-center">

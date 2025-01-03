@@ -1499,7 +1499,7 @@
     ]
   },
   "company": {
-    "companyName": "印章绘制有限责任公司",
+    "companyName": "COMPANYNAME",
     "compression": 1,
     "borderOffset": 1,
     "textDistributionFactor": 5,
@@ -1525,7 +1525,7 @@
   "width": 40,
   "height": 40,
   "stampType": {
-    "stampType": "印章类型",
+    "stampType": "STAMPTYPE",
     "fontHeight": 4.6,
     "fontFamily": "Arial",
     "fontWidth": 3,
@@ -1535,7 +1535,7 @@
     "fontWeight": "normal",
     "lineSpacing": 2
   },
-  "primaryColor": "#1258e4",
+  "primaryColor": "#ff0000",
   "borderWidth": 1,
   "refreshSecurityPattern": false,
   "refreshOld": false,
@@ -1570,29 +1570,29 @@
   "openManualAging": false,
   "stampTypeList": [
     {
-      "stampType": "印章类型",
+      "stampType": "ENGLISH",
       "fontHeight": 4.6,
       "fontFamily": "Arial",
       "fontWidth": 3,
       "compression": 0.75,
-      "letterSpacing": 1.55,
+      "letterSpacing": 1.15,
       "positionY": 0.5,
-      "fontWeight": "normal",
+      "fontWeight": "bold",
       "lineSpacing": 2
     }
   ],
   "companyList": [
     {
-      "companyName": "绘制印章有限责任公司",
+      "companyName": "COMPANYNAME",
       "compression": 1,
       "borderOffset": 1,
-      "textDistributionFactor": 3.7,
+      "textDistributionFactor": 4.7,
       "fontFamily": "SimSun",
       "fontHeight": 4.2,
-      "fontWeight": "normal",
+      "fontWeight": "bold",
       "shape": "ellipse",
       "adjustEllipseText": true,
-      "adjustEllipseTextFactor": 0.75
+      "adjustEllipseTextFactor": 0.25
     }
   ],
   "innerCircleList": []

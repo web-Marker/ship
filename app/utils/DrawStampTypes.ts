@@ -101,6 +101,10 @@ export type IDrawImage = {
 export type IDrawStar = {
   svgPath: string // svg路径
   drawStar: boolean // 是否绘制五角星
+  useImage: boolean // 是否绘制五角星
+  keepAspectRatio: boolean // 保持横宽比例
+  imageWidth: number // 五角星直径
+  imageHeight: number // 五角星直径
   starDiameter: number // 五角星直径
   starPositionY: number // 五角星位置
   scaleToSmallStar: boolean // 是否缩放为小五角星
@@ -168,4 +172,5 @@ export type IDrawStampConfig = {
   offsetX: number // x轴偏移量
   offsetY: number // y轴偏移量
   mmToPixel: number // 毫米到像素的转换比例
+  outBorder: IInnerCircle // 外圈圆
 }

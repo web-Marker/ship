@@ -208,6 +208,7 @@ async function handleLogin() {
     await fetch()
     await router.replace('/')
   } catch (error: any) {
+    console.log('🚀 ~ handleLogin ~ error:', error)
     ElMessage({
       type: 'error',
       message:

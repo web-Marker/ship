@@ -1,7 +1,6 @@
 // server/api/auth/login.post.ts
 import { tables, useDrizzle } from '../../utils/drizzle'
 import { eq } from 'drizzle-orm'
-import * as bcrypt from 'bcrypt'
 
 export default defineEventHandler(async event => {
   try {

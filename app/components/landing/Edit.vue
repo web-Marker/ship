@@ -70,7 +70,7 @@
       style="height: 600px"
     >
       <!-- 模板列表，仅在 Stamp template 激活时显示 -->
-      <div class="flex-1 overflow-y-auto p-4">
+      <div class="flex-1 overflow-y-auto">
         <div v-show="activeMenu === -1" class="template-list">
           <div class="template-category">
             <div class="flex flex-col space-y-4">
@@ -88,7 +88,7 @@
                 >
                   <img
                     :src="template.preview"
-                    alt="模板预览"
+                    alt="custom stamp template preview"
                     class="w-full h-full object-contain"
                   />
                 </div>
@@ -107,7 +107,7 @@
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div class="w-full space-y-4">
               <!-- 印章宽度 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Seal Width</label
                 >
@@ -123,7 +123,7 @@
               </div>
 
               <!-- 印章高度 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Seal Height</label
                 >
@@ -139,7 +139,7 @@
               </div>
 
               <!-- 圆形边框宽度 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Circle Border Width</label
                 >
@@ -155,15 +155,17 @@
               </div>
 
               <!-- 印章颜色 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Seal Color</label
                 >
-                <input
-                  v-model="primaryColor"
-                  type="color"
-                  class="w-[200px] h-[32px] rounded border border-gray-300"
-                />
+                <div class="w-[120px]">
+                  <input
+                    v-model="primaryColor"
+                    type="color"
+                    class="w-[200px] h-[32px] rounded border border-gray-300"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -172,7 +174,7 @@
         <!-- Text 1 设置 -->
         <div
           v-show="activeMenu === 1"
-          class="flex flex-col items-center w-full max-w-[600px] mx-auto"
+          class="flex flex-col items-center w-full max-w-[600px] mx-auto custom-scrollbar"
         >
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div
@@ -194,7 +196,7 @@
               <!-- 表单内容 -->
               <div class="space-y-4">
                 <!-- 公司名称 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Company Name</label
                   >
@@ -202,11 +204,11 @@
                 </div>
 
                 <!-- 字体 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Font</label
                   >
-                  <div class="flex gap-2 flex-1">
+                  <div class="flex w-[150px]">
                     <el-select
                       v-model="company.fontFamily"
                       class="flex-1"
@@ -224,7 +226,7 @@
                 </div>
 
                 <!-- 字体大小 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Font Size (mm)</label
                   >
@@ -239,27 +241,29 @@
                 </div>
 
                 <!-- 字体粗细 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Font Weight</label
                   >
-                  <el-select v-model="company.fontWeight" class="w-[200px]">
-                    <el-option label="normal" value="normal" />
-                    <el-option label="bold" value="bold" />
-                    <el-option label="100" value="100" />
-                    <el-option label="200" value="200" />
-                    <el-option label="300" value="300" />
-                    <el-option label="400" value="400" />
-                    <el-option label="500" value="500" />
-                    <el-option label="600" value="600" />
-                    <el-option label="700" value="700" />
-                    <el-option label="800" value="800" />
-                    <el-option label="900" value="900" />
-                  </el-select>
+                  <div class="w-[150px]">
+                    <el-select v-model="company.fontWeight">
+                      <el-option label="normal" value="normal" />
+                      <el-option label="bold" value="bold" />
+                      <el-option label="100" value="100" />
+                      <el-option label="200" value="200" />
+                      <el-option label="300" value="300" />
+                      <el-option label="400" value="400" />
+                      <el-option label="500" value="500" />
+                      <el-option label="600" value="600" />
+                      <el-option label="700" value="700" />
+                      <el-option label="800" value="800" />
+                      <el-option label="900" value="900" />
+                    </el-select>
+                  </div>
                 </div>
 
                 <!-- 压缩比例 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Compression Ratio</label
                   >
@@ -274,7 +278,7 @@
                 </div>
 
                 <!-- 分布因子 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Distribution Factor</label
                   >
@@ -289,7 +293,7 @@
                 </div>
 
                 <!-- 边距 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Margin (mm)</label
                   >
@@ -303,15 +307,18 @@
                 </div>
 
                 <!-- 调整椭圆文字 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"></label>
                   <el-checkbox v-model="company.adjustEllipseText"
-                    >Adjust Ellipse Text</el-checkbox
+                    >Adjust Text</el-checkbox
                   >
                 </div>
 
                 <!-- 椭圆文字调整 -->
-                <div v-if="company.adjustEllipseText" class="flex items-center">
+                <div
+                  v-if="company.adjustEllipseText"
+                  class="flex items-center justify-between"
+                >
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >adjustmen</label
                   >
@@ -326,7 +333,7 @@
                 </div>
 
                 <!-- 开始角度 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Start Angle</label
                   >
@@ -341,26 +348,28 @@
                 </div>
 
                 <!-- 旋转方向 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Rotation Direction</label
                   >
-                  <el-select
-                    v-model="company.rotateDirection"
-                    class="w-[200px]"
-                  >
-                    <el-option label="Clockwise" value="clockwise" />
-                    <el-option
-                      label="Counterclockwise"
-                      value="counterclockwise"
-                    />
-                  </el-select>
+                  <div class="w-[150px]">
+                    <el-select v-model="company.rotateDirection">
+                      <el-option label="Clockwise" value="clockwise" />
+                      <el-option
+                        label="Counterclockwise"
+                        value="counterclockwise"
+                      />
+                    </el-select>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- 添加按钮 -->
-            <el-button type="primary" class="mt-4" @click="addNewCompany"
+            <el-button
+              type="primary"
+              class="mt-4 hover:!bg-[#1e2736]/90 !border-0"
+              @click="addNewCompany"
               >Add New Row</el-button
             >
           </div>
@@ -377,7 +386,10 @@
               <!-- 标题行 -->
               <div class="flex justify-between items-center mb-4">
                 <span class="text-gray-600">Row {{ index + 1 }}</span>
-                <el-button type="danger" size="small" @click="removeStampType"
+                <el-button
+                  type="danger"
+                  size="small"
+                  @click="() => removeStampType(index)"
                   >Delete</el-button
                 >
               </div>
@@ -385,7 +397,7 @@
               <!-- 表单内容 -->
               <div class="space-y-4">
                 <!-- 文字内容 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Text Content</label
                   >
@@ -393,26 +405,27 @@
                 </div>
 
                 <!-- 字体大小 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Font Size (mm)</label
                   >
-                  <el-input-number
-                    v-model="type.fontHeight"
-                    :min="1"
-                    :max="10"
-                    :step="0.1"
-                    size="default"
-                    class="w-[200px]"
-                  />
+                  <div class="w-[150px]">
+                    <el-input-number
+                      v-model="type.fontHeight"
+                      :min="1"
+                      :max="10"
+                      :step="0.1"
+                      size="default"
+                    />
+                  </div>
                 </div>
 
                 <!-- 字体 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Font</label
                   >
-                  <div class="flex gap-2 flex-1">
+                  <div class="w-[150px]">
                     <el-select v-model="type.fontFamily" class="flex-1">
                       <el-option
                         v-for="font in systemFonts"
@@ -422,82 +435,88 @@
                         :style="{ fontFamily: font }"
                       />
                     </el-select>
-                    <el-input
-                      v-model="type.fontFamily"
-                      placeholder="Enter Font Name"
-                      class="flex-1"
-                    />
                   </div>
                 </div>
 
                 <!-- 字体粗细 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Font Weight</label
                   >
-                  <el-select v-model="type.fontWeight" class="w-[200px]">
-                    <el-option label="normal" value="normal" />
-                    <el-option label="bold" value="bold" />
-                    <el-option label="100" value="100" />
-                    <el-option label="200" value="200" />
-                    <el-option label="300" value="300" />
-                    <el-option label="400" value="400" />
-                    <el-option label="500" value="500" />
-                    <el-option label="600" value="600" />
-                    <el-option label="700" value="700" />
-                    <el-option label="800" value="800" />
-                    <el-option label="900" value="900" />
-                  </el-select>
+                  <div class="w-[150px]">
+                    <el-select v-model="type.fontWeight" class="w-[200px]">
+                      <el-option label="normal" value="normal" />
+                      <el-option label="bold" value="bold" />
+                      <el-option label="100" value="100" />
+                      <el-option label="200" value="200" />
+                      <el-option label="300" value="300" />
+                      <el-option label="400" value="400" />
+                      <el-option label="500" value="500" />
+                      <el-option label="600" value="600" />
+                      <el-option label="700" value="700" />
+                      <el-option label="800" value="800" />
+                      <el-option label="900" value="900" />
+                    </el-select>
+                  </div>
                 </div>
 
                 <!-- 压缩比例 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Compression Ratio</label
                   >
-                  <el-input-number
-                    v-model="type.compression"
-                    :min="0.1"
-                    :max="1.5"
-                    :step="0.05"
-                    :precision="2"
-                    class="w-[200px]"
-                  />
+                  <div class="w-[150px]">
+                    <el-input-number
+                      v-model="type.compression"
+                      :min="0.1"
+                      :max="1.5"
+                      :step="0.05"
+                      :precision="2"
+                      class="w-[200px]"
+                    />
+                  </div>
                 </div>
 
                 <!-- 字符间距 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Letter Spacing (mm)</label
                   >
-                  <el-input-number
-                    v-model="type.letterSpacing"
-                    :min="-1"
-                    :max="10"
-                    :step="0.05"
-                    :precision="2"
-                    class="w-[200px]"
-                  />
+                  <div class="w-[150px]">
+                    <el-input-number
+                      v-model="type.letterSpacing"
+                      :min="-1"
+                      :max="10"
+                      :step="0.05"
+                      :precision="2"
+                      class="w-[200px]"
+                    />
+                  </div>
                 </div>
 
                 <!-- 垂直位置 -->
-                <div class="flex items-center">
+                <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Vertical Position (mm)</label
                   >
-                  <el-input-number
-                    v-model="type.positionY"
-                    :min="-20"
-                    :max="20"
-                    :step="0.5"
-                    class="w-[200px]"
-                  />
+                  <div class="w-[150px]">
+                    <el-input-number
+                      v-model="type.positionY"
+                      :min="-20"
+                      :max="20"
+                      :step="0.5"
+                      class="w-[200px]"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- 添加按钮 -->
-            <el-button type="primary" class="mt-4" @click="addNewStampType"
+            <el-button
+              type="primary"
+              class="mt-4 hover:!bg-[#1e2736]/90 !border-0"
+              @click="addNewStampType"
               >Add New Row</el-button
             >
           </div>
@@ -508,17 +527,19 @@
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div class="w-full space-y-4">
               <!-- 印章编码 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Seal Code</label
                 >
-                <el-input v-model="stampCode" class="flex-1" />
+                <div class="w-[150px]">
+                  <el-input v-model="stampCode" class="flex-1" />
+                </div>
               </div>
 
               <!-- 字体选择 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600">Font</label>
-                <div class="flex gap-2 flex-1">
+                <div class="w-[150px]">
                   <el-select
                     v-model="codeFontFamily"
                     class="flex-1"
@@ -536,79 +557,89 @@
               </div>
 
               <!-- 字体大小 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600">
                   Font Size (mm)</label
                 >
-                <el-input-number
-                  v-model="codeFontSizeMM"
-                  :step="0.1"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="codeFontSizeMM"
+                    :step="0.1"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
 
               <!-- 字体粗细 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Font Weight</label
                 >
-                <el-select v-model="codeFontWeight" class="w-[200px]">
-                  <el-option label="normal" value="normal" />
-                  <el-option label="bold" value="bold" />
-                  <el-option label="100" value="100" />
-                  <el-option label="200" value="200" />
-                  <el-option label="300" value="300" />
-                  <el-option label="400" value="400" />
-                  <el-option label="500" value="500" />
-                  <el-option label="600" value="600" />
-                  <el-option label="700" value="700" />
-                  <el-option label="800" value="800" />
-                  <el-option label="900" value="900" />
-                </el-select>
+                <div class="w-[150px]">
+                  <el-select v-model="codeFontWeight" class="w-[200px]">
+                    <el-option label="normal" value="normal" />
+                    <el-option label="bold" value="bold" />
+                    <el-option label="100" value="100" />
+                    <el-option label="200" value="200" />
+                    <el-option label="300" value="300" />
+                    <el-option label="400" value="400" />
+                    <el-option label="500" value="500" />
+                    <el-option label="600" value="600" />
+                    <el-option label="700" value="700" />
+                    <el-option label="800" value="800" />
+                    <el-option label="900" value="900" />
+                  </el-select>
+                </div>
               </div>
 
               <!-- 压缩比例 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Compression Ratio</label
                 >
-                <el-input-number
-                  v-model="codeCompression"
-                  :min="0.0"
-                  :max="3"
-                  :step="0.01"
-                  :precision="2"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="codeCompression"
+                    :min="0.0"
+                    :max="3"
+                    :step="0.01"
+                    :precision="2"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
 
               <!-- 分布因子 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Distribution Factor</label
                 >
-                <el-input-number
-                  v-model="codeDistributionFactor"
-                  :min="0"
-                  :max="100"
-                  :step="0.5"
-                  :precision="1"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="codeDistributionFactor"
+                    :min="0"
+                    :max="100"
+                    :step="0.5"
+                    :precision="1"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
 
               <!-- 边距 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Margin (mm)</label
                 >
-                <el-input-number
-                  v-model="codeMarginMM"
-                  :min="-10"
-                  :max="20"
-                  :step="0.05"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="codeMarginMM"
+                    :min="-10"
+                    :max="20"
+                    :step="0.05"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -619,17 +650,19 @@
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div class="w-full space-y-4">
               <!-- 税号 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >ID number</label
                 >
-                <el-input v-model="taxNumberValue" class="w-[200px]" />
+                <div class="w-[150px]">
+                  <el-input v-model="taxNumberValue" class="w-[200px]" />
+                </div>
               </div>
 
               <!-- 字体 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600">Font</label>
-                <div class="flex gap-2 w-[200px]">
+                <div class="w-[150px]">
                   <el-select
                     v-model="taxNumberFontFamily"
                     class="w-1/2"
@@ -647,70 +680,78 @@
               </div>
 
               <!-- 字体粗细 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Font Weight</label
                 >
-                <el-select v-model="taxNumberFontWeight" class="w-[200px]">
-                  <el-option label="normal" value="normal" />
-                  <el-option label="bold" value="bold" />
-                  <el-option label="100" value="100" />
-                  <el-option label="200" value="200" />
-                  <el-option label="300" value="300" />
-                  <el-option label="400" value="400" />
-                  <el-option label="500" value="500" />
-                  <el-option label="600" value="600" />
-                  <el-option label="700" value="700" />
-                  <el-option label="800" value="800" />
-                  <el-option label="900" value="900" />
-                </el-select>
+                <div class="w-[150px]">
+                  <el-select v-model="taxNumberFontWeight">
+                    <el-option label="normal" value="normal" />
+                    <el-option label="bold" value="bold" />
+                    <el-option label="100" value="100" />
+                    <el-option label="200" value="200" />
+                    <el-option label="300" value="300" />
+                    <el-option label="400" value="400" />
+                    <el-option label="500" value="500" />
+                    <el-option label="600" value="600" />
+                    <el-option label="700" value="700" />
+                    <el-option label="800" value="800" />
+                    <el-option label="900" value="900" />
+                  </el-select>
+                </div>
               </div>
 
               <!-- 压缩比例 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Compression Ratio</label
                 >
-                <el-input-number
-                  v-model="taxNumberCompression"
-                  :min="0"
-                  :max="3"
-                  :step="0.01"
-                  :precision="2"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="taxNumberCompression"
+                    :min="0"
+                    :max="3"
+                    :step="0.01"
+                    :precision="2"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
 
               <!-- 字符间距 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Letter Spacing</label
                 >
-                <el-input-number
-                  v-model="taxNumberLetterSpacing"
-                  :min="-1"
-                  :max="20"
-                  :step="0.05"
-                  :precision="2"
-                  class="w-[200px]"
-                >
-                </el-input-number>
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="taxNumberLetterSpacing"
+                    :min="-1"
+                    :max="20"
+                    :step="0.05"
+                    :precision="2"
+                    class="w-[200px]"
+                  >
+                  </el-input-number>
+                </div>
               </div>
 
               <!-- 垂直位置调整 -->
-              <div class="flex items-center">
+              <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Vertical Position</label
                 >
-                <el-input-number
-                  v-model="taxNumberPositionY"
-                  :min="-10"
-                  :max="10"
-                  :step="0.1"
-                  :precision="1"
-                  class="w-[200px]"
-                >
-                </el-input-number>
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="taxNumberPositionY"
+                    :min="-10"
+                    :max="10"
+                    :step="0.1"
+                    :precision="1"
+                    class="w-[200px]"
+                  >
+                  </el-input-number>
+                </div>
               </div>
             </div>
           </div>
@@ -761,7 +802,11 @@
                       :show-file-list="false"
                       @change="file => handleImageUpload(file, index)"
                     >
-                      <el-button type="primary">Select Image</el-button>
+                      <el-button
+                        type="primary"
+                        class="hover:!bg-[#1e2736]/90 !border-0"
+                        >Select Image</el-button
+                      >
                     </el-upload>
                   </div>
 
@@ -840,7 +885,7 @@
 
                   <!-- 保持宽高比 -->
                   <div class="flex items-center">
-                    <label class="min-w-[120px] text-sm text-gray-600"
+                    <label class="min-w-[130px] text-sm text-gray-600"
                       >Keep Aspect Ratio</label
                     >
                     <el-switch v-model="image.keepAspectRatio" />
@@ -851,7 +896,11 @@
 
             <!-- 添加按钮 -->
             <div class="flex justify-center mt-4">
-              <el-button type="primary" :icon="Plus" @click="addNewImage"
+              <el-button
+                type="primary"
+                class="hover:!bg-[#1e2736]/90 !border-0"
+                :icon="Plus"
+                @click="addNewImage"
                 >Add Pictures</el-button
               >
             </div>
@@ -863,7 +912,7 @@
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div class="w-full space-y-4">
               <!-- 启用防伪纹路 -->
-              <div class="flex items-center">
+              <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Enable Security Pattern</label
                 >
@@ -871,52 +920,64 @@
               </div>
 
               <!-- 刷新按钮 -->
-              <el-button type="primary" @click="drawStamp(true, false)">
-                Refresh Pattern
-              </el-button>
+              <div class="flex justify-end">
+                <el-button
+                  type="primary"
+                  class="hover:!bg-[#1e2736]/90 !border-0"
+                  @click="drawStamp(true, false)"
+                >
+                  Refresh Pattern
+                </el-button>
+              </div>
 
               <!-- 纹路数量 -->
-              <div class="flex items-center">
+              <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Pattern Count</label
                 >
-                <el-input-number
-                  v-model="securityPatternCount"
-                  :min="1"
-                  :max="100"
-                  :step="1"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="securityPatternCount"
+                    :min="1"
+                    :max="100"
+                    :step="1"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
 
               <!-- 纹路长度 -->
-              <div class="flex items-center">
+              <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Pattern Length (mm)</label
                 >
-                <el-input-number
-                  v-model="securityPatternLength"
-                  :min="0.1"
-                  :max="100"
-                  :step="0.1"
-                  :precision="1"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="securityPatternLength"
+                    :min="0.1"
+                    :max="100"
+                    :step="0.1"
+                    :precision="1"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
 
               <!-- 纹路宽度 -->
-              <div class="flex items-center">
+              <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Pattern Width (mm)</label
                 >
-                <el-input-number
-                  v-model="securityPatternWidth"
-                  :min="0.05"
-                  :max="0.5"
-                  :step="0.05"
-                  :precision="2"
-                  class="w-[200px]"
-                />
+                <div class="w-[150px]">
+                  <el-input-number
+                    v-model="securityPatternWidth"
+                    :min="0.05"
+                    :max="0.5"
+                    :step="0.05"
+                    :precision="2"
+                    class="w-[200px]"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -927,7 +988,7 @@
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div class="w-full space-y-4">
               <!-- 启用毛边效果 -->
-              <div class="flex items-center">
+              <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Enable Burr Effect</label
                 >
@@ -937,7 +998,7 @@
               <!-- 毛边相关设置 -->
               <template v-if="shouldDrawRoughEdge">
                 <!-- 毛边宽度 -->
-                <div class="flex items-center">
+                <div class="flex justify-between items-center">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Burr Width (mm)</label
                   >
@@ -952,7 +1013,7 @@
                 </div>
 
                 <!-- 毛边高度 -->
-                <div class="flex items-center">
+                <div class="flex justify-between items-center">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Burr Height (mm)</label
                   >
@@ -967,7 +1028,7 @@
                 </div>
 
                 <!-- 毛边概率 -->
-                <div class="flex items-center">
+                <div class="flex justify-between items-center">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Burr Probability</label
                   >
@@ -982,7 +1043,7 @@
                 </div>
 
                 <!-- 毛边偏移 -->
-                <div class="flex items-center">
+                <div class="flex justify-between items-center">
                   <label class="min-w-[120px] text-sm text-gray-600">
                     Burr Offset (mm)</label
                   >
@@ -997,7 +1058,7 @@
                 </div>
 
                 <!-- 毛边点数 -->
-                <div class="flex items-center">
+                <div class="flex justify-between items-center">
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Burr Points</label
                   >
@@ -1011,12 +1072,15 @@
                 </div>
 
                 <!-- 刷新按钮 -->
-                <el-button
-                  type="primary"
-                  @click="drawStamp(false, false, true)"
-                >
-                  Refresh Burr
-                </el-button>
+                <div class="flex justify-end">
+                  <el-button
+                    type="primary"
+                    class="hover:!bg-[#1e2736]/90 !border-0"
+                    @click="drawStamp(false, false, true)"
+                  >
+                    Refresh Burr
+                  </el-button>
+                </div>
               </template>
             </div>
           </div>
@@ -1027,7 +1091,7 @@
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div class="w-full space-y-4">
               <!-- 启用做旧效果 -->
-              <div class="flex items-center">
+              <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Enable Aging Effect</label
                 >
@@ -1035,7 +1099,7 @@
               </div>
 
               <!-- 手动做旧 -->
-              <div class="flex items-center">
+              <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600">
                   Manual Aging</label
                 >
@@ -1043,7 +1107,7 @@
               </div>
 
               <!-- 做旧强度 -->
-              <div v-if="applyAging" class="flex items-center">
+              <div v-if="applyAging" class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600"
                   >Aging Intensity</label
                 >
@@ -1056,10 +1120,16 @@
                 />
               </div>
 
-              <!-- 刷新按钮 -->
-              <el-button type="primary" @click="drawStamp(false, true)">
-                Refresh Aging
-              </el-button>
+              <div class="flex justify-end">
+                <!-- 刷新按钮 -->
+                <el-button
+                  type="primary"
+                  class="hover:!bg-[#1e2736]/90 !border-0"
+                  @click="drawStamp(false, true)"
+                >
+                  Refresh Aging
+                </el-button>
+              </div>
             </div>
           </div>
           <!-- Stamp aging 的具体设置内容 -->
@@ -1069,7 +1139,11 @@
         <div v-show="activeMenu === 9">
           <div class="flex flex-col items-center w-full max-w-[600px] mx-auto">
             <div class="w-full space-y-4">
-              <el-button type="primary" @click="addNewInnerCircle">
+              <el-button
+                type="primary"
+                class="hover:!bg-[#1e2736]/90 !border-0"
+                @click="addNewInnerCircle"
+              >
                 Add New Row
               </el-button>
 
@@ -1141,8 +1215,29 @@
   </div>
 
   <!-- 下载按钮只有 -->
+  <div class="flex justify-center items-center gap-4 py-4 mb-8">
+    <div
+      class="text-black underline cursor-pointer hover:opacity-80 font-bold"
+      @click="navigateToPricing"
+    >
+      Join VIP
+    </div>
+    <el-button
+      class="!bg-[#1e2736] hover:!bg-[#1e2736]/90 !h-9 !border-0 !text-white"
+      @click="confirmSave"
+    >
+      Download Seal Without Watermark
+    </el-button>
+    <el-button
+      type="primary"
+      class="!bg-[#E2E2E2] !text-black hover:!bg-[#d5d5d5] !h-9 !border-0"
+      @click="downloadWithWatermark"
+    >
+      Download Seal
+    </el-button>
+  </div>
 
-  <el-col :span="5">
+  <!-- <el-col :span="5">
     <el-button type="primary" @click="downloadWithWatermark">
       Download Seal
     </el-button>
@@ -1166,7 +1261,7 @@
       Unlimited Downloads
       <el-icon class="el-icon--right"><ArrowRight /></el-icon>
     </el-button>
-  </el-col>
+  </el-col> -->
 </template>
 
 <script setup lang="ts">
@@ -1191,19 +1286,19 @@ import type {
 // 添加默认模板的类型定义和数据
 const defaultTemplates = ref<Template[]>([
   {
-    name: 'Contract Seal',
+    name: 'Company Seal',
+    preview: '',
+    config: companyStamp2 as any,
+  },
+  {
+    name: 'Contract Seal 1',
     preview: '',
     config: contractStamp1 as any,
   },
   {
-    name: 'Company Seal 1',
-    preview: '',
-    config: companyStamp1 as any,
-  },
-  {
     name: 'Company Seal 2',
     preview: '',
-    config: companyStamp2 as any,
+    config: companyStamp1 as any,
   },
 ])
 
@@ -1215,14 +1310,6 @@ const navigateToPricing = () => {
 
 const payLoading = ref(false)
 
-// 使用computed创建响应式引用
-const computedImageList = computed({
-  get: () => imageList.value,
-  set: newValue => {
-    imageList.value = newValue
-    drawStamp()
-  },
-})
 const activeMenu = ref(-1)
 const menuItems = [
   { text: 'Basic', icon: House, id: 0 },
@@ -1254,7 +1341,7 @@ const stampCanvas = ref<HTMLCanvasElement | null>(null)
 const MM_PER_PIXEL = 10 // 毫米换算像素
 
 // 添加响应式数据
-const companyName = ref('绘制印章有限责任公司')
+const companyName = ref('')
 // 印章编码
 const stampCode = ref('1234567890123')
 // 税号
@@ -1440,67 +1527,6 @@ const removeImage = (index: number) => {
   imageList.value.splice(index, 1)
 }
 
-// 保存模板
-const saveAsTemplate = () => {
-  const drawConfigs = drawStampUtils.getDrawConfigs()
-  const jsonStr = JSON.stringify(drawConfigs, null, 2)
-
-  // 创建 Blob
-  const blob = new Blob([jsonStr], { type: 'application/json' })
-  const url = URL.createObjectURL(blob)
-
-  // 创建下载链接
-  const link = document.createElement('a')
-  link.href = url
-  link.download = '印章模板.json'
-  document.body.appendChild(link)
-  link.click()
-
-  // 清理
-  document.body.removeChild(link)
-  URL.revokeObjectURL(url)
-}
-
-// 触发文件选择
-const triggerTemplateLoad = () => {
-  templateFileInput.value?.click()
-}
-
-// 载模板
-const loadTemplate = (event: Event) => {
-  const target = event.target as HTMLInputElement
-  if (target.files && target.files[0]) {
-    const file = target.files[0]
-    const reader = new FileReader()
-
-    reader.onload = e => {
-      try {
-        if (e.target?.result) {
-          const jsonStr = e.target.result as string
-          const configs = JSON.parse(jsonStr)
-
-          // 设置新的配置
-          drawStampUtils.setDrawConfigs(configs)
-
-          // 恢复界面显示
-          restoreDrawConfigs()
-
-          // 刷新印章显示
-          drawStamp()
-        }
-      } catch (error) {
-        console.error('加载模板失败:', error)
-        alert('加载模板失败，请确保文件格式正确')
-      }
-    }
-
-    reader.readAsText(file)
-  }
-
-  // 清除文件选择，确保同一文件可以重复选择
-  target.value = ''
-}
-
 // 修改图片上传处理函数
 const handleImageUpload = (uploadFile: any, index: number) => {
   const file = uploadFile.raw // el-upload 会将文件包装在uploadFile.raw中
@@ -1525,7 +1551,7 @@ const addNewStampType = () => {
     newPositionY = lastStampType.positionY + lastStampType.fontHeight
   }
   stampTypeList.value.push({
-    stampType: '新印章类型',
+    stampType: 'New types',
     fontHeight: 4.0,
     fontFamily: 'SimSun',
     compression: 0.75,
@@ -1550,7 +1576,7 @@ const addNewCompany = () => {
     newBorderOffset = lastCompany.borderOffset + lastCompany.fontHeight
   }
   companyList.value.push({
-    companyName: '新公司名称',
+    companyName: 'New texts',
     compression: 1,
     borderOffset: newBorderOffset,
     textDistributionFactor: 3,
@@ -1593,6 +1619,10 @@ const drawStamp = (
   refreshOld: boolean = false,
   refreshRoughEdge: boolean = false
 ) => {
+  console.log(agingIntensity.value)
+  console.log(manualAging.value)
+  console.log(applyAging.value)
+
   // 使用drawstamputils进行绘制
   drawStampUtils.refreshStamp(
     refreshSecurityPattern,
@@ -1682,7 +1712,7 @@ const updateDrawConfigs = () => {
   drawConfigs.height = drawStampHeight.value
 
   // 五角星/图片配置
-  const drawStar: IDrawStar = drawConfigs.drawStar
+  const drawStar: any = drawConfigs.drawStar
   drawStar.drawStar = shouldDrawStar.value
   drawStar.useImage = useStarImage.value
   drawStar.imageWidth = starImageWidth.value
@@ -1924,7 +1954,6 @@ const confirmSave = async () => {
 
     // 确保回调函数被正确传入和执行
     handlePayment('one_time', () => {
-      console.log('支付成功回调执行，开始下载图片')
       drawStampUtils.saveStampAsPNG(512)
       trackEvent('download_after_payment', {
         payment_type: 'one_time',
@@ -2048,6 +2077,7 @@ const loadSystemFonts = async () => {
 
 onMounted(async () => {
   await loadSystemFonts()
+
   initDrawStampUtils()
   restoreDrawConfigs()
   drawStamp()
@@ -2062,6 +2092,10 @@ onMounted(async () => {
       }
     }
   })
+
+  if (defaultTemplates.value[0]) {
+    await loadDefaultTemplate(defaultTemplates.value[0])
+  }
 })
 
 // 监听所有响应式数据的变化
@@ -2163,8 +2197,8 @@ interface StampTypePreset {
 const stampTypePresets = ref<StampTypePreset[]>([
   {
     id: 'contract',
-    name: '合同专用章',
-    text: '合同专用章',
+    name: 'Special seal for contracts',
+    text: 'Special seal for contracts',
     fontSize: 4.6,
     letterSpacing: 0,
     lineSpacing: 1.2,
@@ -2173,8 +2207,8 @@ const stampTypePresets = ref<StampTypePreset[]>([
   },
   {
     id: 'invoice',
-    name: '印章类型',
-    text: '发票专章\n增值税专用',
+    name: 'Seal type',
+    text: 'Invoice stamp',
     fontSize: 4.2,
     letterSpacing: 0,
     lineSpacing: 1.5,
@@ -2183,8 +2217,8 @@ const stampTypePresets = ref<StampTypePreset[]>([
   },
   {
     id: 'finance',
-    name: '财务专用章',
-    text: '财务专用章\n仅限报销使用',
+    name: 'Financial Seal',
+    text: 'Financial Seal',
     fontSize: 4.0,
     letterSpacing: 0,
     lineSpacing: 1.8,
@@ -2271,14 +2305,6 @@ interface Template {
 // 添加模板相关的响应式数据
 const currentTemplateIndex = ref(-1)
 
-// 保存当前设置为模板
-const saveCurrentAsTemplate = async () => {
-  const name = prompt('请输入模板名称')
-  if (!name) return
-  // 保存到本地存储
-  saveTemplatesToStorage()
-}
-
 // 加载模板
 const loadDefaultTemplate = (template: Template) => {
   try {
@@ -2306,7 +2332,6 @@ const loadDefaultTemplate = (template: Template) => {
       -1 - defaultTemplates.value.findIndex(t => t === template)
   } catch (error) {
     console.error('加载默认模板失败:', error)
-    alert('加载默认模板失败')
   }
 }
 
@@ -2386,5 +2411,28 @@ onMounted(() => {
   padding-bottom: 4px;
   color: #606266;
   line-height: 1.5;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #d1d5db transparent; /* Firefox */
+}
+
+/* Webkit browsers (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* 滚动条宽度 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* 轨道背景 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db; /* 滚动条颜色 */
+  border-radius: 3px; /* 圆角 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af; /* 悬停时的颜色 */
 }
 </style>

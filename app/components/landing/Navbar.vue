@@ -1,20 +1,23 @@
 <script setup>
 import { useAuth } from '~/composables/useAuth'
+import logoimg from '@/assets/img/logo.svg'
+
 const route = useRoute() // 添加这行来获取路由实例
 
 const menuitems = [
   { title: 'Edit', path: '/' },
   { title: 'Pricing', path: '/pricing' },
-  { title: 'News', path: '/news' },
+  { title: 'Blog', path: '/blog' },
   { title: 'Contact', path: '/contact' },
 ]
 
 const open = ref(false)
-const { user, logout } = useAuth()
+const router = useRouter()
+const { user, logout, getUserDisplay } = useAuth()
 
 const handleLogout = async () => {
   await logout()
-  navigateTo('/signin')
+  router.push('/signin')
 }
 
 // 关闭移动端菜单
@@ -31,7 +34,8 @@ watch(() => route.path, closeMenu)
     <header class="flex flex-col lg:flex-row justify-between items-center my-5">
       <!-- Logo部分 -->
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <NuxtLink to="/" class="text-lg">
+        <NuxtLink to="/" class="flex items-center gap-2 text-lg">
+          <img :src="logoimg" class="h-6 w-5" alt="free seal maker" />
           <span class="font-bold text-slate-800">Seal</span>
           <span class="text-slate-500">Digital</span>
         </NuxtLink>
@@ -99,7 +103,7 @@ watch(() => route.path, closeMenu)
             class="text-primary hover:underline px-4 py-2"
             @click="handleLogout"
           >
-            Logout
+            Log out
           </button>
         </div>
       </nav>
@@ -117,37 +121,31 @@ watch(() => route.path, closeMenu)
         </div>
         <div v-else class="flex items-center gap-4">
           <div class="flex items-center gap-2 text-gray-600">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-gray-500"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+            <div
+              v-if="getUserDisplay?.type === 'google'"
+              class="w-8 h-8 rounded-full overflow-hidden"
             >
-              <path
-                fill-rule="evenodd"
-                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                clip-rule="evenodd"
+              <img
+                :src="getUserDisplay.display"
+                alt="custom stamp seals digital"
+                class="w-full h-full object-cover"
               />
-            </svg>
-            <span class="truncate max-w-[200px]">{{ user.email }}</span>
+            </div>
+
+            <div
+              v-else-if="getUserDisplay?.type === 'email'"
+              class="user-initial-avatar"
+            >
+              {{ getUserDisplay.display }}
+            </div>
+
+            <!-- <span class="truncate max-w-[200px]">{{ user.email }}</span> -->
           </div>
           <button
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-200"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-200 login-out"
             @click="handleLogout"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            Logout
+            Log out
           </button>
         </div>
       </div>
@@ -160,5 +158,25 @@ watch(() => route.path, closeMenu)
   nav {
     overflow: hidden;
   }
+}
+
+.login-out {
+  background: #f9f9f9;
+  font-size: 13px;
+  color: #a19a9a;
+  font-weight: 600;
+}
+
+.user-initial-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%; /* 圆形 */
+  background-color: #000000; /* 黑色背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff; /* 白色文字 */
+  font-size: 18px;
+  font-weight: 700; /* 文字加粗 */
 }
 </style>

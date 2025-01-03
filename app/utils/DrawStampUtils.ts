@@ -701,6 +701,15 @@ export class DrawStampUtils {
     height: number,
     forceRefresh: boolean = false
   ) {
+    console.log(
+      'addAgingEffect',
+      'width',
+      width,
+      'height',
+      height,
+      'forceRefresh',
+      this.drawStampConfigs.agingEffect.applyAging
+    )
     if (!this.drawStampConfigs.agingEffect.applyAging) return
     const imageData = ctx.getImageData(0, 0, width, height)
     const data = imageData.data
@@ -708,9 +717,11 @@ export class DrawStampUtils {
     const centerX =
       width / (2 * this.scale) +
       (this.stampOffsetX * this.mmToPixel) / this.scale
+
     const centerY =
       height / (2 * this.scale) +
       (this.stampOffsetY * this.mmToPixel) / this.scale
+
     const radius = ((Math.max(width, height) / 2) * this.mmToPixel) / this.scale
 
     // 如果需要刷新或者参数数组为空,则重新生成参数
@@ -725,25 +736,23 @@ export class DrawStampUtils {
           const distanceFromCenter = Math.sqrt(
             Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2)
           )
-          if (
-            distanceFromCenter <= radius &&
-            data[index] > 200 &&
-            data[index + 1] < 50 &&
-            data[index + 2] < 50
-          ) {
-            const intensityFactor =
-              this.drawStampConfigs.agingEffect.agingIntensity / 100
-            const seed = Math.random()
-            this.drawStampConfigs.agingEffect.agingEffectParams.push({
-              x: x - this.stampOffsetX * this.mmToPixel,
-              y: y - this.stampOffsetY * this.mmToPixel,
-              noiseSize: Math.random() * 3 + 1,
-              noise: Math.random() * 200 * intensityFactor,
-              strongNoiseSize: Math.random() * 5 + 2,
-              strongNoise: Math.random() * 250 * intensityFactor + 5,
-              fade: Math.random() * 50 * intensityFactor,
-              seed: seed,
-            })
+          if (distanceFromCenter <= radius) {
+            // 检查像素是否不是透明的（alpha 通道不为 0）
+            if (data[index + 3] > 0) {
+              const intensityFactor =
+                this.drawStampConfigs.agingEffect.agingIntensity / 100
+              const seed = Math.random()
+              this.drawStampConfigs.agingEffect.agingEffectParams.push({
+                x: x - this.stampOffsetX * this.mmToPixel,
+                y: y - this.stampOffsetY * this.mmToPixel,
+                noiseSize: Math.random() * 3 + 1,
+                noise: Math.random() * 200 * intensityFactor,
+                strongNoiseSize: Math.random() * 5 + 2,
+                strongNoise: Math.random() * 250 * intensityFactor + 5,
+                fade: Math.random() * 50 * intensityFactor,
+                seed: seed,
+              })
+            }
           }
         }
       }

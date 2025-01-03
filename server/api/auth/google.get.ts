@@ -35,11 +35,11 @@ export default defineOAuthGoogleEventHandler({
         user: {
           email: googleEmail, // 这里使用原始邮箱
           name: user.name,
+          picture: user.picture,
           // 可以添加一个标记表示这是 Google 登录用户
           isGoogleUser: true,
         },
       })
-
       return sendRedirect(event, '/')
     } catch (error) {
       console.error('Google OAuth registration error:', error)

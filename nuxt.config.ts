@@ -1,17 +1,34 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import path from 'path'
+
 export default defineNuxtConfig({
   // https://nuxt.com/modules
   modules: [
     '@nuxthub/core',
     '@nuxt/eslint',
-    'nuxt-icon',
+    '@nuxt/content',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@element-plus/nuxt',
     'nuxt-auth-utils',
   ],
+
+  vite: {
+    build: {
+      assetsInlineLimit: 10,
+    },
+  },
+
   nitro: {
+    minify: false,
+    prerender: {
+      routes: ['/blog'], // 预渲染博客列表页
+      crawlLinks: true, // 自动爬取链接
+    },
     routeRules: {
+      '/blog': { prerender: true },
+      '/blog/**': { prerender: true },
+
       '/**': {
         headers: {
           'Content-Security-Policy':
@@ -20,6 +37,37 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  hooks: {
+    // 'nitro:config': (nitroConfig) => {
+    //   // 如果需要,你可以在这里修改 nitro 配置
+    // },
+    'nitro:init': async nitro => {
+      // 获取所有博客文章的路径
+      const blogSlugs = await Promise.resolve([
+        'legal-requirements-digital-seals',
+        'custom-seal-typography',
+        'digital-seal-formats',
+        'seal-design-trends-2024',
+        'seal-automation-workflow',
+        'cultural-seal-designs',
+        'digital-seal-history',
+        'business-seal-guide',
+        'digital-signatures-vs-seals',
+        'ai-seal-design',
+        'seal-security-features',
+        'creative-seal-designs',
+        // ... 其他文章的 slug
+      ])
+
+      // 添加到预渲染队列
+      blogSlugs.forEach(slug => {
+        nitro.options.prerender.routes.push(`/blog/${slug}`)
+      })
+    },
+  },
+  experimental: {
+    payloadExtraction: true, // 启用 payload 提取优化
   },
   auth: {
     hash: {
@@ -38,18 +86,18 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-      title: 'DigitalSeal Studio - Free AI Seal Maker | Custom Stamp Creator',
+      title: 'Free Custom Stamp Maker - Design Digital Seals Online',
       meta: [
         // Primary Meta Tags
         {
           name: 'description',
           content:
-            'Create professional digital seals and stamps for free with AI technology. No signup required. Design custom seals with vintage effects, multiple colors, and instant download. Free online tool for business documents and artworks.',
+            'Create custom digital seals and stamps effortlessly with our free AI-powered seal maker. Enjoy professional templates and advanced security features.',
         },
         {
           name: 'keywords',
           content:
-            'free seal maker, free stamp creator, free digital seal, online seal generator, free business seal, AI stamp maker, custom seal design, free stamp tool, no cost seal creator, free download seal maker, free business stamp',
+            'digital seal maker, custom stamp creator, AI seal maker, professional stamp design, anti-counterfeiting features, customizable seal templates, download digital stamp, online seal generator',
         },
         // Open Graph / Facebook
         {
@@ -92,13 +140,17 @@ export default defineNuxtConfig({
           name: 'robots',
           content: 'index, follow',
         },
+        {
+          name: 'google-adsense-account',
+          content: 'ca-pub-5518561944394588',
+        },
       ],
 
       script: [
-        {
-          src: 'https://docs.opencv.org/master/opencv.js',
-          async: true,
-        },
+        // {
+        //   src: 'https://docs.opencv.org/master/opencv.js',
+        //   async: true,
+        // },
         {
           src: `https://www.googletagmanager.com/gtag/js?id=G-SPT6210FEJ`,
           async: true,
@@ -148,6 +200,7 @@ export default defineNuxtConfig({
   hub: {
     kv: true,
     database: true,
+    // blob: true,
   },
   // https://hub.nuxt.com/docs/getting-started/installation#options
   postcss: {

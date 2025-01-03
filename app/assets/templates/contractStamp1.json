@@ -1531,7 +1531,7 @@
     "fontWeight": "normal",
     "lineSpacing": 2
   },
-  "primaryColor": "#ff0000",
+  "primaryColor": "#00eeee",
   "borderWidth": 1,
   "refreshSecurityPattern": false,
   "refreshOld": false,
@@ -1567,12 +1567,12 @@
   "openManualAging": false,
   "stampTypeList": [
     {
-      "stampType": "印章类型",
+      "stampType": "chinese",
       "fontHeight": 4.6,
       "fontFamily": "Arial",
       "fontWidth": 3,
       "compression": 0.75,
-      "letterSpacing": 0,
+      "letterSpacing": 1,
       "positionY": -3,
       "fontWeight": "normal",
       "lineSpacing": 2
