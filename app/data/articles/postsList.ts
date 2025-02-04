@@ -10,7 +10,13 @@ import p9 from '@/assets/img/9.jpg'
 import p10 from '@/assets/img/10.jpg'
 import p11 from '@/assets/img/11.jpg'
 import p12 from '@/assets/img/12.jpg'
-
+import p13 from '@/assets/img/13.jpg'
+import p14 from '@/assets/img/14.jpg'
+import p15 from '@/assets/img/15.jpg'
+import p16 from '@/assets/img/16.jpg'
+import p17 from '@/assets/img/17.jpg'
+import p18 from '@/assets/img/18.jpg'
+import p19 from '@/assets/img/19.jpg'
 export const postdata = ref([
   {
     id: 7,
@@ -143,5 +149,86 @@ export const postdata = ref([
     publishedAt: '2024-02-10T16:45:00Z',
     author: 'Lisa Zhang',
     category: 'Security',
+  },
+  {
+    id: 13,
+    slug: 'healthcare-digital-seals',
+    title: 'Digital Seals in Healthcare: 2024 Implementation Guide',
+    description:
+      'In 2024, digital seals have become instrumental in healthcare, revolutionizing medical documentation, patient records, and regulatory compliance. Discover comprehensive insights into healthcare-specific digital seal implementation.',
+    coverImage: p13,
+    publishedAt: '2025-01-7T11:30:00Z',
+    author: 'Dr. Rachel Thompson',
+    category: 'Security',
+  },
+  {
+    id: 14,
+    slug: 'digital-seal-verification',
+    title:
+      'Digital Seal Verification: Complete Guide to Authentication Methods 2024',
+    description:
+      'Learn about modern digital seal verification techniques, security protocols, and best practices. Comprehensive guide for businesses and professionals.',
+    coverImage: p14,
+    publishedAt: '2025-01-08T10:00:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Security',
+  },
+  {
+    id: 15,
+    slug: 'stamp-maker-online',
+    title: 'Online Stamp Maker Tools: Complete Guide 2024',
+    description:
+      'Explore modern online stamp making solutions with advanced customization tools, security features, and integration capabilities. Essential guide for businesses seeking professional digital and physical stamp creation.',
+    coverImage: p15,
+    publishedAt: '2025-01-10T09:15:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Design Tips',
+  },
+  {
+    id: 16,
+    slug: 'financial-digital-seals',
+    title:
+      'Financial Digital Seals: Advanced Security Solutions for Banking 2024',
+    description:
+      'Explore comprehensive digital seal solutions for financial institutions, including banking security protocols, compliance requirements, and implementation strategies.',
+    coverImage: p16,
+    publishedAt: '2025-01-12T14:30:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Finance',
+  },
+  {
+    id: 17,
+    slug: 'seal-seo-optimization',
+    title:
+      'Digital Seal SEO: Ultimate Guide to Search Engine Optimization 2025',
+    description:
+      'Master the art of digital seal SEO with our comprehensive guide covering advanced strategies, technical optimization, and content marketing techniques for maximum search visibility.',
+    coverImage: p17,
+    publishedAt: '2025-01-31T14:30:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Marketing',
+  },
+  {
+    id: 18,
+    slug: 'custom-seal-design-guide',
+    title:
+      'Custom Seal Design: Complete Guide to Creating Professional Seals 2024',
+    description:
+      'Master the art of custom seal design with our comprehensive guide covering design principles, tools, and professional techniques for creating unique and impactful seals.',
+    coverImage: p18,
+    publishedAt: '2025-02-02T14:30:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Design Tips',
+  },
+  {
+    id: 19,
+    slug: 'seal-design-psychology',
+    title: 'Seal Design Psychology: Complete Guide 2025',
+    description:
+      'Explore the psychological principles behind seal design, including color psychology, shape symbolism, and emotional design elements. A comprehensive guide for designers and businesses.',
+    coverImage: p19,
+    publishedAt: '2025-02-04T14:30:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Design Psychology',
   },
 ])

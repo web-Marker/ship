@@ -16,6 +16,14 @@ export const messages = sqliteTable('messages', {
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
 })
 
+export const orders = sqliteTable('orders', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  userEmail: text('user_email').notNull(),
+  paidAt: integer('paid_at', { mode: 'timestamp' }).notNull(),
+  sealImage: text('seal_image', { length: 1024 * 1024 }).notNull(), // 1MB 长度限制用于存储 base64
+  createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
+})
+
 // server/database/schema.ts
 // 在现有的 schema 中添加
 // export const blogPosts = sqliteTable('blog_posts', {

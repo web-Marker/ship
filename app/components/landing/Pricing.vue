@@ -57,6 +57,7 @@ const handleClick = () => {
           :href="plan.button.link || '#'"
           block
           :style-name="plan.popular ? 'primary' : 'outline'"
+          :loading="plan.button.loading"
           @click.prevent="handleClick"
         >
           {{ plan.button.text || 'Get Started' }}

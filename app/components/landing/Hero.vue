@@ -178,7 +178,7 @@
     <div class="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
       <!-- Card -->
       <NuxtLink
-        to="/blog/legal-requirements-digital-seals"
+        to="/blog/seal-seo-optimization"
         class="group block rounded-xl overflow-hidden focus:outline-none"
       >
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
@@ -187,8 +187,8 @@
           >
             <img
               class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"
-              :src="p13"
-              alt="legal-requirements-digital-seals"
+              :src="p17"
+              alt="seal-seo-optimization"
             />
           </div>
 
@@ -196,11 +196,11 @@
             <h3
               class="text-xl font-semibold text-gray-800 group-hover:text-gray-600"
             >
-              legal-requirements-digital-seals
+              seal-seo-optimization
             </h3>
             <p class="mt-3 text-gray-600">
-              In 2024, digital seals have become an integral part of modern
-              business operations...
+              Digital Seal SEO: Ultimate Guide to Search Engine Optimization
+              2025...
             </p>
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
@@ -251,6 +251,56 @@
             <p class="mt-3 text-gray-600">
               Master the art of selecting and arranging fonts in your digital
               seals. Learn how typography can enhance the...
+            </p>
+            <p
+              class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
+            >
+              Read more
+              <svg
+                class="shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </NuxtLink>
+      <!-- End Card -->
+      <!-- Card -->
+      <NuxtLink
+        to="/blog/healthcare-digital-seals"
+        class="group block rounded-xl overflow-hidden focus:outline-none"
+      >
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+          <div
+            class="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44"
+          >
+            <img
+              class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"
+              :src="p13_1"
+              alt="healthcare-digital-seals"
+            />
+          </div>
+
+          <div class="grow">
+            <h3
+              class="text-xl font-semibold text-gray-800 group-hover:text-gray-600"
+            >
+              Digital Seals in Healthcare: 2024 Implementation Guide
+            </h3>
+            <p class="mt-3 text-gray-600">
+              In 2024, digital seals have become instrumental in healthcare,
+              revolutionizing medical documentation, patient records, and
+              regulatory compliance. Discover ....
             </p>
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
@@ -328,7 +378,7 @@
 
       <!-- Card -->
       <NuxtLink
-        to="/blog/seal-design-trends-2024"
+        to="/blog/custom-seal-design-guide"
         class="group block rounded-xl overflow-hidden focus:outline-none"
       >
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
@@ -337,7 +387,7 @@
           >
             <img
               class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"
-              :src="p16"
+              :src="p18"
               alt="seal-design-trends"
             />
           </div>
@@ -346,11 +396,62 @@
             <h3
               class="text-xl font-semibold text-gray-800 group-hover:text-gray-600"
             >
-              Digital Seal Design Trends for 2024
+              Custom Seal Design: Complete Guide to Creating Professional Seals
+              2024
             </h3>
             <p class="mt-3 text-gray-600">
-              Explore the latest trends in digital seal design, from minimalist
-              approaches to innovative color schemes
+              Master the art of custom seal design with our comprehensive guide
+              covering design principles
+            </p>
+            <p
+              class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
+            >
+              Read more
+              <svg
+                class="shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </NuxtLink>
+      <!-- End Card -->
+
+      <!-- Card -->
+      <NuxtLink
+        to="/blog/seal-design-psychology"
+        class="group block rounded-xl overflow-hidden focus:outline-none"
+      >
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+          <div
+            class="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44"
+          >
+            <img
+              class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"
+              :src="p19"
+              alt="seal-design-trends"
+            />
+          </div>
+
+          <div class="grow">
+            <h3
+              class="text-xl font-semibold text-gray-800 group-hover:text-gray-600"
+            >
+              Seal Design Psychology: Complete Guide 2025
+            </h3>
+            <p class="mt-3 text-gray-600">
+              Explore the psychological principles behind seal design, including
+              color psychology, shape symbolism, and emotional design elements.
             </p>
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
@@ -414,6 +515,10 @@ import p13 from '@/assets/img/13.jpeg'
 import p14 from '@/assets/img/14.jpeg'
 import p15 from '@/assets/img/15.jpeg'
 import p16 from '@/assets/img/16.jpeg'
+import p13_1 from '@/assets/img/13.jpg'
+import p17 from '@/assets/img/17.jpg'
+import p18 from '@/assets/img/18.jpg'
+import p19 from '@/assets/img/19.jpg'
 
 const tabs = ref(['Generate Stamp'])
 const activeTab = ref(0)

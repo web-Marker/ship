@@ -1,6 +1,26 @@
 // app/composables/useAuth.ts
 export const useAuth = () => {
-  const { user, loggedIn, clear } = useUserSession()
+  const { user, loggedIn, clear, fetch } = useUserSession()
+
+  const handleStateRefresh = async () => {
+    await fetch()
+  }
+  const handleVisibilityChange = async () => {
+    if (document.visibilityState === 'visible') {
+      await handleStateRefresh()
+    }
+  }
+
+  // 添加窗口焦点事件处理
+  onMounted(() => {
+    window.addEventListener('focus', handleStateRefresh)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('focus', handleStateRefresh)
+    document.removeEventListener('visibilitychange', handleVisibilityChange)
+  })
 
   // 获取用户显示信息
   const getUserDisplay = computed(() => {

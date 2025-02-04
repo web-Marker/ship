@@ -840,7 +840,7 @@ export class DrawStampUtils {
    * 将印章保存为PNG图片
    * @param outputSize 输出图片的尺寸
    */
-  saveStampAsPNG(outputSize: number = 512) {
+  saveStampAsPNG(outputSize: number = 512, isOne: boolean = false) {
     // 首先隐藏虚线
     this.drawStampConfigs.ruler.showCrossLine = false
     this.drawStampConfigs.ruler.showRuler = false
@@ -897,10 +897,32 @@ export class DrawStampUtils {
       // 将的 canvas 转为 PNG 数据 URL
       const dataURL = saveCanvas.toDataURL('image/png')
 
+      if (isOne) {
+        // 调用保存API
+        fetch('/api/orders/save', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            sealImage: dataURL,
+          }),
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              console.log('save success')
+            }
+          })
+          .catch(error => {
+            console.error('save fail')
+          })
+      }
+
       // 创建一个临时的 <a> 元素来触发下载
       const link = document.createElement('a')
       link.href = dataURL
-      link.download = '印章.png'
+      link.download = 'seal.png'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -1031,141 +1053,153 @@ export class DrawStampUtils {
     refreshOld: boolean = false,
     refreshRoughEdge: boolean = false
   ) {
-    // 清除整个画布
-    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-    // 在离屏 canvas 上绘制
-    const offscreenCanvas = this.offscreenCanvas
-    offscreenCanvas.width = this.canvas.width
-    offscreenCanvas.height = this.canvas.height
-    const offscreenCtx = offscreenCanvas.getContext('2d')
-    if (!offscreenCtx) return
-    // 创建一个临时的 canvas 用于存储原始图片
-    const tempCanvas = document.createElement('canvas')
-    tempCanvas.width = this.canvas.width
-    tempCanvas.height = this.canvas.height
-    const tempCtx = tempCanvas.getContext('2d')
-    if (!tempCtx) return
-    // 在离屏 canvas 上绘制印章基本形状
-    drawBasicBorder(
-      offscreenCtx,
-      centerX,
-      centerY,
-      radiusX,
-      radiusY,
-      borderWidth,
-      borderColor
-    )
-    // 创建裁剪区域，确保所有内容（文字、图片、五角星等）都被限制在印章的椭圆形状内
-    offscreenCtx.save()
-    offscreenCtx.beginPath()
-    offscreenCtx.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, Math.PI * 2)
-    offscreenCtx.clip()
-    // 绘制内圈列表
-    if (this.drawStampConfigs.innerCircleList.length > 0) {
-      this.drawCircleUtils.drawCircleList(
-        offscreenCtx,
-        this.drawStampConfigs.innerCircleList,
-        centerX,
-        centerY,
-        borderColor
-      )
-    }
-    // 如果没有图片，绘制五角星或SVG
-    if (this.drawStampConfigs.drawStar.drawStar) {
-      this.drawSvgUtils.drawStarShape(
-        offscreenCtx,
-        this.drawStampConfigs.drawStar,
-        centerX,
-        centerY,
-        this.drawStampConfigs.primaryColor
-      )
-    }
-    // 绘制图片列表
-    if (
-      this.drawStampConfigs.imageList &&
-      this.drawStampConfigs.imageList.length > 0
-    ) {
-      this.drawImageList(
-        offscreenCtx,
-        this.drawStampConfigs.imageList,
-        centerX,
-        centerY
-      )
-    }
-    // 绘制公司文字内容，边框的圆形文字
-    this.drawCompanyUtils.drawCompanyList(
-      offscreenCtx,
-      this.drawStampConfigs.companyList,
-      centerX,
-      centerY,
-      radiusX,
-      radiusY,
-      this.drawStampConfigs.primaryColor
-    )
-    // 绘制印章类型文字内容，边框的矩形文字
-    this.drawStampTypeList(
-      offscreenCtx,
-      this.drawStampConfigs.stampTypeList,
-      centerX,
-      centerY,
-      radiusX
-    )
-    // 绘制编码文字内容，边框的圆形文字
-    this.drawCode(
-      offscreenCtx,
-      this.drawStampConfigs.stampCode,
-      centerX,
-      centerY,
-      radiusX,
-      radiusY
-    )
-    // 绘制税号文字内容，边框的圆形文字
-    this.drawTaxNumber(
-      offscreenCtx,
-      this.drawStampConfigs.taxNumber,
-      centerX,
-      centerY
-    )
-    offscreenCtx.restore()
-    // 将离屏 canvas 的内容绘制到主 canvas
-    ctx.save()
-    // 添加毛边效果
-    if (this.drawStampConfigs.roughEdge.drawRoughEdge) {
-      this.addRoughEdge(
+    try {
+      // 清除整个画布
+      ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+      // 在离屏 canvas 上绘制
+      const offscreenCanvas = this.offscreenCanvas
+      offscreenCanvas.width = this.canvas.width
+      offscreenCanvas.height = this.canvas.height
+      const offscreenCtx = offscreenCanvas.getContext('2d')
+      if (!offscreenCtx) return
+      // 创建一个临时的 canvas 用于存储原始图片
+      const tempCanvas = document.createElement('canvas')
+      tempCanvas.width = this.canvas.width
+      tempCanvas.height = this.canvas.height
+      const tempCtx = tempCanvas.getContext('2d')
+      if (!tempCtx) return
+      // 在离屏 canvas 上绘制印章基本形状
+      drawBasicBorder(
         offscreenCtx,
         centerX,
         centerY,
         radiusX,
         radiusY,
         borderWidth,
-        refreshRoughEdge
+        borderColor
       )
-    }
-    if (this.drawStampConfigs.securityPattern.openSecurityPattern) {
-      // 绘制防伪纹路
-      this.drawSecurityPatternUtils.drawSecurityPattern(
-        offscreenCtx,
-        this.drawStampConfigs.securityPattern,
+      // 创建裁剪区域，确保所有内容（文字、图片、五角星等）都被限制在印章的椭圆形状内
+      offscreenCtx.save()
+      offscreenCtx.beginPath()
+      offscreenCtx.ellipse(
         centerX,
         centerY,
         radiusX,
         radiusY,
-        refreshSecurityPattern
+        0,
+        0,
+        Math.PI * 2
       )
-    }
+      offscreenCtx.clip()
+      // 绘制内圈列表
+      if (this.drawStampConfigs.innerCircleList.length > 0) {
+        this.drawCircleUtils.drawCircleList(
+          offscreenCtx,
+          this.drawStampConfigs.innerCircleList,
+          centerX,
+          centerY,
+          borderColor
+        )
+      }
+      // 如果没有图片，绘制五角星或SVG
+      if (this.drawStampConfigs.drawStar.drawStar) {
+        this.drawSvgUtils.drawStarShape(
+          offscreenCtx,
+          this.drawStampConfigs.drawStar,
+          centerX,
+          centerY,
+          this.drawStampConfigs.primaryColor
+        )
+      }
+      // 绘制图片列表
+      if (
+        this.drawStampConfigs.imageList &&
+        this.drawStampConfigs.imageList.length > 0
+      ) {
+        this.drawImageList(
+          offscreenCtx,
+          this.drawStampConfigs.imageList,
+          centerX,
+          centerY
+        )
+      }
+      // 绘制公司文字内容，边框的圆形文字
+      this.drawCompanyUtils.drawCompanyList(
+        offscreenCtx,
+        this.drawStampConfigs.companyList,
+        centerX,
+        centerY,
+        radiusX,
+        radiusY,
+        this.drawStampConfigs.primaryColor
+      )
+      // 绘制印章类型文字内容，边框的矩形文字
+      this.drawStampTypeList(
+        offscreenCtx,
+        this.drawStampConfigs.stampTypeList,
+        centerX,
+        centerY,
+        radiusX
+      )
+      // 绘制编码文字内容，边框的圆形文字
+      this.drawCode(
+        offscreenCtx,
+        this.drawStampConfigs.stampCode,
+        centerX,
+        centerY,
+        radiusX,
+        radiusY
+      )
+      // 绘制税号文字内容，边框的圆形文字
+      this.drawTaxNumber(
+        offscreenCtx,
+        this.drawStampConfigs.taxNumber,
+        centerX,
+        centerY
+      )
+      offscreenCtx.restore()
+      // 将离屏 canvas 的内容绘制到主 canvas
+      ctx.save()
+      // 添加毛边效果
+      if (this.drawStampConfigs.roughEdge.drawRoughEdge) {
+        this.addRoughEdge(
+          offscreenCtx,
+          centerX,
+          centerY,
+          radiusX,
+          radiusY,
+          borderWidth,
+          refreshRoughEdge
+        )
+      }
+      if (this.drawStampConfigs.securityPattern.openSecurityPattern) {
+        // 绘制防伪纹路
+        this.drawSecurityPatternUtils.drawSecurityPattern(
+          offscreenCtx,
+          this.drawStampConfigs.securityPattern,
+          centerX,
+          centerY,
+          radiusX,
+          radiusY,
+          refreshSecurityPattern
+        )
+      }
 
-    // 设置合成模式，确保印章内容只在椭圆区域内显示
-    ctx.globalCompositeOperation = 'source-over'
-    ctx.drawImage(offscreenCanvas, 0, 0)
-    ctx.restore()
-    // 添加做旧效果
-    if (this.drawStampConfigs.agingEffect.applyAging) {
-      this.addAgingEffect(
-        ctx,
-        this.canvas.width,
-        this.canvas.height,
-        refreshOld
-      )
+      // 设置合成模式，确保印章内容只在椭圆区域内显示
+      ctx.globalCompositeOperation = 'source-over'
+      ctx.drawImage(offscreenCanvas, 0, 0)
+      ctx.restore()
+      // 添加做旧效果
+      if (this.drawStampConfigs.agingEffect.applyAging) {
+        this.addAgingEffect(
+          ctx,
+          this.canvas.width,
+          this.canvas.height,
+          refreshOld
+        )
+      }
+    } catch (error) {
+      console.error(error)
     }
   }
 }

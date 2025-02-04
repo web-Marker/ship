@@ -1,0 +1,139 @@
+{
+  "roughEdge": {
+    "drawRoughEdge": true,
+    "roughEdgeWidth": 0.2,
+    "roughEdgeHeight": 4,
+    "roughEdgeParams": [
+      {
+        "angle": 0,
+        "size": 0.3
+      },
+      {
+        "angle": 1.5707963267948966,
+        "size": 0.4
+      },
+      {
+        "angle": 0.7853981633974483,
+        "size": 0.35
+      },
+      {
+        "angle": 1.5707963267948966,
+        "size": 0.45
+      },
+      {
+        "angle": 2.356194490192345,
+        "size": 0.38
+      },
+      {
+        "angle": 3.141592653589793,
+        "size": 0.42
+      },
+      {
+        "angle": 3.141592653589793,
+        "size": 0.36
+      },
+      {
+        "angle": 3.9269908169872414,
+        "size": 0.41
+      },
+      {
+        "angle": 4.71238898038469,
+        "size": 0.39
+      },
+      {
+        "angle": 4.71238898038469,
+        "size": 0.37
+      },
+      {
+        "angle": 5.497787143782138,
+        "size": 0.43
+      },
+      {
+        "angle": 6.283185307179586,
+        "size": 0.34
+      }
+    ],
+    "roughEdgeProbability": 0.3,
+    "roughEdgeShift": 8,
+    "roughEdgePoints": 360
+  },
+  "securityPattern": {
+    "openSecurityPattern": true,
+    "securityPatternWidth": 0.1,
+    "securityPatternLength": 8,
+    "securityPatternCount": 120,
+    "securityPatternAngleRange": 6.283185307179586,
+    "securityPatternParams": []
+  },
+  "agingEffect": {
+    "applyAging": true,
+    "agingIntensity": 50,
+    "agingEffectParams": []
+  },
+  "stampCode": {
+    "code": "",
+    "compression": 1,
+    "fontHeight": 1.2,
+    "fontFamily": "Arial",
+    "borderOffset": 1,
+    "fontWidth": 1.2,
+    "textDistributionFactor": 50,
+    "fontWeight": "normal"
+  },
+  "width": 40,
+  "height": 40,
+  "stampType": {
+    "stampType": "方形印章",
+    "fontHeight": 4.6,
+    "fontFamily": "SimSun",
+    "fontWidth": 3,
+    "compression": 0.75,
+    "letterSpacing": 0,
+    "positionY": -3,
+    "fontWeight": "normal",
+    "lineSpacing": 2
+  },
+  "primaryColor": "#ff0000",
+  "borderWidth": 1,
+  "refreshSecurityPattern": false,
+  "refreshOld": false,
+  "companyList": [
+    {
+      "companyName": "测试公司名称",
+      "compression": 1,
+      "borderOffset": 2,
+      "textDistributionFactor": 1,
+      "fontFamily": "SimSun",
+      "fontHeight": 4.2,
+      "fontWeight": "normal",
+      "shape": "square",
+      "adjustEllipseText": false,
+      "adjustEllipseTextFactor": 0.5,
+      "startAngle": 0,
+      "rotateDirection": "horizontal"
+    }
+  ],
+  "innerCircleList": [
+    {
+      "drawInnerCircle": true,
+      "innerCircleLineWidth": 0.5,
+      "innerCircleLineRadiusX": 36,
+      "innerCircleLineRadiusY": 36,
+      "shape": "square"
+    }
+  ],
+  "imageList": [
+    {
+      "imageUrl": "",
+      "imageWidth": 10,
+      "imageHeight": 10,
+      "positionX": 0,
+      "positionY": 0,
+      "keepAspectRatio": true
+    }
+  ],
+  "scale": 1,
+  "offsetX": 0,
+  "offsetY": 0,
+  "mmToPixel": 10
+} 

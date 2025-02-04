@@ -42,7 +42,7 @@ export default defineEventHandler(async event => {
       ],
       mode: priceType === 'one_time' ? 'payment' : 'subscription',
       success_url: `${config.public.appUrl}/payment/auto-close?session_id={CHECKOUT_SESSION_ID}&status=success`,
-      cancel_url: `${config.public.appUrl}/payment/auto-close?status=cancel`,
+      cancel_url: `${config.public.appUrl}/?status=cancel`,
       metadata: {
         userEmail: session.user.email,
         type: priceType,

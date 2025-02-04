@@ -6,16 +6,19 @@
       <div class="flex items-center h-12 border-b border-gray-100 pb-2">
         <!-- Stamp template -->
         <div
-          class="flex items-center cursor-pointer group"
+          class="flex items-center cursor-pointer group px-3 py-2 rounded-md hover:bg-gray-50 transition-all duration-200"
           @click="activeMenu = -1"
         >
           <el-icon class="text-[14px] text-gray-600 group-hover:text-blue-600">
             <Search />
           </el-icon>
           <span
-            class="ml-1.5 text-sm font-medium text-gray-700 group-hover:text-blue-600"
+            class="ml-1.5 text-base font-medium text-gray-700 group-hover:text-blue-600 select-none animate-pulse"
           >
-            Stamp template
+            Select Template
+            <el-tag size="small" class="ml-2" type="info" effect="light">
+              Click to change
+            </el-tag>
           </span>
         </div>
       </div>
@@ -25,7 +28,7 @@
         <!-- Stamp Setting -->
         <div class="flex items-center">
           <span class="ml-1.5 text-sm font-medium text-gray-700">
-            Stamp Setting
+            Setting
           </span>
         </div>
 
@@ -39,16 +42,33 @@
           class="pr-5 py-3 px-2 flex items-center hover:bg-gray-100 cursor-pointer transition-colors group border-b-2 text-sm"
           :class="[
             activeMenu === item.id
-              ? 'border-blue-500 bg-gray-100 '
+              ? 'border-blue-500 bg-gray-100'
               : 'border-transparent hover:border-blue-500',
+            // 为特殊菜单添加额外样式
+            item.special ? 'bg-gradient-to-r from-blue-50 to-transparent' : '',
           ]"
           @click="activeMenu = item.id"
         >
-          <el-icon class="text-gray-600 group-hover:text-blue-600 text-[14px]">
+          <el-icon
+            class="text-gray-600 group-hover:text-blue-600 text-[14px]"
+            :class="{ 'text-blue-600': item.special }"
+          >
             <component :is="item.icon" />
           </el-icon>
-          <span class="ml-1.5 text-gray-700 group-hover:text-blue-600">
+          <span
+            class="ml-1.5 text-gray-700 group-hover:text-blue-600"
+            :class="{ 'font-medium': item.special }"
+          >
             {{ item.text }}
+            <el-tag
+              v-if="item.special"
+              size="small"
+              class="ml-2 special-tag"
+              type="info"
+              effect="plain"
+            >
+              New
+            </el-tag>
           </span>
         </div>
       </div>
@@ -56,17 +76,22 @@
   </div>
 
   <!-- 主要内容区域 -->
-  <div class="flex-1 flex p-4">
+  <div class="flex-1 flex flex-col lg:flex-row p-4">
+    <!-- 添加flex-col和lg:flex-row -->
     <!-- Canvas 区域 -->
-    <div class="flex-1 bg-white rounded-lg shadow-sm overflow-hidden mr-4">
-      <div class="w-full h-full flex items-center justify-center">
+    <div
+      class="w-full lg:flex-1 bg-white rounded-lg shadow-sm overflow-hidden lg:mr-4 mb-4 lg:mb-0"
+    >
+      <!-- 添加宽度和margin -->
+      <div class="w-full h-[300px] lg:h-full flex items-center justify-center">
+        <!-- 添加固定高度 -->
         <canvas ref="stampCanvas"></canvas>
       </div>
     </div>
 
     <!-- 右侧设置区域(原底部设置区域) -->
     <div
-      class="setting w-72 bg-white rounded-lg shadow-sm flex flex-col"
+      class="w-full lg:w-72 bg-white rounded-lg shadow-sm flex flex-col"
       style="height: 600px"
     >
       <!-- 模板列表，仅在 Stamp template 激活时显示 -->
@@ -81,19 +106,19 @@
                 @click="loadDefaultTemplate(template)"
               >
                 <div
-                  class="template-preview w-24 h-24 rounded overflow-hidden border border-gray-200"
+                  class="template-preview w-16 h-16 md:w-24 md:h-24 rounded overflow-hidden border border-gray-200"
                   :class="{
                     'template-active': currentTemplateIndex === -1 - index,
                   }"
                 >
                   <img
-                    :src="template.preview"
+                    :src="`/${index + 1}.png`"
                     alt="custom stamp template preview"
                     class="w-full h-full object-contain"
                   />
                 </div>
-                <div class="template-info mt-2">
-                  <span class="template-name text-sm text-gray-600">
+                <div class="template-info mt-1 md:mt-2">
+                  <span class="template-name text-xs md:text-sm text-gray-600">
                     {{ template.name }}
                   </span>
                 </div>
@@ -108,9 +133,7 @@
             <div class="w-full space-y-4">
               <!-- 印章宽度 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Seal Width</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">Width</label>
                 <el-input-number
                   v-model="drawStampWidth"
                   :min="1"
@@ -125,7 +148,7 @@
               <!-- 印章高度 -->
               <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600"
-                  >Seal Height</label
+                  >Height</label
                 >
                 <el-input-number
                   v-model="drawStampHeight"
@@ -156,15 +179,21 @@
 
               <!-- 印章颜色 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Seal Color</label
-                >
-                <div class="w-[120px]">
-                  <input
+                <label class="min-w-[120px] text-sm text-gray-600">Color</label>
+                <div class="w-[100px]">
+                  <el-color-picker
+                    v-model="primaryColor"
+                    :predefine="predefineColors"
+                    show-alpha
+                    size="large"
+                    @active-change="updatePrimaryColor"
+                  />
+
+                  <!-- <input
                     v-model="primaryColor"
                     type="color"
-                    class="w-[200px] h-[32px] rounded border border-gray-300"
-                  />
+                    class="w-[100px] h-[32px] rounded border border-gray-300"
+                  /> -->
                 </div>
               </div>
             </div>
@@ -200,7 +229,11 @@
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Company Name</label
                   >
-                  <el-input v-model="company.companyName" class="flex-1" />
+                  <el-input
+                    v-model="company.companyName"
+                    class="flex-1"
+                    placeholder="Enter company name"
+                  />
                 </div>
 
                 <!-- 字体 -->
@@ -211,7 +244,7 @@
                   <div class="flex w-[150px]">
                     <el-select
                       v-model="company.fontFamily"
-                      class="flex-1"
+                      class="flex-1 font-select"
                       @change="updateFontPreview"
                     >
                       <el-option
@@ -401,7 +434,11 @@
                   <label class="min-w-[120px] text-sm text-gray-600"
                     >Text Content</label
                   >
-                  <el-input v-model="type.stampType" class="flex-1" />
+                  <el-input
+                    v-model="type.stampType"
+                    class="flex-1"
+                    placeholder="Enter text content"
+                  />
                 </div>
 
                 <!-- 字体大小 -->
@@ -532,7 +569,11 @@
                   >Seal Code</label
                 >
                 <div class="w-[150px]">
-                  <el-input v-model="stampCode" class="flex-1" />
+                  <el-input
+                    v-model="stampCode"
+                    class="flex-1"
+                    placeholder="Enter seal code"
+                  />
                 </div>
               </div>
 
@@ -542,7 +583,7 @@
                 <div class="w-[150px]">
                   <el-select
                     v-model="codeFontFamily"
-                    class="flex-1"
+                    class="flex-1 font-select"
                     @change="updateFontPreview"
                   >
                     <el-option
@@ -655,7 +696,11 @@
                   >ID number</label
                 >
                 <div class="w-[150px]">
-                  <el-input v-model="taxNumberValue" class="w-[200px]" />
+                  <el-input
+                    v-model="taxNumberValue"
+                    class="w-[200px]"
+                    placeholder="Enter tax ID number"
+                  />
                 </div>
               </div>
 
@@ -665,7 +710,7 @@
                 <div class="w-[150px]">
                   <el-select
                     v-model="taxNumberFontFamily"
-                    class="w-1/2"
+                    class="w-1/2 font-select"
                     @change="updateFontPreview"
                   >
                     <el-option
@@ -1213,58 +1258,92 @@
       </div>
     </div>
   </div>
-
-  <!-- 下载按钮只有 -->
-  <div class="flex justify-center items-center gap-4 py-4 mb-8">
-    <div
-      class="text-black underline cursor-pointer hover:opacity-80 font-bold"
-      @click="navigateToPricing"
+  <!-- 添加友情提示 -->
+  <div class="text-gray-500 text-xs text-center w-full mt-2">
+    Please login to download seal without watermark
+  </div>
+  <!-- 下载按钮区域 -->
+  <div
+    class="flex flex-col sm:flex-row justify-center items-center gap-4 py-4 mb-8"
+  >
+    <a
+      href="/pricing"
+      target="_blank"
+      class="text-black underline cursor-pointer hover:opacity-80 font-bold text-center w-full sm:w-auto"
     >
       Join VIP
+    </a>
+    <div class="relative w-full sm:w-auto">
+      <el-button
+        class="!bg-[#1e2736] hover:!bg-[#1e2736]/90 !h-9 !border-0 !text-white w-full sm:w-auto"
+        :loading="downloadLoading"
+        @click="confirmSave"
+      >
+        <span class="hidden sm:inline">Generate Seal</span>
+        <span class="sm:hidden">Generate Seal</span>
+      </el-button>
+
+      <!-- Promotion tag -->
+      <div class="absolute -top-3 -right-2 animate-bounce-slow">
+        <div
+          class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full transform rotate-12 shadow-lg"
+        >
+          <span class="animate-pulse">Sale</span>
+        </div>
+      </div>
     </div>
     <el-button
-      class="!bg-[#1e2736] hover:!bg-[#1e2736]/90 !h-9 !border-0 !text-white"
-      @click="confirmSave"
-    >
-      Download Seal Without Watermark
-    </el-button>
-    <el-button
       type="primary"
-      class="!bg-[#E2E2E2] !text-black hover:!bg-[#d5d5d5] !h-9 !border-0"
+      class="!bg-[#E2E2E2] !text-black hover:!bg-[#d5d5d5] !h-9 !border-0 w-full sm:w-auto"
+      :loading="watermarkLoading"
       @click="downloadWithWatermark"
     >
-      Download Seal
+      <span class="hidden sm:inline">Download Free</span>
+      <span class="sm:hidden">Download Free</span>
     </el-button>
   </div>
 
-  <!-- <el-col :span="5">
-    <el-button type="primary" @click="downloadWithWatermark">
-      Download Seal
-    </el-button>
-  </el-col>
-  <el-col :span="5">
-    <el-button
-      type="success"
-      class="premium-button"
-      :loading="payLoading"
-      @click="confirmSave"
-    >
-      Download Seal Without Watermark
-    </el-button>
-  </el-col>
-  <el-col :span="5">
-    <el-button
-      type="warning"
-      class="unlimited-button"
-      @click="navigateToPricing"
-    >
-      Unlimited Downloads
-      <el-icon class="el-icon--right"><ArrowRight /></el-icon>
-    </el-button>
-  </el-col> -->
+  <!-- 替换原有的 ElMessageBox.alert -->
+  <el-dialog
+    v-model="downloadDialogVisible"
+    title="Download Notice"
+    width="600"
+    center
+    align-center
+    class="download-dialog"
+  >
+    <span class="text-gray-600 text-lg">
+      Your seal is being downloaded automatically. Please check your browser
+      downloads.
+    </span>
+    <template #header>
+      <div class="font-bold text-lg">Download Notice</div>
+    </template>
+    <template #footer>
+      <div class="dialog-footer !mt-3">
+        <el-button
+          type="primary"
+          class="!bg-[#1e2736] hover:!bg-[#1e2736]/90 !border-0 !font-bold !w-32"
+          @click="handleDownload"
+        >
+          <el-icon class="mr-1 text-white">
+            <Download />
+          </el-icon>
+          Download
+        </el-button>
+        <el-button
+          class="!font-bold hover:!bg-transparent hover:!border-[#dcdfe6] !w-32 !text-gray-500"
+          @click="downloadDialogVisible = false"
+        >
+          Cancel
+        </el-button>
+      </div>
+    </template>
+  </el-dialog>
 </template>
 
 <script setup lang="ts">
+import { useDebounceFn } from '@vueuse/core'
 import { ref, onMounted, watch } from 'vue'
 import { DrawStampUtils } from '@/utils/DrawStampUtils'
 import { getSystemFonts } from '@/utils/fontUtils'
@@ -1284,6 +1363,10 @@ import type {
   ITaxNumber,
 } from '@/utils/DrawStampTypes'
 // 添加默认模板的类型定义和数据
+const downloadLoading = ref(false)
+const watermarkLoading = ref(false)
+const downloadDialogVisible = ref(false)
+
 const defaultTemplates = ref<Template[]>([
   {
     name: 'Company Seal',
@@ -1318,9 +1401,9 @@ const menuItems = [
   { text: 'Text 3', icon: EditPen, id: 3 },
   { text: 'Text 4', icon: EditPen, id: 4 },
   { text: 'Image', icon: Picture, id: 5 },
-  { text: 'Anti-counterfeiting', icon: Lock, id: 6 },
-  { text: 'Anti-aliasing', icon: Lock, id: 7 },
-  { text: 'Stamp aging', icon: MagicStick, id: 8 },
+  { text: 'Anti-counterfeiting', icon: MagicStick, id: 6, special: true },
+  { text: 'Anti-aliasing', icon: MagicStick, id: 7, special: true },
+  { text: 'Stamp aging', icon: MagicStick, id: 8, special: true },
   { text: 'Inner circle', icon: Help, id: 9 },
 ]
 import {
@@ -1335,13 +1418,31 @@ import {
   House,
   Delete,
   Plus,
+  Download,
 } from '@element-plus/icons-vue'
 const editorControls = ref<HTMLDivElement | null>(null)
 const stampCanvas = ref<HTMLCanvasElement | null>(null)
 const MM_PER_PIXEL = 10 // 毫米换算像素
 
+const predefineColors = ref([
+  '#ff4500',
+  '#ff8c00',
+  '#ffd700',
+  '#90ee90',
+  '#00ced1',
+  '#1e90ff',
+  '#c71585',
+  'rgba(255, 69, 0, 0.68)',
+  'rgb(255, 120, 0)',
+  'hsv(51, 100, 98)',
+  'hsva(120, 40, 94, 0.5)',
+  'hsl(181, 100%, 37%)',
+  'hsla(209, 100%, 56%, 0.73)',
+  '#c7158577',
+])
+
 // 添加响应式数据
-const companyName = ref('')
+const companyName = ref('Seal Drawing Co., Ltd.')
 // 印章编码
 const stampCode = ref('1234567890123')
 // 税号
@@ -1381,7 +1482,7 @@ const codeMarginMM = ref(1) // 默认值为1mm
 // 编码分布因子，控制印章编码在椭圆下方的分布范围
 const codeDistributionFactor = ref(20) // 默认值可以根据需要调整
 // 印章印章类型
-const bottomText = ref('合同专用章')
+const bottomText = ref('Contract Seal')
 // 印章类型大小，默认 4mm
 const bottomTextFontFamily = ref('SimSun')
 const bottomTextFontSizeMM = ref(4.6)
@@ -1431,7 +1532,7 @@ const showLegalDialog = ref(false) // 是否显示法律提示弹窗
 // 添加印章类型列表的响式数据
 const stampTypeList = ref<IStampType[]>([
   {
-    stampType: '印章类型',
+    stampType: 'Seal Type',
     fontHeight: 4.6,
     fontFamily: 'SimSun',
     compression: 0.75,
@@ -1445,7 +1546,7 @@ const stampTypeList = ref<IStampType[]>([
 // 添加公司列表的响应式数据
 const companyList = ref<ICompany[]>([
   {
-    companyName: '绘制印章有限责任公司',
+    companyName: 'Seal Drawing Co., Ltd.',
     compression: 1,
     borderOffset: 1,
     textDistributionFactor: 3,
@@ -1759,107 +1860,122 @@ const updateDrawConfigs = () => {
 
 // 下载带水印的印章
 const downloadWithWatermark = () => {
-  const outputSize = 512
-  const tempCanvas = document.createElement('canvas')
-  tempCanvas.width = outputSize
-  tempCanvas.height = outputSize
-  const ctx = tempCanvas.getContext('2d')
-  if (!ctx || !stampCanvas.value) return
+  try {
+    trackEvent('download_free_click', {
+      button_name: 'free_download',
+      button_type: 'free_download',
+    })
+  } catch (error) {}
+  watermarkLoading.value = true
+  try {
+    const outputSize = 512
+    const tempCanvas = document.createElement('canvas')
+    tempCanvas.width = outputSize
+    tempCanvas.height = outputSize
+    const ctx = tempCanvas.getContext('2d')
+    if (!ctx || !stampCanvas.value) return
 
-  // 设置2%的边距
-  const margin = outputSize * 0.01
-  const drawSize = outputSize - 2 * margin
+    // 设置2%的边距
+    const margin = outputSize * 0.01
+    const drawSize = outputSize - 2 * margin
 
-  // 首先隐藏标尺和辅助线
-  const originalConfig = drawStampUtils.getDrawConfigs()
-  originalConfig.ruler.showCrossLine = false
-  originalConfig.ruler.showRuler = false
-  originalConfig.ruler.showDashLine = false
-  originalConfig.ruler.showSideRuler = false
-  originalConfig.ruler.showFullRuler = false
-  originalConfig.ruler.showCurrentPositionText = false
-  drawStampUtils.setDrawConfigs(originalConfig)
-  drawStampUtils.refreshStamp()
-
-  // 等待短暂延时确保重绘完成
-  setTimeout(() => {
-    // 清除画布
-    ctx.clearRect(0, 0, outputSize, outputSize)
-
-    // 计算原始 canvas 中印章的位置和大小
-    const originalStampSize =
-      (Math.max(originalConfig.width, originalConfig.height) + 2) *
-      drawStampUtils.mmToPixel
-
-    const sourceX =
-      (stampCanvas.value!.width - originalStampSize) / 2 +
-      drawStampUtils.stampOffsetX * drawStampUtils.mmToPixel
-    const sourceY =
-      (stampCanvas.value!.height - originalStampSize) / 2 +
-      drawStampUtils.stampOffsetY * drawStampUtils.mmToPixel
-
-    // 绘制印章（使用正确的源区域）
-    ctx.drawImage(
-      stampCanvas.value!,
-      sourceX,
-      sourceY,
-      originalStampSize,
-      originalStampSize,
-      margin,
-      margin,
-      drawSize,
-      drawSize
-    )
-
-    // 如果启用了做旧效果，添加做旧效果
-    if (originalConfig.agingEffect.applyAging) {
-      drawStampUtils.addAgingEffect(ctx, outputSize, outputSize, false)
-    }
-
-    // 添加水印
-    ctx.save()
-    ctx.globalAlpha = 0.2 // 水印透明度
-    ctx.fillStyle = '#999'
-    ctx.font = `${outputSize * 0.03}px Arial`
-
-    // 计算水印文本
-    const text = 'Seal Digital'
-    const textMetrics = ctx.measureText(text)
-    const textWidth = textMetrics.width
-
-    // 在印章区域内绘制水印网格
-    ctx.translate(outputSize / 2, outputSize / 2)
-    ctx.rotate(-Math.PI / 4)
-
-    const gridSpacing = textWidth * 1.5
-    const gridSize = Math.sqrt(2) * outputSize
-
-    for (let x = -gridSize / 2; x < gridSize / 2; x += gridSpacing) {
-      for (let y = -gridSize / 2; y < gridSize / 2; y += gridSpacing) {
-        ctx.fillText(text, x, y)
-      }
-    }
-
-    ctx.restore()
-
-    // 下载图片
-    const link = document.createElement('a')
-    link.download = '印章.png'
-    link.href = tempCanvas.toDataURL('image/png')
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-
-    // 恢复原始配置
-    originalConfig.ruler.showCrossLine = true
-    originalConfig.ruler.showRuler = true
-    originalConfig.ruler.showDashLine = true
-    originalConfig.ruler.showSideRuler = true
-    originalConfig.ruler.showFullRuler = true
-    originalConfig.ruler.showCurrentPositionText = true
+    // 首先隐藏标尺和辅助线
+    const originalConfig = drawStampUtils.getDrawConfigs()
+    originalConfig.ruler.showCrossLine = false
+    originalConfig.ruler.showRuler = false
+    originalConfig.ruler.showDashLine = false
+    originalConfig.ruler.showSideRuler = false
+    originalConfig.ruler.showFullRuler = false
+    originalConfig.ruler.showCurrentPositionText = false
     drawStampUtils.setDrawConfigs(originalConfig)
     drawStampUtils.refreshStamp()
-  }, 50)
+
+    // 等待短暂延时确保重绘完成
+    setTimeout(() => {
+      // 清除画布
+      ctx.clearRect(0, 0, outputSize, outputSize)
+
+      // 计算原始 canvas 中印章的位置和大小
+      const originalStampSize =
+        (Math.max(originalConfig.width, originalConfig.height) + 2) *
+        drawStampUtils.mmToPixel
+
+      const sourceX =
+        (stampCanvas.value!.width - originalStampSize) / 2 +
+        drawStampUtils.stampOffsetX * drawStampUtils.mmToPixel
+      const sourceY =
+        (stampCanvas.value!.height - originalStampSize) / 2 +
+        drawStampUtils.stampOffsetY * drawStampUtils.mmToPixel
+
+      // 绘制印章（使用正确的源区域）
+      ctx.drawImage(
+        stampCanvas.value!,
+        sourceX,
+        sourceY,
+        originalStampSize,
+        originalStampSize,
+        margin,
+        margin,
+        drawSize,
+        drawSize
+      )
+
+      // 如果启用了做旧效果，添加做旧效果
+      if (originalConfig.agingEffect.applyAging) {
+        drawStampUtils.addAgingEffect(ctx, outputSize, outputSize, false)
+      }
+
+      // 添加水印
+      ctx.save()
+      ctx.globalAlpha = 0.3 // 水印透明度
+      ctx.fillStyle = '#999'
+      ctx.font = `${outputSize * 0.03}px Arial`
+
+      // 计算水印文本
+      const text = 'Seal Digital Free'
+      const textMetrics = ctx.measureText(text)
+      const textWidth = textMetrics.width
+
+      // 在印章区域内绘制水印网格
+      ctx.translate(outputSize / 2, outputSize / 2)
+      ctx.rotate(-Math.PI / 4)
+
+      const gridSpacing = textWidth * 1.5
+      const gridSize = Math.sqrt(2) * outputSize
+
+      for (let x = -gridSize / 2; x < gridSize / 2; x += gridSpacing) {
+        for (let y = -gridSize / 2; y < gridSize / 2; y += gridSpacing) {
+          ctx.fillText(text, x, y)
+        }
+      }
+
+      ctx.restore()
+
+      // 下载图片
+      const link = document.createElement('a')
+      link.download = 'seal.png'
+
+      link.href = tempCanvas.toDataURL('image/png')
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+      // 恢复原始配置
+      originalConfig.ruler.showCrossLine = true
+      originalConfig.ruler.showRuler = true
+      originalConfig.ruler.showDashLine = true
+      originalConfig.ruler.showSideRuler = true
+      originalConfig.ruler.showFullRuler = true
+      originalConfig.ruler.showCurrentPositionText = true
+      drawStampUtils.setDrawConfigs(originalConfig)
+      drawStampUtils.refreshStamp()
+    }, 50)
+  } catch (error) {
+    console.error('Download error:', error)
+    ElMessage.error('Download failed')
+  } finally {
+    watermarkLoading.value = false
+  }
 }
 
 // 添加水印的方法
@@ -1901,12 +2017,12 @@ const checkAuth = async () => {
 
   if (!session.user.value?.email) {
     ElMessage.warning('Please login first')
-    router.push('/signin') // 重定向到登录页面
+
+    window.open('/signin', '_blank') // 在新窗口中打开登录页面
     return false
   }
   return true
 }
-
 // 确认保存
 const confirmSave = async () => {
   // 跟踪按钮点击
@@ -1920,6 +2036,8 @@ const confirmSave = async () => {
   if (!(await checkAuth())) return
 
   payLoading.value = true
+  downloadLoading.value = true
+
   try {
     const session = await useUserSession()
     const { data: paymentStatus } = await useFetch('/api/user/payment-status')
@@ -1927,8 +2045,9 @@ const confirmSave = async () => {
     console.log('Payment status check:', paymentStatus.value)
 
     if (paymentStatus.value?.subscription) {
-      console.log('User has active subscription')
-      drawStampUtils.saveStampAsPNG(512)
+      drawStampUtils.saveStampAsPNG(512, true)
+
+      downloadDialogVisible.value = true // 显示对话框而不是直接调用 alert
       trackEvent('download_success', {
         download_type: paymentStatus.value?.subscription
           ? 'subscription'
@@ -1938,23 +2057,10 @@ const confirmSave = async () => {
       return
     }
 
-    // if (paymentStatus.value?.hasOneTimePurchase) {
-    //   console.log('User has unused one-time purchase')
-    //   const kv = hubKV()
-    //   await kv.set(`user:${session.user.value?.email}:oneTimePurchase`, {
-    //     active: true,
-    //     purchased: Date.now(),
-    //     used: true,
-    //   })
-    //   drawStampUtils.saveStampAsPNG(512)
-    //   return
-    // }
-
-    console.log('No active subscription or one-time purchase found')
-
-    // 确保回调函数被正确传入和执行
     handlePayment('one_time', () => {
-      drawStampUtils.saveStampAsPNG(512)
+      downloadDialogVisible.value = true // 显示对话框而不是直接调用 alert
+
+      drawStampUtils.saveStampAsPNG(512, true)
       trackEvent('download_after_payment', {
         payment_type: 'one_time',
         download_type: 'seal',
@@ -1969,8 +2075,18 @@ const confirmSave = async () => {
     })
   } finally {
     payLoading.value = false
+
+    setTimeout(() => {
+      downloadLoading.value = false
+    }, 3000)
   }
 }
+
+// 添加下载处理函数
+const handleDownload = () => {
+  drawStampUtils.saveStampAsPNG(512)
+}
+
 const restoreDrawConfigs = () => {
   const drawConfigs = drawStampUtils.getDrawConfigs()
 
@@ -2373,6 +2489,11 @@ onMounted(() => {
   canvas.width = container.clientWidth
   canvas.height = container.clientHeight
 })
+
+// 添加新的响应式变量
+const updatePrimaryColor = useDebounceFn((color: any) => {
+  primaryColor.value = color
+}, 200) // 100ms 的节流时间
 </script>
 
 <style scoped>
@@ -2434,5 +2555,108 @@ onMounted(() => {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #9ca3af; /* 悬停时的颜色 */
+}
+
+.special-tag {
+  background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(-5%) rotate(12deg);
+  }
+  50% {
+    transform: translateY(5%) rotate(12deg);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite ease-in-out;
+}
+
+/* 添加对话框样式 */
+</style>
+
+<style>
+.el-select__selected-item {
+  text-align: center;
+}
+.download-dialog {
+  background: #fff !important;
+}
+
+.download-dialog :deep(.el-dialog__header) {
+  margin-right: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.download-dialog :deep(.el-dialog__body) {
+  padding: 30px 20px;
+}
+
+.download-dialog :deep(.el-dialog__footer) {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.download-dialog-box {
+  width: 600px;
+  max-width: 90vw;
+}
+
+.download-dialog-box .el-message-box__title {
+  font-size: 20px;
+  padding: 20px 0 0;
+}
+
+.download-dialog-box .el-message-box {
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.download-dialog-box .el-message-box__header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.download-dialog-box .el-message-box__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e2736;
+}
+
+.download-dialog-box .el-message-box__content {
+  padding: 12px;
+}
+
+.download-dialog-box .el-message-box__close {
+  color: #909399;
+  font-size: 18px;
+}
+
+.download-dialog-box .el-message-box__close:hover {
+  color: #606266;
 }
 </style>

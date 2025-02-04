@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'landing',
+})
 import { articleContents } from '../../data/articles/articleContents.js'
 import { postdata } from '../../data/articles/postsList'
 
@@ -104,15 +107,24 @@ useHead(() => ({
         />
       </div>
 
-      <!-- 广告位置1 -->
-      <div class="my-8 text-center">
-        <!-- Google AdSense 广告位 -->
-        <div class="ad-slot-1"></div>
-      </div>
-
       <!-- 文章内容 -->
       <div class="prose lg:prose-xl mx-auto" itemprop="articleBody">
         <template v-if="articleContent">
+          <!-- 添加开头内链 -->
+          <div class="mb-8 text-gray-600">
+            <p>
+              As a
+              <NuxtLink
+                to="/"
+                :title="`Digital Seal Studio - Professional Solutions for ${slug}`"
+                class="text-primary-600 hover:text-primary-700"
+              >
+                leading provider of digital seal solutions
+              </NuxtLink>
+              , we explore topics related to {{ slug }}.
+            </p>
+          </div>
+
           <div
             v-for="(section, index) in articleContent.content.sections"
             :key="index"
@@ -167,13 +179,22 @@ useHead(() => ({
               </div>
             </div>
           </div>
-        </template>
-      </div>
 
-      <!-- 广告位置2 -->
-      <div class="my-8 text-center">
-        <!-- Google AdSense 广告位 -->
-        <div class="ad-slot-2"></div>
+          <!-- 添加结尾内链 -->
+          <div class="mt-8 text-gray-600">
+            <p>
+              Want to learn more about digital seals? Visit
+              <NuxtLink
+                to="/"
+                :title="`Explore more ${currentArticle.category} content from Digital Seal Studio`"
+                class="text-primary-600 hover:text-primary-700"
+              >
+                Digital Seal Studio's homepage
+              </NuxtLink>
+              for more professional insights.
+            </p>
+          </div>
+        </template>
       </div>
 
       <!-- 文章页脚 -->
@@ -190,7 +211,6 @@ useHead(() => ({
 
         <!-- 作者信息 -->
         <div class="flex items-center bg-gray-50 p-6 rounded-lg">
-          <Icon name="heroicons:user-circle" class="w-12 h-12 mr-4" />
           <div>
             <h3 class="font-semibold">{{ currentArticle.author }}</h3>
             <p class="text-gray-600">Digital Seal Expert</p>

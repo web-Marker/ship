@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@element-plus/nuxt',
     'nuxt-auth-utils',
+    '@sentry/nuxt/module',
   ],
 
   vite: {
@@ -38,6 +39,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   hooks: {
     // 'nitro:config': (nitroConfig) => {
     //   // 如果需要,你可以在这里修改 nitro 配置
@@ -57,7 +59,11 @@ export default defineNuxtConfig({
         'ai-seal-design',
         'seal-security-features',
         'creative-seal-designs',
-        // ... 其他文章的 slug
+        'healthcare-digital-seals',
+        'digital-seal-verification',
+        'stamp-maker-online',
+        'financial-digital-seals',
+        'seal-seo-optimization',
       ])
 
       // 添加到预渲染队列
@@ -66,9 +72,11 @@ export default defineNuxtConfig({
       })
     },
   },
+
   experimental: {
     payloadExtraction: true, // 启用 payload 提取优化
   },
+
   auth: {
     hash: {
       scrypt: {
@@ -80,25 +88,23 @@ export default defineNuxtConfig({
       },
     },
   },
+
   // https://devtools.nuxt.com
   devtools: { enabled: true },
+
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-      title: 'Free Custom Stamp Maker - Design Digital Seals Online',
+      title: 'Online Stamp Maker Free - Create Custom Digital Stamps & Seals',
       meta: [
         // Primary Meta Tags
         {
           name: 'description',
           content:
-            'Create custom digital seals and stamps effortlessly with our free AI-powered seal maker. Enjoy professional templates and advanced security features.',
+            'Create professional stamps online with our free stamp maker. Design custom digital seals and stamps using AI-powered stamp maker online. Easy to use templates and secure stamp making tools.',
         },
-        {
-          name: 'keywords',
-          content:
-            'digital seal maker, custom stamp creator, AI seal maker, professional stamp design, anti-counterfeiting features, customizable seal templates, download digital stamp, online seal generator',
-        },
+
         // Open Graph / Facebook
         {
           property: 'og:type',
@@ -106,12 +112,13 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:title',
-          content: 'Free Digital Seal Maker - Create Custom Stamps Online',
+          content:
+            'Online Stamp Maker Free - Create Custom Digital Stamps & Seals',
         },
         {
           property: 'og:description',
           content:
-            'Create professional digital seals and stamps for free. AI-powered design tools with instant download. No registration needed.',
+            'Create professional stamps online with our free stamp maker. Design custom digital seals and stamps using AI-powered stamp maker online. Easy to use templates and secure stamp making tools.',
         },
         {
           property: 'og:site_name',
@@ -124,12 +131,13 @@ export default defineNuxtConfig({
         },
         {
           name: 'twitter:title',
-          content: 'Free Digital Seal Maker - AI-Powered Stamp Creator',
+          content:
+            'Online Stamp Maker Free - Create Custom Digital Stamps & Seals',
         },
         {
           name: 'twitter:description',
           content:
-            'Design professional seals and stamps for free. AI-powered tools, no signup required, instant download.',
+            'Create professional stamps online with our free stamp maker. Design custom digital seals and stamps using AI-powered stamp maker online. Easy to use templates and secure stamp making tools.',
         },
         // Additional SEO
         {
@@ -166,9 +174,20 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ['~/assets/css/main.css'],
+
   // Env variables - https://nuxt.com/docs/getting-started/configuration#environment-variables-and-private-tokens
   runtimeConfig: {
+    session: {
+      // 确保 cookie 配置正确
+      cookie: {
+        sameSite: 'lax', // 设置 SameSite 属性
+        secure: process.env.NODE_ENV === 'production', // 生产环境使用 secure
+        httpOnly: true,
+        maxAge: 60 * 60 * 24 * 7, // 7天
+      },
+    },
     public: {
       sessionPassword: process.env.NUXT_SESSION_PASSWORD,
       appUrl: process.env.NUXT_APP_URL,
@@ -194,14 +213,18 @@ export default defineNuxtConfig({
       },
     },
   },
+
   // https://nuxt.com/docs/getting-started/upgrade#testing-nuxt-4
   future: { compatibilityVersion: 4 },
+
   compatibilityDate: '2024-07-30',
+
   hub: {
     kv: true,
     database: true,
     // blob: true,
   },
+
   // https://hub.nuxt.com/docs/getting-started/installation#options
   postcss: {
     plugins: {
@@ -226,5 +249,16 @@ export default defineNuxtConfig({
 
   sitemap: {
     urls: ['https://sealsdigital.com'],
+  },
+
+  sentry: {
+    sourceMapsUploadOptions: {
+      org: 'zyp-17',
+      project: 'javascript-nuxt',
+    },
+  },
+
+  sourcemap: {
+    client: 'hidden',
   },
 })

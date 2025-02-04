@@ -3,6 +3,7 @@ definePageMeta({
   layout: 'landing',
 })
 const { handlePayment } = usePayment()
+const isLoading = ref(false)
 
 const pricing = [
   {
@@ -39,7 +40,15 @@ const pricing = [
     button: {
       text: 'Get Started',
       link: '#',
-      onClick: () => handlePayment('subscription'),
+      onClick: async () => {
+        isLoading.value = true
+        try {
+          await handlePayment('subscription')
+        } finally {
+          isLoading.value = false
+        }
+      },
+      loading: isLoading,
     },
     className: 'prominent',
   },

@@ -12,26 +12,18 @@ export const usePayment = () => {
     paymentStatus.value = 'pending'
 
     try {
-      for (let i = 0; i < 60; i++) {
-        console.log('轮询次数:', i + 1)
+      const { data } = await useFetch('/api/stripe/check-payment-status', {
+        params: { session_id: sessionId },
+      })
 
-        const { data } = await useFetch('/api/stripe/check-payment-status', {
-          params: { session_id: sessionId },
-        })
+      console.log('轮询返回结果:', data.value)
 
-        console.log('轮询返回结果:', data.value)
-
-        if (data.value?.status === 'success') {
-          paymentStatus.value = 'success'
-          return true
-        }
-
-        // 等待3秒再次检查
-        await new Promise(resolve => setTimeout(resolve, 3000))
+      if (data.value?.status === 'success') {
+        paymentStatus.value = 'success'
+        return true
       }
 
-      paymentStatus.value = 'failed'
-      ElMessage.error('Payment check timed out')
+      paymentStatus.value = 'pending'
       return false
     } catch (error) {
       console.error('Poll payment status error:', error)
@@ -82,20 +74,62 @@ export const usePayment = () => {
         // 保存会话ID到localStorage
         localStorage.setItem('pending_payment_session', sessionId)
 
-        // 打开支付页面
-        window.open(data.value.url, '_blank')
+        // 使用 ElMessageBox 显示带有链接的弹窗
+        // window.open(data.value.url, '_blank')
+        ElMessageBox({
+          title: '🎉🎉Congratulations! Your Seal is Ready! 🎉🎉',
+          message: `
+            <div style="text-align: center;">
+              <p style="margin-bottom: 16px; color: #606266;">Click the button below to pay and get your seal</p>
+              <a 
+                href="${data.value.url}" 
+                target="_blank" 
+                style="
+                  display: inline-block;
+                  background: #1e2736;
+                  color: white;
+                  padding: 8px 24px;
+                  border-radius: 4px;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: background-color 0.3s ease;
+                "
+                onmouseover="this.style.backgroundColor='#2c3747'"
+                onmouseout="this.style.backgroundColor='#1e2736'"
+                class="payment-link"
+
+              >
+                Download Now
+              </a>
+            </div>
+          `,
+          showCancelButton: false,
+          showConfirmButton: false,
+          dangerouslyUseHTMLString: true,
+          center: true,
+          customClass: 'download-dialog-box',
+        })
+
+        nextTick(() => {
+          const paymentLink = document.querySelector(
+            '.download-dialog-box .payment-link'
+          )
+          if (paymentLink) {
+            paymentLink.addEventListener('click', () => {
+              ElMessageBox.close()
+            })
+          }
+        })
 
         // 立即开始轮询
         let attempts = 0
-        const maxAttempts = 60 // 最多检查60次，每次间隔3秒
+        const maxAttempts = 120 // 最多检查60次，每次间隔3秒
 
         const checkPayment = async () => {
           while (attempts < maxAttempts) {
-            console.log(`检查支付状态: 第 ${attempts + 1} 次`)
             const success = await pollPaymentStatus(sessionId)
 
             if (success) {
-              console.log('支付成功，执行回调')
               onSuccess?.()
               ElMessage.success('Payment successful!')
               localStorage.removeItem('pending_payment_session')
@@ -103,7 +137,7 @@ export const usePayment = () => {
             }
 
             attempts++
-            await new Promise(resolve => setTimeout(resolve, 3000))
+            await new Promise(resolve => setTimeout(resolve, 4000))
           }
 
           console.log('支付检查超时')
