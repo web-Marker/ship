@@ -178,7 +178,7 @@
     <div class="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
       <!-- Card -->
       <NuxtLink
-        to="/blog/seal-seo-optimization"
+        to="/blog/online-stamp-maker-free"
         class="group block rounded-xl overflow-hidden focus:outline-none"
       >
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
@@ -187,8 +187,8 @@
           >
             <img
               class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"
-              :src="p17"
-              alt="seal-seo-optimization"
+              :src="p20"
+              alt="online-stamp-maker-free"
             />
           </div>
 
@@ -196,11 +196,12 @@
             <h3
               class="text-xl font-semibold text-gray-800 group-hover:text-gray-600"
             >
-              seal-seo-optimization
+              Online Stamp Maker Free: Digital Creation Guide 2025
             </h3>
             <p class="mt-3 text-gray-600">
-              Digital Seal SEO: Ultimate Guide to Search Engine Optimization
-              2025...
+              Discover how to create professional digital stamps using free
+              online tools. Learn about customization features, design
+              techniques, and best practices for digital stamp creation.
             </p>
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
@@ -476,6 +477,59 @@
         </div>
       </NuxtLink>
       <!-- End Card -->
+
+      <!-- Card -->
+      <NuxtLink
+        to="/blog/ai-seal-innovation"
+        class="group block rounded-xl overflow-hidden focus:outline-none"
+      >
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+          <div
+            class="shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44"
+          >
+            <img
+              class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out size-full absolute top-0 start-0 object-cover rounded-xl"
+              :src="p21"
+              alt="seal-design-trends"
+            />
+          </div>
+
+          <div class="grow">
+            <h3
+              class="text-xl font-semibold text-gray-800 group-hover:text-gray-600"
+            >
+              AI in Digital Seal Design: Revolutionizing Custom Seal Creation
+              2025
+            </h3>
+            <p class="mt-3 text-gray-600">
+              description: 'Explore how artificial intelligence is transforming
+              digital seal design and creation, featuring innovative AI
+              applications, automation capabilities, and future trends in smart
+              seal technology.'
+            </p>
+            <p
+              class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
+            >
+              Read more
+              <svg
+                class="shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </NuxtLink>
+      <!-- End Card -->
     </div>
     <!-- End Grid -->
     <div class="text-center mt-10">
@@ -519,6 +573,8 @@ import p13_1 from '@/assets/img/13.jpg'
 import p17 from '@/assets/img/17.jpg'
 import p18 from '@/assets/img/18.jpg'
 import p19 from '@/assets/img/19.jpg'
+import p20 from '@/assets/img/20.jpg'
+import p21 from '@/assets/img/21.jpg'
 
 const tabs = ref(['Generate Stamp'])
 const activeTab = ref(0)

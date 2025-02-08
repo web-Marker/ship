@@ -64,6 +64,9 @@ export default defineNuxtConfig({
         'stamp-maker-online',
         'financial-digital-seals',
         'seal-seo-optimization',
+        'custom-seal-design-guide',
+        'seal-design-psychology',
+        'online-stamp-maker-free',
       ])
 
       // 添加到预渲染队列
@@ -96,7 +99,8 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-      title: 'Online Stamp Maker Free - Create Custom Digital Stamps & Seals',
+      title:
+        'AI Online Stamp Maker Free - Create Custom Digital Stamps & Seals',
       meta: [
         // Primary Meta Tags
         {

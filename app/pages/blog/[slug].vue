@@ -15,7 +15,6 @@ const allPosts = ref(postdata)
 const currentArticle = computed(() =>
   allPosts.value.find(post => post.slug === slug)
 )
-console.log('🚀 ~ currentArticle:', currentArticle.value)
 
 // 获取文章内容
 const articleContent = computed(
@@ -137,7 +136,9 @@ useHead(() => ({
             <!-- 普通段落 -->
             <div v-else-if="section.type === 'section'" class="mb-12">
               <h2 class="text-2xl font-bold mb-4">{{ section.title }}</h2>
-              <div
+
+              <!-- 分组渲染不同类型的内容 -->
+              <template
                 v-for="(content, contentIndex) in section.content"
                 :key="contentIndex"
               >
@@ -158,9 +159,21 @@ useHead(() => ({
                   </ul>
                 </div>
 
-                <!-- 文本内容 -->
-                <p v-else-if="content.type === 'text'" class="mb-4">
-                  {{ content.content }}
+                <!-- 文本和链接内容 -->
+                <p
+                  v-else-if="content.type === 'text' || content.type === 'link'"
+                  class="mb-4 inline"
+                >
+                  <template v-if="content.type === 'text'">{{
+                    content.content
+                  }}</template>
+                  <NuxtLink
+                    v-else
+                    :to="content.href"
+                    target="_blank"
+                    class="text-primary hover:underline inline"
+                    >{{ content.text }}</NuxtLink
+                  >
                 </p>
 
                 <!-- 列表内容 -->
@@ -176,7 +189,7 @@ useHead(() => ({
                     {{ item }}
                   </li>
                 </ul>
-              </div>
+              </template>
             </div>
           </div>
 

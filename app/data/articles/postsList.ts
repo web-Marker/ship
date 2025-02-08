@@ -17,6 +17,9 @@ import p16 from '@/assets/img/16.jpg'
 import p17 from '@/assets/img/17.jpg'
 import p18 from '@/assets/img/18.jpg'
 import p19 from '@/assets/img/19.jpg'
+import p20 from '@/assets/img/20.jpg'
+import p21 from '@/assets/img/21.jpg'
+
 export const postdata = ref([
   {
     id: 7,
@@ -230,5 +233,28 @@ export const postdata = ref([
     publishedAt: '2025-02-04T14:30:00Z',
     author: 'DigitalSeal Studio',
     category: 'Design Psychology',
+  },
+  {
+    id: 20,
+    slug: 'online-stamp-maker-free',
+    title: 'Online Stamp Maker Free: Digital Creation Guide 2025',
+    description:
+      'Discover how to create professional digital stamps using free online tools. Learn about customization features, design techniques, and best practices for digital stamp creation.',
+    coverImage: p20,
+    publishedAt: '2025-02-07T10:00:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Digital Tools',
+  },
+  {
+    id: 21,
+    slug: 'ai-seal-innovation',
+    title:
+      'AI in Digital Seal Design: Revolutionizing Custom Seal Creation 2025',
+    description:
+      'Explore how artificial intelligence is transforming digital seal design and creation, featuring innovative AI applications, automation capabilities, and future trends in smart seal technology.',
+    coverImage: p21,
+    publishedAt: '2025-02-07T10:00:00Z',
+    author: 'DigitalSeal Studio',
+    category: 'Technology',
   },
 ])
