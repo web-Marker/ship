@@ -47,7 +47,7 @@
             // 为特殊菜单添加额外样式
             item.special ? 'bg-gradient-to-r from-blue-50 to-transparent' : '',
           ]"
-          @click="activeMenu = item.id"
+          @click="handleMenuChange(item.id)"
         >
           <el-icon
             class="text-gray-600 group-hover:text-blue-600 text-[14px]"
@@ -2192,8 +2192,6 @@ const loadSystemFonts = async () => {
 }
 
 onMounted(async () => {
-  await loadSystemFonts()
-
   initDrawStampUtils()
   restoreDrawConfigs()
   drawStamp()
@@ -2494,6 +2492,15 @@ onMounted(() => {
 const updatePrimaryColor = useDebounceFn((color: any) => {
   primaryColor.value = color
 }, 200) // 100ms 的节流时间
+
+// 添加一个新的方法来处理工具栏切换
+const handleMenuChange = (menuId: number) => {
+  activeMenu.value = menuId
+  if (menuId === 1 || menuId === 2 || menuId === 3 || menuId === 4) {
+    // 假设这些菜单有字体选项
+    loadSystemFonts() // 只有在切换到有字体选项的工具栏时才加载字体
+  }
+}
 </script>
 
 <style scoped>
