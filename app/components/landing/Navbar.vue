@@ -2,18 +2,34 @@
 import { useAuth } from '~/composables/useAuth'
 import logoimg from '@/assets/img/logo.svg'
 
+const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
+
 const route = useRoute() // 添加这行来获取路由实例
 
-const menuitems = [
-  { title: 'Edit', path: '/' },
-  { title: 'Pricing', path: '/pricing' },
-  { title: 'Blog', path: '/blog' },
-  { title: 'Contact', path: '/contact' },
-]
+const menuitems = computed(() => [
+  { title: 'nav.edit', path: localePath('/') },
+  { title: 'nav.pricing', path: localePath('/pricing') },
+  { title: 'nav.blog', path: localePath('/blog') },
+  { title: 'nav.contact', path: localePath('/contact') },
+])
 
 const open = ref(false)
 const router = useRouter()
-const { user, logout, getUserDisplay } = useAuth()
+const { user, logout, getUserDisplay, pending } = useAuth()
+const showUserMenu = ref(false) // 添加这行来定义showUserMenu响应式变量
+
+// 添加语言切换处理函数
+const handleLocaleChange = async newLocale => {
+  // 获取目标语言的路径
+
+  const path = switchLocalePath(newLocale)
+  // 如果存在对应路径，则进行跳转
+  if (path) {
+    await navigateTo(path)
+  }
+}
 
 const handleLogout = async () => {
   await logout()
@@ -36,8 +52,8 @@ watch(() => route.path, closeMenu)
       <div class="flex w-full lg:w-auto items-center justify-between">
         <NuxtLink to="/" class="flex items-center gap-2 text-lg">
           <img :src="logoimg" class="h-6 w-5" alt="free seal maker" />
-          <span class="font-bold text-slate-800">Seal</span>
-          <span class="text-slate-500">Digital</span>
+          <span class="font-bold text-slate-800">{{ $t('brand.seal') }}</span>
+          <span class="text-slate-500">{{ $t('brand.digital') }}</span>
         </NuxtLink>
         <button
           class="text-gray-800 lg:hidden focus:outline-none"
@@ -79,95 +95,106 @@ watch(() => route.path, closeMenu)
               class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-200"
               active-class="text-primary font-medium"
             >
-              {{ item.title }}
+              {{ $t(item.title.toLowerCase()) }}
             </NuxtLink>
           </li>
         </ul>
 
         <!-- 移动端认证状态 -->
-        <div
-          v-if="!user"
-          class="lg:hidden flex flex-col mt-3 gap-4 border-t pt-3 border-gray-100"
-        >
-          <LandingLink to="/signin" style-name="muted" block size="md">
-            Log in
-          </LandingLink>
-          <LandingLink to="/signup" size="md" block> Sign up </LandingLink>
-        </div>
+        <template v-if="!pending">
+          <div
+            v-if="!user"
+            class="lg:hidden flex flex-col mt-3 gap-4 border-t pt-3 border-gray-100"
+          >
+            <!-- 修改移动端的语言选择器 -->
+            <select
+              :value="locale"
+              class="w-full px-3 py-2 rounded-md text-gray-600 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary"
+              @change="e => handleLocaleChange(e.target.value)"
+            >
+              <option
+                v-for="loc in locales"
+                :key="loc.code"
+                :value="loc.code"
+                :class="{ 'font-bold': loc.code === locale }"
+              >
+                {{ loc.name }}
+              </option>
+            </select>
+
+            <LandingLink to="/signin" style-name="muted" block size="md">
+              {{ $t('nav.login') }}
+            </LandingLink>
+            <LandingLink to="/signup" size="md" block>
+              {{ $t('nav.signup') }}
+            </LandingLink>
+          </div>
+          <div
+            v-else
+            class="lg:hidden flex items-center justify-between mt-3 pt-3 border-t border-gray-100"
+          >
+            <div class="text-gray-600 truncate">{{ user.email }}</div>
+            <button
+              class="text-primary hover:underline px-4 py-2"
+              @click="handleLogout"
+            >
+              Log out
+            </button>
+          </div>
+        </template>
         <div
           v-else
-          class="lg:hidden flex items-center justify-between mt-3 pt-3 border-t border-gray-100"
-        >
-          <div class="text-gray-600 truncate">{{ user.email }}</div>
-          <button
-            class="text-primary hover:underline px-4 py-2"
-            @click="handleLogout"
-          >
-            Log out
-          </button>
-        </div>
+          class="lg:hidden h-[100px] bg-gray-100 animate-pulse rounded mt-3"
+        ></div>
       </nav>
 
       <!-- 桌面端认证状态 -->
       <div class="hidden lg:block">
-        <div v-if="!user" class="flex items-center gap-4">
+        <div v-if="!pending" class="flex items-center gap-4">
+          <!-- <el-select
+            v-model="locale"
+            placeholder="Select"
+            size="large"
+            style="width: 240px"
+            @change="v => handleLocaleChange(v)"
+          >
+            <el-option
+              v-for="loc in locales"
+              :key="loc.code"
+              :value="loc.code"
+              :class="{ 'font-bold': loc.code === locale }"
+            />
+          </el-select> -->
+          <!-- 修改桌面端的语言选择器 -->
+          <select
+            :value="locale"
+            class="px-2 py-1 rounded-md text-sm text-gray-600 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary"
+            @change="e => handleLocaleChange(e.target.value)"
+          >
+            <option
+              v-for="loc in locales"
+              :key="loc.code"
+              :value="loc.code"
+              :class="{ 'font-bold': loc.code === locale }"
+            >
+              {{ loc.name }}
+            </option>
+          </select>
+
           <NuxtLink
             to="/signin"
             class="text-primary hover:underline transition-colors duration-200"
           >
-            Log in
+            {{ $t('nav.login') }}
           </NuxtLink>
-          <LandingLink to="/signup" size="md"> Sign up </LandingLink>
+          <LandingLink to="/signup" size="md">
+            {{ $t('nav.signup') }}
+          </LandingLink>
         </div>
-        <div v-else class="flex items-center gap-4">
-          <div class="flex items-center gap-2 text-gray-600">
-            <div
-              v-if="getUserDisplay?.type === 'google'"
-              class="w-8 h-8 rounded-full overflow-hidden"
-            >
-              <img
-                :src="getUserDisplay.display"
-                alt="custom stamp seals digital"
-                class="w-full h-full object-cover"
-              />
-            </div>
-
-            <div
-              v-else-if="getUserDisplay?.type === 'email'"
-              class="user-initial-avatar"
-            >
-              {{ getUserDisplay.display }}
-            </div>
-
-            <!-- <span class="truncate max-w-[200px]">{{ user.email }}</span> -->
-          </div>
-          <NuxtLink
-            to="/order"
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-600 text-white transition-colors duration-200 font-semibold"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-              />
-            </svg>
-            My Orders
-          </NuxtLink>
-          <button
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors duration-200 login-out"
-            @click="handleLogout"
-          >
-            Log out
-          </button>
-        </div>
+        <div
+          v-else
+          class="w-[240px] h-[38px] bg-gray-100 animate-pulse rounded"
+        ></div>
       </div>
     </header>
   </LandingContainer>
@@ -198,5 +225,37 @@ watch(() => route.path, closeMenu)
   color: #ffffff; /* 白色文字 */
   font-size: 18px;
   font-weight: 700; /* 文字加粗 */
+}
+
+/* 修改下拉菜单的样式，确保有足够的空间连接头像和菜单 */
+.absolute {
+  animation: fadeIn 0.2s ease-out;
+  margin-top: 0.5rem; /* 增加一点空间 */
+}
+
+/* 添加一个看不见的连接区域 */
+.relative::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 0.5rem; /* 与margin-top相同 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 添加选择器选中项的样式 */
+select option:checked {
+  font-weight: bold;
 }
 </style>

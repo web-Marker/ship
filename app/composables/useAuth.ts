@@ -1,9 +1,12 @@
 // app/composables/useAuth.ts
 export const useAuth = () => {
   const { user, loggedIn, clear, fetch } = useUserSession()
+  const pending = ref(true) // 添加 pending 状态
 
   const handleStateRefresh = async () => {
+    pending.value = true
     await fetch()
+    pending.value = false
   }
   const handleVisibilityChange = async () => {
     if (document.visibilityState === 'visible') {
@@ -12,7 +15,8 @@ export const useAuth = () => {
   }
 
   // 添加窗口焦点事件处理
-  onMounted(() => {
+  onMounted(async () => {
+    await handleStateRefresh()
     window.addEventListener('focus', handleStateRefresh)
     document.addEventListener('visibilitychange', handleVisibilityChange)
   })
@@ -68,6 +72,7 @@ export const useAuth = () => {
   return {
     user,
     loggedIn,
+    pending, // 导出 pending 状态
     login,
     register,
     logout,

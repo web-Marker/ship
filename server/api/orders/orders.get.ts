@@ -2,8 +2,6 @@ import { tables, useDrizzle } from '../../utils/drizzle'
 import { eq, desc } from 'drizzle-orm'
 
 export default defineEventHandler(async event => {
-  console.log('orderapiget')
-
   const session = await getUserSession(event)
   if (!session?.user) {
     throw createError({
@@ -11,7 +9,6 @@ export default defineEventHandler(async event => {
       message: 'Please login first',
     })
   }
-  console.log('orderapiget')
   const db = useDrizzle()
 
   try {

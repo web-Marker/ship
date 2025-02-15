@@ -2,48 +2,60 @@
 definePageMeta({
   layout: 'landing',
 })
-const { handlePayment } = usePayment()
-const isLoading = ref(false)
 
-const pricing = [
+const { t } = useI18n()
+const { watchUserLogin, paymentUrl, handlePaymentClick, emitter } = usePayment()
+
+const isLoading = ref(false)
+watchUserLogin('subscription')
+
+const getFeatures = planType => {
+  const features = []
+  let i = 0
+  while (true) {
+    const feature = t(`pricing.plans.${planType}.features[${i}]`)
+    if (feature.includes('.features[')) break
+    features.push(feature)
+    i++
+  }
+  return features
+}
+
+const pricing = computed(() => [
   {
-    name: 'Single Seal',
-    price: '$1.99',
+    name: t('pricing.plans.singleSeal.name'),
+    price: t('pricing.plans.singleSeal.price'),
     popular: false,
-    features: [
-      'Create 1 watermark-free seal',
-      'Standard seal templates',
-      'High-quality PNG format',
-      'Basic email support',
-      'Single device access',
-      '24-hour delivery guaranteed',
-    ],
+    features: getFeatures('singleSeal'),
     button: {
-      text: 'Get Started',
+      text: t('pricing.plans.singleSeal.button'),
       link: '/',
     },
   },
   {
-    name: 'Pro Monthly',
+    name: t('pricing.plans.proMonthly.name'),
     price: {
-      monthly: '$9.9',
+      monthly: t('pricing.plans.proMonthly.price'),
     },
     popular: true,
-    features: [
-      'Unlimited seal creation',
-      'All premium templates',
-      'Watermark-free downloads',
-      'Priority customer support',
-      'Multi-device access',
-      'Instant delivery',
-    ],
+    features: getFeatures('proMonthly'),
     button: {
-      text: 'Get Started',
-      link: '#',
+      text: t('pricing.plans.proMonthly.button'),
       onClick: async () => {
+        const session = await useUserSession()
+
+        if (!session.user.value?.email) {
+          ElMessage.warning(t('auth.pleaseLoginFirst'))
+
+          window.open('/signin', '_blank')
+          return false
+        }
         isLoading.value = true
         try {
-          await handlePayment('subscription')
+          if (paymentUrl.value) {
+            window.open(paymentUrl.value, '_blank')
+          }
+          handlePaymentClick()
         } finally {
           isLoading.value = false
         }
@@ -53,35 +65,38 @@ const pricing = [
     className: 'prominent',
   },
   {
-    name: 'Custom Design',
-    price: 'Contact',
+    name: t('pricing.plans.customDesign.name'),
+    price: t('pricing.plans.customDesign.price'),
     popular: false,
-    features: [
-      'Fully customized seal design',
-      'Exclusive template creation',
-      'Dedicated design service',
-      'Unlimited revisions',
-      'Commercial usage rights',
-      'Priority support',
-    ],
+    features: getFeatures('customDesign'),
     button: {
-      text: 'Contact us',
+      text: t('pricing.plans.customDesign.button'),
       link: '/contact',
     },
   },
-]
+])
+
+onMounted(() => {
+  emitter.on('payment_success', () => {
+    ElMessage.success('Payment Successful!')
+  })
+})
+
+onUnmounted(() => {
+  emitter.off('payment_success')
+})
 </script>
 
 <template>
   <LandingContainer>
     <LandingSectionhead>
-      <template #title>Pricing</template>
+      <template #title>{{ $t('pricing.title') }}</template>
     </LandingSectionhead>
 
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
       <LandingPricing
         v-for="item of pricing"
-        :key="item"
+        :key="item.name"
         :plan="item"
         :class-name="item.className"
       />

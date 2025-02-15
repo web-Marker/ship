@@ -2,36 +2,33 @@
   <LandingContainer>
     <div class="privacy-policy">
       <h1 class="policy-title">
-        <strong>Privacy Policy - DigitalSeal Studio</strong>
+        <strong>{{ $t('privacy.title') }}</strong>
       </h1>
-      <p class="last-updated">Last updated: December 12, 2024</p>
+      <p class="last-updated">{{ $t('privacy.lastUpdated') }}</p>
 
-      <h2 class="section-title"><strong>Introduction</strong></h2>
+      <h2 class="section-title">
+        <strong>{{ $t('privacy.sections.introduction.title') }}</strong>
+      </h2>
       <p>
-        Welcome to DigitalSeal Studio ("we," "our," or "us"). We value your
-        privacy and are committed to protecting your personal information. This
-        Privacy Policy explains how we collect, use, and safeguard your data
-        when you use our
-        <NuxtLink to="/" class="link">digital seal maker service</NuxtLink> and
-        website.
+        {{ $t('privacy.sections.introduction.content') }}
       </p>
 
       <h2 class="section-title">
-        <strong>Interpretation and Definitions</strong>
+        <strong>{{ $t('privacy.sections.interpretation.title') }}</strong>
       </h2>
-      <p>For clarity, the following terms have specific meanings:</p>
+      <p>{{ $t('privacy.sections.interpretation.content') }}</p>
       <ul>
         <li>
-          "Service" refers to our
-          <NuxtLink to="/" class="link">seal creation platform</NuxtLink>
+          {{ $t('privacy.sections.interpretation.terms.service') }}
         </li>
         <li>
-          "User" means any person accessing our website or using our seal
-          generation tools
+          {{ $t('privacy.sections.interpretation.terms.user') }}
         </li>
-        <li>"Personal Data" refers to any information that can identify you</li>
         <li>
-          "Usage Data" means data collected automatically during service use
+          {{ $t('privacy.sections.interpretation.terms.personalData') }}
+        </li>
+        <li>
+          {{ $t('privacy.sections.interpretation.terms.usageData') }}
         </li>
       </ul>
 

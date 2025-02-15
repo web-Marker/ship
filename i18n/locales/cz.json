@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Upravit",
+    "pricing": "Ceník",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "login": "Přihlásit",
+    "signup": "Registrace",
+    "logout": "Odhlásit",
+    "myOrders": "Moje objednávky"
+  },
+  "brand": {
+    "seal": "Razítko",
+    "digital": "Digitální"
+  },
+  "auth": {
+    "signInTitle": "Přihlaste se ke svému účtu",
+    "signInDesc": "Přihlaste se ke svému účtu pro rychlejší objednávku.",
+    "email": "Váš email",
+    "password": "Vaše heslo",
+    "emailPlaceholder": "Zadejte váš email",
+    "passwordPlaceholder": "Zadejte vaše heslo",
+    "signingIn": "Přihlašování...",
+    "signIn": "Přihlásit se",
+    "orContinueWith": "Nebo pokračujte s",
+    "signInWithGoogle": "Přihlásit se přes Google",
+    "noAccount": "Nemáte účet?",
+    "signUpLink": "Zaregistrovat se",
+    "pleaseLoginFirst": "Prosím, nejdříve se přihlaste",
+    "createAccount": "Vytvořit účet",
+    "registerWithEmail": "Registrovat se emailem",
+    "registering": "Registrace...",
+    "signUp": "Zaregistrovat se",
+    "alreadyHaveAccount": "Už máte účet?"
+  },
+  "contact": {
+    "emailPlaceholder": "Emailová adresa",
+    "emailRequired": "Prosím, zadejte svou emailovou adresu.",
+    "emailInvalid": "Prosím, zadejte platnou emailovou adresu.",
+    "messagePlaceholder": "Vaše zpráva",
+    "messageRequired": "Prosím, zadejte svou zprávu.",
+    "sendMessage": "Odeslat zprávu",
+    "sending": "Odesílání...",
+    "sentSuccess": "Zpráva úspěšně odeslána!",
+    "sentError": "Něco se pokazilo!",
+    "sendFailed": "Odeslání zprávy se nezdařilo",
+    "namePlaceholder": "Celé jméno",
+    "nameRequired": "Prosím, zadejte své celé jméno.",
+    "title": "Kontaktujte tvůrce",
+    "description": "Jsem tu, abych pomohl.",
+    "message": "Máte něco na srdci? Jsem tu, abych pomohl. Vyplňte formulář nebo pošlete email."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Vytvořit razítko"
+    },
+    "title": "Chytrý designér digitálních razítek - Vytvářejte profesionální razítka snadno",
+    "description": "Vyzkoušejte našeho tvůrce digitálních razítek s podporou AI, který vám pomůže vytvářet profesionální firemní razítka, smluvní razítka a vlastní digitální razítka pomocí několika kliknutí.",
+    "features": {
+      "templates": {
+        "title": "Profesionální šablony",
+        "description": "Vyberte si z různých profesionálních šablon razítek včetně firemních razítek, smluvních razítek a dalších. Přizpůsobte si velikost, šířku okraje, barvy a další parametry podle vašich potřeb."
+      },
+      "security": {
+        "title": "Ochranné prvky",
+        "description": "Vestavěný generátor bezpečnostních vzorů s nastavitelnou hustotou a velikostí vzoru. Obsahuje efekty stárnutí a otřepů pro autenticky vypadající razítka se zvýšenou bezpečností."
+      },
+      "customization": {
+        "title": "Plně přizpůsobitelné",
+        "description": "Přizpůsobte si každý aspekt vašeho razítka - od textového obsahu a písma po kompresní poměr a distribuční faktory. Přidejte obrázky a vnitřní kruhy pro vytvoření jedinečných designů razítek."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Informace a zdroje o digitálních razítkách",
+      "sectionDescription": "Prozkoumejte naše nejnovější články o digitálních razítkách, autentizační technologii a profesionálním designu razítek.",
+      "readMore": "Číst více",
+      "wantMore": "Chcete číst více?",
+      "goHere": "Jděte sem"
+    }
+  },
+  "footer": {
+    "product": "Produkt",
+    "company": "Společnost",
+    "stayUpdated": "Zůstaňte informováni",
+    "subscribe": "Odebírat",
+    "enterEmail": "Zadejte váš email",
+    "subscribeSuccess": "Odběr úspěšně aktivován!",
+    "pleaseEnterEmail": "Prosím, zadejte váš email",
+    "copyright": "Copyright © {year} SealDigital. Všechna práva vyhrazena.",
+    "privacy": "Soukromí",
+    "terms": "Podmínky použití",
+    "stripeClimate": "Člen Stripe Climate"
+  },
+  "pricing": {
+    "title": "Ceník",
+    "plans": {
+      "singleSeal": {
+        "name": "Jedno razítko",
+        "price": "$1.99",
+        "features": [
+          "Vytvoření 1 razítka bez vodoznaku",
+          "Standardní šablony razítek",
+          "Vysoká kvalita ve formátu PNG",
+          "Základní emailová podpora",
+          "Přístup z jednoho zařízení",
+          "Garantované dodání do 24 hodin"
+        ],
+        "button": "Začít"
+      },
+      "proMonthly": {
+        "name": "Pro Měsíční",
+        "price": "$9.9",
+        "features": [
+          "Neomezené vytváření razítek",
+          "Všechny premium šablony",
+          "Stahování bez vodoznaku",
+          "Prioritní zákaznická podpora",
+          "Přístup z více zařízení",
+          "Okamžité dodání"
+        ],
+        "button": "Začít"
+      },
+      "customDesign": {
+        "name": "Vlastní design",
+        "price": "Kontaktujte nás",
+        "features": [
+          "Plně přizpůsobený design razítka",
+          "Tvorba exkluzivních šablon",
+          "Dedikovaná designová služba",
+          "Neomezené revize",
+          "Práva ke komerčnímu využití",
+          "Prioritní podpora"
+        ],
+        "button": "Kontaktujte nás"
+      }
+    }
+  },
+  "blog": {
+    "title": "Informace a zdroje o digitálních razítkách",
+    "description": "Prozkoumejte naše nejnovější články o digitálních razítkách, autentizační technologii a profesionálním designu razítek. Zůstaňte informováni o trendech v oboru a nejlepších postupech.",
+    "articleCount": "{count} článků, které vám pomohou zvládnout digitální razítka",
+    "categories": {
+      "allPosts": "Všechny příspěvky",
+      "designTips": "Tipy pro design",
+      "security": "Bezpečnost",
+      "tutorials": "Návody"
+    }
+  },
+  "terms": {
+    "title": "Podmínky použití - DigitalSeal Studio",
+    "lastUpdated": "Poslední aktualizace: 12. prosince 2024",
+    "sections": {
+      "general": {
+        "title": "Obecné podmínky",
+        "content": "Přístupem a objednáním u DigitalSeal Studio potvrzujete, že souhlasíte a jste vázáni podmínkami služby obsaženými v těchto Podmínkách použití. Tyto podmínky se vztahují na celý web a veškerou emailovou či jinou komunikaci mezi vámi a DigitalSeal Studio.",
+        "liability": "Za žádných okolností nebude tým DigitalSeal Studio odpovědný za jakékoli přímé, nepřímé, zvláštní, náhodné nebo následné škody, včetně, ale ne výhradně, ztráty dat nebo zisku, vyplývající z použití nebo nemožnosti použít materiály na tomto webu, i když byl tým DigitalSeal Studio nebo autorizovaný zástupce upozorněn na možnost takových škod."
+      },
+      "license": {
+        "title": "Licence",
+        "content": "DigitalSeal Studio vám uděluje odvolatelnou, nevýhradní, nepřenosnou, omezenou licenci ke stažení, instalaci a používání webu striktně v souladu s podmínkami této Smlouvy."
+      },
+      "definitions": {
+        "title": "Definice a klíčové pojmy",
+        "content": "Pro co nejjasnější vysvětlení v těchto Podmínkách použití jsou při každém použití kteréhokoli z těchto termínů striktně definovány jako:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "malé množství dat generované webem a uložené vaším webovým prohlížečem. Používá se k identifikaci vašeho prohlížeče, poskytování analytiky, zapamatování informací o vás."
+          },
+          "company": {
+            "name": "Společnost",
+            "description": "když tyto zásady zmiňují \"Společnost,\" \"my,\" \"nás,\" nebo \"naše,\" odkazuje na DigitalSeal Studio, který je odpovědný za vaše informace podle těchto Podmínek použití."
+          },
+          "service": {
+            "name": "Služba",
+            "description": "odkazuje na platformu pro tvorbu razítek a služby poskytované společností DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Webová stránka",
+            "description": "stránka DigitalSeal Studio, která je přístupná přes https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "Vy",
+            "description": "osoba nebo subjekt, který je registrován u DigitalSeal Studio k využívání Služeb."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Omezení",
+        "content": "Souhlasíte, že nebudete a neumožníte ostatním:",
+        "list": [
+          "Licencovat, prodávat, pronajímat, převádět, distribuovat, přenášet, hostovat, outsourcovat, zveřejňovat nebo jinak komerčně využívat web nebo zpřístupňovat platformu třetím stranám.",
+          "Modifikovat, vytvářet odvozená díla, rozebírat, dešifrovat, zpětně kompilovat nebo zpětně analyzovat jakoukoli část webu.",
+          "Odstranit, změnit nebo zakrýt jakékoli oznámení o vlastnictví DigitalSeal Studio nebo jeho přidružených společností, partnerů, dodavatelů nebo poskytovatelů licence webu."
+        ]
+      },
+      "contact": {
+        "title": "Kontaktujte nás",
+        "content": "Pro jakékoli dotazy ohledně těchto Podmínek použití nás prosím kontaktujte přes naši kontaktní stránku."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Vybrat šablonu",
+    "clickToChange": "Klikněte pro změnu",
+    "templates": {
+      "companySeal": "Firemní razítko",
+      "contractSeal1": "Smluvní razítko 1",
+      "companySeal2": "Firemní razítko 2"
+    },
+    "menu": {
+      "basic": "Základní #0",
+      "circleText1": "Kruhový text #1",
+      "circleText2": "Kruhový text #2",
+      "circleText3": "Kruhový text #3",
+      "circleText4": "Kruhový text #4",
+      "image": "Obrázek #5",
+      "antiCounterfeiting": "Ochrana proti padělání #6",
+      "antiAliasing": "Vyhlazování #7",
+      "stampAging": "Stárnutí razítka #8",
+      "innerCircle": "Vnitřní kruh #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Šířka",
+        "height": "Výška",
+        "circleBorderWidth": "Šířka okraje kruhu",
+        "color": "Barva"
+      },
+      "text": {
+        "companyName": "Název společnosti",
+        "font": "Písmo",
+        "fontSize": "Velikost písma (mm)",
+        "fontWeight": "Tloušťka písma",
+        "compressionRatio": "Kompresní poměr",
+        "distributionFactor": "Distribuční faktor",
+        "margin": "Okraj (mm)",
+        "adjustText": "Upravit text",
+        "adjustment": "Úprava",
+        "startAngle": "Počáteční úhel",
+        "rotationDirection": "Směr rotace",
+        "clockwise": "Po směru hodin",
+        "counterclockwise": "Proti směru hodin",
+        "addNewRow": "Přidat nový řádek",
+        "row": "Řádek",
+        "delete": "Smazat",
+        "letterSpacing": "Mezery mezi písmeny",
+        "verticalPosition": "Vertikální pozice",
+        "textContent": "Textový obsah",
+        "enterTextContent": "Zadejte textový obsah",
+        "sealCode": "Kód razítka",
+        "enterSealCode": "Zadejte kód razítka",
+        "taxNumber": "DIČ",
+        "enterTaxNumber": "Zadejte DIČ"
+      },
+      "image": {
+        "selectImage": "Vybrat obrázek",
+        "imageWidth": "Šířka obrázku",
+        "imageHeight": "Výška obrázku",
+        "horizontalPosition": "Horizontální pozice",
+        "verticalPosition": "Vertikální pozice",
+        "keepAspectRatio": "Zachovat poměr stran",
+        "addPictures": "Přidat obrázky",
+        "title": "Obrázek"
+      },
+      "security": {
+        "enableSecurityPattern": "Povolit bezpečnostní vzor",
+        "refreshPattern": "Obnovit vzor",
+        "patternCount": "Počet vzorů",
+        "patternLength": "Délka vzoru (mm)",
+        "patternWidth": "Šířka vzoru (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Povolit efekt otřepů",
+        "burrWidth": "Šířka otřepů (mm)",
+        "burrHeight": "Výška otřepů (mm)",
+        "burrProbability": "Pravděpodobnost otřepů",
+        "burrOffset": "Odsazení otřepů (mm)",
+        "burrPoints": "Body otřepů",
+        "refreshBurr": "Obnovit otřepy"
+      },
+      "aging": {
+        "enableAgingEffect": "Povolit efekt stárnutí",
+        "manualAging": "Manuální stárnutí",
+        "agingIntensity": "Intenzita stárnutí",
+        "refreshAging": "Obnovit stárnutí"
+      },
+      "innerCircle": {
+        "addNewRow": "Přidat nový řádek",
+        "row": "Řádek",
+        "delete": "Smazat",
+        "width": "Šířka (mm)",
+        "radiusX": "Poloměr vnitřního kruhu X (mm)",
+        "radiusY": "Poloměr vnitřního kruhu Y (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Pro stažení razítka bez vodoznaku se prosím přihlaste",
+      "joinVip": "Stát se VIP",
+      "downloadStamp": "Stáhnout razítko",
+      "downloadFree": "Stáhnout zdarma",
+      "flashSale": "Sleva"
+    }
+  },
+  "payment": {
+    "success": "Platba úspěšná!",
+    "failed": "Platba se nezdařila",
+    "downloadNotice": "Vaše razítko se automaticky stahuje. Zkontrolujte prosím stažené soubory ve vašem prohlížeči.",
+    "redirecting": "Přesměrování na domovskou stránku za {seconds} sekund...",
+    "backToHome": "Zpět na úvodní stránku",
+    "preparing": "Připravujeme vaše razítko...",
+    "dialogTitle": "Oznámení o stažení",
+    "download": "Stáhnout",
+    "close": "Zavřít"
+  },
+  "orders": {
+    "loading": "Načítání...",
+    "fetchError": "Chyba při načítání objednávek",
+    "paymentTime": "Čas platby",
+    "status": "Stav",
+    "action": "Akce",
+    "paid": "Zaplaceno",
+    "downloadSeal": "Stáhnout razítko",
+    "noOrders": "Žádné objednávky nebyly nalezeny"
+  }
+}

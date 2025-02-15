@@ -54,8 +54,9 @@ const handleClick = () => {
       </ul>
       <div class="flex mt-8">
         <LandingLink
-          :href="plan.button.link || '#'"
+          :href="plan.button.link"
           block
+          class="cursor-pointer"
           :style-name="plan.popular ? 'primary' : 'outline'"
           :loading="plan.button.loading"
           @click.prevent="handleClick"

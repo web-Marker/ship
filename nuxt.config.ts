@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@element-plus/nuxt',
     'nuxt-auth-utils',
-    '@sentry/nuxt/module',
+    // '@sentry/nuxt/module',
+    '@nuxtjs/i18n',
   ],
 
   vite: {
@@ -255,14 +256,123 @@ export default defineNuxtConfig({
     urls: ['https://sealsdigital.com'],
   },
 
-  sentry: {
-    sourceMapsUploadOptions: {
-      org: 'zyp-17',
-      project: 'javascript-nuxt',
-    },
-  },
+  // sentry: {
+  //   sourceMapsUploadOptions: {
+  //     org: 'zyp-17',
+  //     project: 'javascript-nuxt',
+  //   },
+  // },
 
   sourcemap: {
     client: 'hidden',
+  },
+
+  i18n: {
+    baseUrl: 'https://sealsdigital.com',
+    langDir: 'locales',
+    strategy: 'prefix',
+    defaultLocale: 'en',
+    detectBrowserLanguage: false, // 禁用浏览器语言检测
+
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json',
+        language: 'en-US',
+        isCatchallLocale: true,
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+        file: 'fr.json',
+        language: 'fr-FR',
+      },
+      {
+        code: 'ru',
+        name: 'Русский',
+        file: 'ru.json',
+        language: 'ru-RU',
+      },
+      {
+        code: 'cz',
+        name: 'Čeština',
+        file: 'cz.json',
+        language: 'cs-CZ',
+      },
+      {
+        code: 'dk',
+        name: 'Dansk',
+        file: 'dk.json',
+        language: 'da-DK',
+      },
+      {
+        code: 'el',
+        name: 'Ελληνικά',
+        file: 'el.json',
+        language: 'el-GR',
+      },
+
+      {
+        code: 'hu',
+        name: 'Magyar',
+        file: 'hu.json',
+        language: 'hu-HU',
+      },
+      {
+        code: 'id',
+        name: 'Indonesia',
+        file: 'id.json',
+        language: 'id-ID',
+      },
+      {
+        code: 'it',
+        name: 'Italiano',
+        file: 'it.json',
+        language: 'it-IT',
+      },
+      {
+        code: 'ja',
+        name: '日本語',
+        file: 'ja.json',
+        language: 'ja-JP',
+      },
+      {
+        code: 'ko',
+        name: '한국어',
+        file: 'ko.json',
+        language: 'ko-KR',
+      },
+      {
+        code: 'de',
+        name: 'Deutsch',
+        file: 'de.json',
+        language: 'de-DE',
+      },
+      {
+        code: 'ar',
+        name: 'العربية',
+        file: 'ar.json',
+        language: 'ar-AE',
+      },
+      {
+        code: 'pt',
+        name: 'Português',
+        file: 'pt.json',
+        language: 'pt-PT',
+      },
+      {
+        code: 'pl',
+        name: 'Polski',
+        file: 'pl.json',
+        language: 'pl-PL',
+      },
+      {
+        code: 'ur',
+        name: 'اردو',
+        file: 'ur.json',
+        language: 'ur-PK',
+      },
+    ],
   },
 })

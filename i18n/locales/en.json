@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Edit",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "myOrders": "My Orders"
+  },
+  "brand": {
+    "seal": "Seal",
+    "digital": "Digital"
+  },
+  "auth": {
+    "signInTitle": "Sign in to your account",
+    "signInDesc": "Login to your account for a faster checkout.",
+    "email": "Your Email",
+    "password": "Your Password",
+    "emailPlaceholder": "Enter your Email",
+    "passwordPlaceholder": "Enter your Password",
+    "signingIn": "Signing in...",
+    "signIn": "Sign in",
+    "orContinueWith": "Or continue with",
+    "signInWithGoogle": "Sign in with Google",
+    "noAccount": "Don't you have an account?",
+    "signUpLink": "Sign up",
+    "pleaseLoginFirst": "Please login first",
+    "createAccount": "Create your account",
+    "registerWithEmail": "Register with your email",
+    "registering": "Registering...",
+    "signUp": "Sign up",
+    "alreadyHaveAccount": "Already have an account?"
+  },
+  "contact": {
+    "emailPlaceholder": "Email Address",
+    "emailRequired": "Please provide your email address.",
+    "emailInvalid": "Please provide a valid email address.",
+    "messagePlaceholder": "Your Message",
+    "messageRequired": "Please enter your message.",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "sentSuccess": "Message sent successfully!",
+    "sentError": "Something went wrong!",
+    "sendFailed": "Failed to send message",
+    "namePlaceholder": "Full Name",
+    "nameRequired": "Please provide your full name.",
+    "title": "Contact Creator",
+    "description": "I am here to help.",
+    "message": "Have something to say? I am here to help. Fill up the form or send email."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Generate Stamp"
+    },
+    "title": "Smart Digital Seal Designer - Create Professional Stamps Effortlessly",
+    "description": "Experience our AI-powered digital seal maker that helps you create professional company seals, contract stamps, and custom digital stamps with just a few clicks.",
+    "features": {
+      "templates": {
+        "title": "Professional Templates",
+        "description": "Choose from a variety of professional seal templates including company seals, contract stamps, and more. Customize size, border width, colors, and other parameters to match your needs."
+      },
+      "security": {
+        "title": "Anti-counterfeiting Features",
+        "description": "Built-in security pattern generator with customizable pattern density and size. Includes aging effects and burr effects for authentic-looking seals with enhanced security."
+      },
+      "customization": {
+        "title": "Fully Customizable",
+        "description": "Customize every aspect of your seal - from text content and fonts to compression ratio and distribution factors. Add images and inner circles to create unique seal designs."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Digital Seal Insights & Resources",
+      "sectionDescription": "Explore our latest articles about digital seals, authentication technology, and professional stamp design.",
+      "readMore": "Read more",
+      "wantMore": "Want to read more?",
+      "goHere": "Go here"
+    }
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "stayUpdated": "Stay up to date",
+    "subscribe": "Subscribe",
+    "enterEmail": "Enter your email",
+    "subscribeSuccess": "Subscribe sent successfully!",
+    "pleaseEnterEmail": "Please enter your email",
+    "copyright": "Copyright © {year} SealDigital. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms & Conditions",
+    "stripeClimate": "Stripe Climate Member"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "plans": {
+      "singleSeal": {
+        "name": "Single Seal",
+        "price": "$1.99",
+        "features": [
+          "Create 1 watermark-free seal",
+          "Standard seal templates",
+          "High-quality PNG format",
+          "Basic email support",
+          "Single device access",
+          "24-hour delivery guaranteed"
+        ],
+        "button": "Get Started"
+      },
+      "proMonthly": {
+        "name": "Pro Monthly",
+        "price": "$9.9",
+        "features": [
+          "Unlimited seal creation",
+          "All premium templates",
+          "Watermark-free downloads",
+          "Priority customer support",
+          "Multi-device access",
+          "Instant delivery"
+        ],
+        "button": "Get Started"
+      },
+      "customDesign": {
+        "name": "Custom Design",
+        "price": "Contact",
+        "features": [
+          "Fully customized seal design",
+          "Exclusive template creation",
+          "Dedicated design service",
+          "Unlimited revisions",
+          "Commercial usage rights",
+          "Priority support"
+        ],
+        "button": "Contact us"
+      }
+    }
+  },
+  "blog": {
+    "title": "Digital Stamp Insights & Resources",
+    "description": "Explore our latest articles about digital seals, authentication technology, and professional stamp design. Stay informed about industry trends and best practices.",
+    "articleCount": "{count} articles to help you master digital sealing",
+    "categories": {
+      "allPosts": "All Posts",
+      "designTips": "Design Tips",
+      "security": "Security",
+      "tutorials": "Tutorials"
+    }
+  },
+  "terms": {
+    "title": "Terms & Conditions - DigitalSeal Studio",
+    "lastUpdated": "Last updated: December 12, 2024",
+    "sections": {
+      "general": {
+        "title": "General Terms",
+        "content": "By accessing and placing an order with DigitalSeal Studio, you confirm that you are in agreement with and bound by the terms of service contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and DigitalSeal Studio.",
+        "liability": "Under no circumstances shall DigitalSeal Studio team be liable for any direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if DigitalSeal Studio team or an authorized representative has been advised of the possibility of such damages."
+      },
+      "license": {
+        "title": "License",
+        "content": "DigitalSeal Studio grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the website strictly in accordance with the terms of this Agreement."
+      },
+      "definitions": {
+        "title": "Definitions and Key Terms",
+        "content": "To help explain things as clearly as possible in this Terms & Conditions, every time any of these terms are referenced, are strictly defined as:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "small amount of data generated by a website and saved by your web browser. It is used to identify your browser, provide analytics, remember information about you."
+          },
+          "company": {
+            "name": "Company",
+            "description": "when this policy mentions \"Company,\" \"we,\" \"us,\" or \"our,\" it refers to DigitalSeal Studio that is responsible for your information under this Terms & Conditions."
+          },
+          "service": {
+            "name": "Service",
+            "description": "refers to the seal creation platform and services provided by DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Website",
+            "description": "DigitalSeal Studio's site, which can be accessed via https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "You",
+            "description": "a person or entity that is registered with DigitalSeal Studio to use the Services."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Restrictions",
+        "content": "You agree not to, and you will not permit others to:",
+        "list": [
+          "License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the website or make the platform available to any third party.",
+          "Modify, make derivative works of, disassemble, decrypt, reverse compile or reverse engineer any part of the website.",
+          "Remove, alter or obscure any proprietary notice of DigitalSeal Studio or its affiliates, partners, suppliers or the licensors of the website."
+        ]
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "For any questions about these Terms & Conditions, please contact us through our contact page."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Select Template",
+    "clickToChange": "Click to change",
+    "templates": {
+      "companySeal": "Company Seal",
+      "contractSeal1": "Contract Seal 1", 
+      "companySeal2": "Company Seal 2"
+    },
+    "menu": {
+      "basic": "Basic #0",
+      "circleText1": "Circle txt #1",
+      "circleText2": "Circle txt #2", 
+      "circleText3": "Circle txt #3",
+      "circleText4": "Circle txt #4",
+      "image": "Image #5",
+      "antiCounterfeiting": "Anti-counterfeiting #6",
+      "antiAliasing": "Anti-aliasing #7",
+      "stampAging": "Stamp aging #8",
+      "innerCircle": "Inner circle #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Width",
+        "height": "Height",
+        "circleBorderWidth": "Circle Border Width",
+        "color": "Color"
+      },
+      "text": {
+        "companyName": "Company Name",
+        "font": "Font",
+        "fontSize": "Font Size (mm)",
+        "fontWeight": "Font Weight",
+        "compressionRatio": "Compression Ratio",
+        "distributionFactor": "Distribution Factor",
+        "margin": "Margin (mm)",
+        "adjustText": "Adjust Text",
+        "adjustment": "Adjustment",
+        "startAngle": "Start Angle",
+        "rotationDirection": "Rotation Direction",
+        "clockwise": "Clockwise",
+        "counterclockwise": "Counterclockwise",
+        "addNewRow": "Add New Row",
+        "row": "Row",
+        "delete": "Delete",
+        "letterSpacing": "Letter Spacing",
+        "verticalPosition": "Vertical Position",
+        "textContent": "Text Content",
+        "enterTextContent": "Enter text content",
+        "sealCode": "Seal Code",
+        "enterSealCode": "Enter seal code",
+        "taxNumber": "Tax Number",
+        "enterTaxNumber": "Enter tax number"
+      },
+      "image": {
+        "selectImage": "Select Image",
+        "imageWidth": "Image Width",
+        "imageHeight": "Image Height",
+        "horizontalPosition": "Horizontal Position",
+        "verticalPosition": "Vertical Position",
+        "keepAspectRatio": "Keep Aspect Ratio",
+        "addPictures": "Add Pictures",
+        "title": "Image"
+      },
+      "security": {
+        "enableSecurityPattern": "Enable Security Pattern",
+        "refreshPattern": "Refresh Pattern",
+        "patternCount": "Pattern Count",
+        "patternLength": "Pattern Length (mm)",
+        "patternWidth": "Pattern Width (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Enable Burr Effect",
+        "burrWidth": "Burr Width (mm)", 
+        "burrHeight": "Burr Height (mm)",
+        "burrProbability": "Burr Probability",
+        "burrOffset": "Burr Offset (mm)",
+        "burrPoints": "Burr Points",
+        "refreshBurr": "Refresh Burr"
+      },
+      "aging": {
+        "enableAgingEffect": "Enable Aging Effect",
+        "manualAging": "Manual Aging",
+        "agingIntensity": "Aging Intensity",
+        "refreshAging": "Refresh Aging"
+      },
+      "innerCircle": {
+        "addNewRow": "Add New Row",
+        "row": "Row",
+        "delete": "Delete",
+        "width": "Width (mm)",
+        "radiusX": "Inner Circle Radius X (mm)",
+        "radiusY": "Inner Circle Radius Y (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Please login to Download stamp without watermark",
+      "joinVip": "Join VIP",
+      "downloadStamp": "Download Stamp",
+      "downloadFree": "Download Free",
+      "flashSale": "Discount"
+    }
+  },
+  "payment": {
+    "success": "Payment Successful!",
+    "failed": "Payment Failed",
+    "downloadNotice": "Your seal is being downloaded automatically. Please check your browser downloads.",
+    "redirecting": "Redirecting to homepage in {seconds} seconds...",
+    "backToHome": "Back to Homepage",
+    "preparing": "Preparing your Stamp...",
+    "dialogTitle": "Download Notice",
+    "download": "Download",
+    "close": "Close"
+  },
+  "orders": {
+    "loading": "Loading...",
+    "fetchError": "Error fetching orders",
+    "paymentTime": "Payment Time",
+    "status": "Status",
+    "action": "Action",
+    "paid": "Paid",
+    "downloadSeal": "Download Seal",
+    "noOrders": "No orders found"
+  }
+} 

@@ -13,7 +13,7 @@
                 <h3
                   class="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl"
                 >
-                  Create your account
+                  {{ $t('auth.createAccount') }}
                 </h3>
 
                 <div class="mb-8 flex items-center justify-center">
@@ -23,7 +23,7 @@
                   <p
                     class="w-full px-5 text-center text-base font-medium text-body-color"
                   >
-                    register with your email
+                    {{ $t('auth.registerWithEmail') }}
                   </p>
                   <span
                     class="hidden h-[1px] w-full max-w-[60px] bg-body-color/50 sm:block"
@@ -34,12 +34,13 @@
                     <label
                       for="email"
                       class="mb-3 block text-sm text-dark dark:text-white"
-                      >Your Email</label
                     >
+                      {{ $t('auth.email') }}
+                    </label>
                     <input
                       v-model="form.email"
                       type="email"
-                      placeholder="Enter your Email"
+                      :placeholder="$t('auth.emailPlaceholder')"
                       class="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
                       required
                     />
@@ -48,32 +49,32 @@
                     <label
                       for="password"
                       class="mb-3 block text-sm text-dark dark:text-white"
-                      >Your Password</label
                     >
+                      {{ $t('auth.password') }}
+                    </label>
                     <input
                       v-model="form.password"
                       type="password"
-                      placeholder="Enter your Password"
+                      :placeholder="$t('auth.passwordPlaceholder')"
                       class="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
                       required
                     />
                   </div>
 
-                  <!-- 其他输入字段类似修改 -->
                   <div class="mb-6">
                     <button
                       type="submit"
                       class="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm px-9 py-4 text-base font-medium text-white duration-300 hover:bg-black/90 bg-black"
                     >
-                      {{ loading ? 'Registering...' : 'Sign up' }}
+                      {{ loading ? $t('auth.registering') : $t('auth.signUp') }}
                     </button>
                   </div>
                 </form>
                 <p class="text-center text-base font-medium text-body-color">
-                  Already using Startup?
-                  <NuxtLink to="/signin" class="text-black hover:underline"
-                    >Sign in</NuxtLink
-                  >
+                  {{ $t('auth.alreadyHaveAccount') }}
+                  <NuxtLink to="/signin" class="text-black hover:underline">{{
+                    $t('auth.signIn')
+                  }}</NuxtLink>
                 </p>
               </div>
             </div>

@@ -4,6 +4,7 @@ import Stripe from 'stripe'
 export default defineEventHandler(async event => {
   const config = useRuntimeConfig()
   const stripe = new Stripe(config.stripe.secretKey)
+
   const { priceType } = await readBody(event)
 
   // 获取当前用户会话
@@ -21,11 +22,15 @@ export default defineEventHandler(async event => {
     const subscription: any = await kv.get(
       `user:${session.user.email}:subscription`
     )
+    // 修改订阅检查逻辑
     if (subscription?.active && subscription?.endDate > Date.now()) {
-      throw createError({
-        statusCode: 400,
-        message: 'You already have an active subscription',
-      })
+      // 如果是一次性支付，即使有活跃订阅也允许购买
+      if (priceType !== 'one_time') {
+        throw createError({
+          statusCode: 400,
+          message: 'You already have an active subscription',
+        })
+      }
     }
 
     // 创建结账会话的基本配置
@@ -41,7 +46,10 @@ export default defineEventHandler(async event => {
         },
       ],
       mode: priceType === 'one_time' ? 'payment' : 'subscription',
-      success_url: `${config.public.appUrl}/payment/auto-close?session_id={CHECKOUT_SESSION_ID}&status=success`,
+      success_url:
+        priceType === 'one_time'
+          ? `${config.public.appUrl}/en/payment/auto-close?session_id={CHECKOUT_SESSION_ID}&status=success`
+          : `${config.public.appUrl}/?status=success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${config.public.appUrl}/?status=cancel`,
       metadata: {
         userEmail: session.user.email,

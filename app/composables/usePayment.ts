@@ -1,11 +1,92 @@
 // composables/usePayment.ts
+import mitt from 'mitt'
+const emitter = mitt()
+
 export const usePayment = () => {
-  const router = useRouter()
   const isPolling = ref(false)
   const paymentStatus = ref<'pending' | 'success' | 'failed' | null>(null)
+  const paymentUrl = ref<string | null>(null)
+  const currentPaymentType = ref<'one_time' | 'subscription' | null>(null)
+
+  const watchUserLogin = (type: 'one_time' | 'subscription') => {
+    currentPaymentType.value = type
+    const session = useUserSession()
+
+    watch(
+      [() => session.user.value?.email, () => paymentUrl.value],
+      async ([newEmail, newPaymentUrl]) => {
+        if (newEmail && !newPaymentUrl && currentPaymentType.value) {
+          try {
+            const { data, error } = await useFetch(
+              '/api/stripe/create-checkout',
+              {
+                method: 'POST',
+                body: { priceType: currentPaymentType.value },
+              }
+            )
+
+            if (error.value) {
+              throw error.value
+            }
+
+            if (data.value?.url) {
+              paymentUrl.value = data.value.url
+              const matches = data.value.url.match(/\/c\/pay\/(cs_[^#?]+)/)
+              const sessionId = matches ? matches[1] : null
+
+              if (sessionId && typeof window !== 'undefined') {
+                localStorage.setItem('pending_payment_session', sessionId)
+                localStorage.setItem('payment_session_id', sessionId)
+              }
+            }
+          } catch (error) {
+            ElMessage.error('Failed to get payment URL')
+          }
+        }
+      },
+      { immediate: true }
+    )
+  }
+
+  const startPaymentCheck = async (
+    sessionId: string,
+    onSuccess?: () => void
+  ) => {
+    let attempts = 0
+    const maxAttempts = 120
+
+    const checkPayment = async () => {
+      while (attempts < maxAttempts) {
+        const success = await pollPaymentStatus(sessionId)
+
+        if (success) {
+          ElMessage.success('Payment successful!')
+          localStorage.removeItem('pending_payment_session')
+          localStorage.removeItem('payment_session_id')
+          if (currentPaymentType.value === 'one_time') {
+            onSuccess?.()
+            paymentUrl.value = null
+          }
+          return true
+        }
+
+        attempts++
+        await new Promise(resolve => setTimeout(resolve, 4000))
+      }
+
+      console.log('Payment check timeout')
+      ElMessage.warning('Payment status check timeout')
+      localStorage.removeItem('pending_payment_session')
+      localStorage.removeItem('payment_session_id')
+      paymentUrl.value = null
+      return false
+    }
+
+    checkPayment()
+  }
 
   const pollPaymentStatus = async (sessionId: string): Promise<boolean> => {
-    console.log('开始轮询支付状态:', sessionId)
+    console.log('Start polling payment status:', sessionId)
     if (isPolling.value) return false
 
     isPolling.value = true
@@ -16,7 +97,7 @@ export const usePayment = () => {
         params: { session_id: sessionId },
       })
 
-      console.log('轮询返回结果:', data.value)
+      console.log('Polling result:', data.value)
 
       if (data.value?.status === 'success') {
         paymentStatus.value = 'success'
@@ -35,131 +116,23 @@ export const usePayment = () => {
     }
   }
 
-  const handlePayment = async (
-    type: 'one_time' | 'subscription',
-    onSuccess?: () => void
-  ) => {
-    try {
-      const session = await useUserSession()
-      if (!session.user.value?.email) {
-        ElMessage.warning('Please login first')
-        router.push('/signin')
-        return
-      }
-
-      const { data, error } = await useFetch('/api/stripe/create-checkout', {
-        method: 'POST',
-        body: { priceType: type },
+  const handlePaymentClick = () => {
+    const sessionId = localStorage.getItem('payment_session_id')
+    if (sessionId) {
+      startPaymentCheck(sessionId, () => {
+        emitter.emit('payment_success')
       })
-
-      if (error.value) {
-        throw error.value
-      }
-
-      if (data.value?.url) {
-        // 从URL中提取cs_xxx部分作为session_id
-        const matches = data.value.url.match(/\/c\/pay\/(cs_[^#?]+)/)
-        const sessionId = matches ? matches[1] : null
-
-        console.log('提取的sessionId:', sessionId)
-
-        if (!sessionId) {
-          console.error(
-            'Failed to extract session ID from URL:',
-            data.value.url
-          )
-          throw new Error('Failed to get session ID')
-        }
-
-        // 保存会话ID到localStorage
-        localStorage.setItem('pending_payment_session', sessionId)
-
-        // 使用 ElMessageBox 显示带有链接的弹窗
-        // window.open(data.value.url, '_blank')
-        ElMessageBox({
-          title: '🎉🎉Congratulations! Your Seal is Ready! 🎉🎉',
-          message: `
-            <div style="text-align: center;">
-              <p style="margin-bottom: 16px; color: #606266;">Click the button below to pay and get your seal</p>
-              <a 
-                href="${data.value.url}" 
-                target="_blank" 
-                style="
-                  display: inline-block;
-                  background: #1e2736;
-                  color: white;
-                  padding: 8px 24px;
-                  border-radius: 4px;
-                  text-decoration: none;
-                  font-weight: 500;
-                  transition: background-color 0.3s ease;
-                "
-                onmouseover="this.style.backgroundColor='#2c3747'"
-                onmouseout="this.style.backgroundColor='#1e2736'"
-                class="payment-link"
-
-              >
-                Download Now
-              </a>
-            </div>
-          `,
-          showCancelButton: false,
-          showConfirmButton: false,
-          dangerouslyUseHTMLString: true,
-          center: true,
-          customClass: 'download-dialog-box',
-        })
-
-        nextTick(() => {
-          const paymentLink = document.querySelector(
-            '.download-dialog-box .payment-link'
-          )
-          if (paymentLink) {
-            paymentLink.addEventListener('click', () => {
-              ElMessageBox.close()
-            })
-          }
-        })
-
-        // 立即开始轮询
-        let attempts = 0
-        const maxAttempts = 120 // 最多检查60次，每次间隔3秒
-
-        const checkPayment = async () => {
-          while (attempts < maxAttempts) {
-            const success = await pollPaymentStatus(sessionId)
-
-            if (success) {
-              onSuccess?.()
-              ElMessage.success('Payment successful!')
-              localStorage.removeItem('pending_payment_session')
-              return true
-            }
-
-            attempts++
-            await new Promise(resolve => setTimeout(resolve, 4000))
-          }
-
-          console.log('支付检查超时')
-          ElMessage.warning('Payment status check timed out')
-          localStorage.removeItem('pending_payment_session')
-          return false
-        }
-
-        // 开始检查支付状态
-        console.log('开始检查支付状态')
-        checkPayment()
-      }
-    } catch (error) {
-      console.error('Payment error:', error)
-      ElMessage.error(error.message || 'Failed to initiate checkout')
     }
   }
 
   return {
-    handlePayment,
     pollPaymentStatus,
     isPolling,
     paymentStatus,
+    paymentUrl,
+    watchUserLogin,
+    handlePaymentClick,
+    emitter,
+    currentPaymentType,
   }
 }

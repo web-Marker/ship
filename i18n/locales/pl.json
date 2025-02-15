@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Edytuj",
+    "pricing": "Cennik",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "login": "Zaloguj się",
+    "signup": "Zarejestruj się",
+    "logout": "Wyloguj się",
+    "myOrders": "Moje zamówienia"
+  },
+  "brand": {
+    "seal": "Pieczęć",
+    "digital": "Cyfrowa"
+  },
+  "auth": {
+    "signInTitle": "Zaloguj się na swoje konto",
+    "signInDesc": "Zaloguj się na swoje konto, aby szybciej składać zamówienia.",
+    "email": "Twój email",
+    "password": "Twoje hasło",
+    "emailPlaceholder": "Wpisz swój email",
+    "passwordPlaceholder": "Wpisz swoje hasło",
+    "signingIn": "Logowanie...",
+    "signIn": "Zaloguj się",
+    "orContinueWith": "Lub kontynuuj przez",
+    "signInWithGoogle": "Zaloguj się przez Google",
+    "noAccount": "Nie masz konta?",
+    "signUpLink": "Zarejestruj się",
+    "pleaseLoginFirst": "Proszę najpierw się zalogować",
+    "createAccount": "Utwórz konto",
+    "registerWithEmail": "Zarejestruj się przez email",
+    "registering": "Rejestracja...",
+    "signUp": "Zarejestruj się",
+    "alreadyHaveAccount": "Masz już konto?"
+  },
+  "contact": {
+    "emailPlaceholder": "Adres email",
+    "emailRequired": "Proszę podać adres email.",
+    "emailInvalid": "Proszę podać prawidłowy adres email.",
+    "messagePlaceholder": "Twoja wiadomość",
+    "messageRequired": "Proszę wpisać wiadomość.",
+    "sendMessage": "Wyślij wiadomość",
+    "sending": "Wysyłanie...",
+    "sentSuccess": "Wiadomość wysłana pomyślnie!",
+    "sentError": "Coś poszło nie tak!",
+    "sendFailed": "Nie udało się wysłać wiadomości",
+    "namePlaceholder": "Pełne imię i nazwisko",
+    "nameRequired": "Proszę podać pełne imię i nazwisko.",
+    "title": "Skontaktuj się z twórcą",
+    "description": "Jestem tutaj, aby pomóc.",
+    "message": "Masz pytania? Jestem tutaj, aby pomóc. Wypełnij formularz lub wyślij email."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Generuj pieczęć"
+    },
+    "title": "Inteligentny projektant pieczęci cyfrowych - Twórz profesjonalne pieczęcie z łatwością",
+    "description": "Wypróbuj nasz kreator pieczęci cyfrowych wspomagany sztuczną inteligencją, który pomoże Ci tworzyć profesjonalne pieczęcie firmowe, pieczęcie umów i niestandardowe pieczęcie cyfrowe za pomocą kilku kliknięć.",
+    "features": {
+      "templates": {
+        "title": "Profesjonalne szablony",
+        "description": "Wybieraj spośród różnych profesjonalnych szablonów pieczęci, w tym pieczęci firmowych, pieczęci umów i innych. Dostosuj rozmiar, szerokość obramowania, kolory i inne parametry według swoich potrzeb."
+      },
+      "security": {
+        "title": "Ochrona bezpieczeństwa",
+        "description": "Wbudowany generator wzorów zabezpieczających z regulowaną gęstością i rozmiarem wzoru. Zawiera efekty starzenia i zadziorów dla autentycznie wyglądających pieczęci z zwiększonym bezpieczeństwem."
+      },
+      "customization": {
+        "title": "W pełni konfigurowalne",
+        "description": "Dostosuj każdy aspekt swojej pieczęci - od treści tekstu i czcionki po współczynnik kompresji i czynniki dystrybucji. Dodawaj obrazy i wewnętrzne okręgi, aby tworzyć unikalne projekty pieczęci."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Informacje i zasoby o pieczęciach cyfrowych",
+      "sectionDescription": "Odkryj nasze najnowsze artykuły o pieczęciach cyfrowych, technologii uwierzytelniania i profesjonalnym projektowaniu pieczęci.",
+      "readMore": "Czytaj więcej",
+      "wantMore": "Chcesz wiedzieć więcej?",
+      "goHere": "Przejdź tutaj"
+    }
+  },
+  "footer": {
+    "product": "Produkt",
+    "company": "Firma",
+    "stayUpdated": "Bądź na bieżąco",
+    "subscribe": "Subskrybuj",
+    "enterEmail": "Wpisz swój email",
+    "subscribeSuccess": "Pomyślnie zasubskrybowano!",
+    "pleaseEnterEmail": "Proszę wpisać email",
+    "copyright": "Copyright © {year} SealDigital. Wszelkie prawa zastrzeżone.",
+    "privacy": "Prywatność",
+    "terms": "Warunki użytkowania",
+    "stripeClimate": "Członek Stripe Climate"
+  },
+  "pricing": {
+    "title": "Cennik",
+    "plans": {
+      "singleSeal": {
+        "name": "Pojedyncza pieczęć",
+        "price": "9,99 zł",
+        "features": [
+          "Utwórz 1 pieczęć bez znaku wodnego",
+          "Standardowe szablony pieczęci",
+          "Wysoka jakość w formacie PNG",
+          "Podstawowe wsparcie przez email",
+          "Dostęp z jednego urządzenia",
+          "Gwarantowana dostawa w ciągu 24 godzin"
+        ],
+        "button": "Rozpocznij"
+      },
+      "proMonthly": {
+        "name": "Pro Miesięczne",
+        "price": "49,99 zł",
+        "features": [
+          "Nieograniczone tworzenie pieczęci",
+          "Wszystkie szablony premium",
+          "Pobieranie bez znaku wodnego",
+          "Priorytetowa obsługa klienta",
+          "Dostęp z wielu urządzeń",
+          "Natychmiastowa dostawa"
+        ],
+        "button": "Rozpocznij"
+      },
+      "customDesign": {
+        "name": "Projekt niestandardowy",
+        "price": "Skontaktuj się",
+        "features": [
+          "W pełni niestandardowy projekt pieczęci",
+          "Tworzenie ekskluzywnych szablonów",
+          "Dedykowana usługa projektowa",
+          "Nieograniczone poprawki",
+          "Prawa do użytku komercyjnego",
+          "Priorytetowe wsparcie"
+        ],
+        "button": "Kontakt"
+      }
+    }
+  },
+  "blog": {
+    "title": "Informacje i zasoby o pieczęciach cyfrowych",
+    "description": "Odkryj nasze najnowsze artykuły o pieczęciach cyfrowych, technologii uwierzytelniania i profesjonalnym projektowaniu pieczęci. Bądź na bieżąco z trendami branżowymi i najlepszymi praktykami.",
+    "articleCount": "{count} artykułów, które pomogą Ci opanować pieczęcie cyfrowe",
+    "categories": {
+      "allPosts": "Wszystkie posty",
+      "designTips": "Wskazówki projektowe",
+      "security": "Bezpieczeństwo",
+      "tutorials": "Poradniki"
+    }
+  },
+  "terms": {
+    "title": "Warunki użytkowania - DigitalSeal Studio",
+    "lastUpdated": "Ostatnia aktualizacja: 12 grudnia 2024",
+    "sections": {
+      "general": {
+        "title": "Warunki ogólne",
+        "content": "Uzyskując dostęp i składając zamówienia w DigitalSeal Studio, potwierdzasz, że zgadzasz się i jesteś związany warunkami usługi zawartymi w niniejszych Warunkach użytkowania. Warunki te dotyczą całej strony internetowej i wszystkich komunikacji email lub innych między Tobą a DigitalSeal Studio.",
+        "liability": "W żadnym wypadku zespół DigitalSeal Studio nie ponosi odpowiedzialności za jakiekolwiek szkody bezpośrednie, pośrednie, specjalne, przypadkowe lub wynikowe, w tym między innymi utratę danych lub zysków, wynikające z użytkowania lub niemożności użytkowania materiałów na tej stronie, nawet jeśli zespół DigitalSeal Studio lub upoważniony przedstawiciel został poinformowany o możliwości wystąpienia takich szkód."
+      },
+      "license": {
+        "title": "Licencja",
+        "content": "DigitalSeal Studio udziela Ci odwołalnej, niewyłącznej, nieprzenoszalnej, ograniczonej licencji na pobieranie, instalowanie i korzystanie ze strony internetowej ściśle zgodnie z warunkami niniejszej umowy."
+      },
+      "definitions": {
+        "title": "Definicje i kluczowe terminy",
+        "content": "Aby wyjaśnić sprawy jak najjaśniej w niniejszych Warunkach użytkowania, za każdym razem, gdy te terminy są wymieniane, są one ściśle zdefiniowane jako:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "mała ilość danych generowana przez stronę internetową i zapisywana przez przeglądarkę internetową. Służy do identyfikacji przeglądarki, dostarczania analiz, zapamiętywania informacji o Tobie."
+          },
+          "company": {
+            "name": "Firma",
+            "description": "gdy te zasady wspominają o 'Firmie', 'my', 'nas' lub 'nasz', odnosi się to do DigitalSeal Studio, które jest odpowiedzialne za Twoje informacje zgodnie z niniejszymi Warunkami użytkowania."
+          },
+          "service": {
+            "name": "Usługa",
+            "description": "odnosi się do platformy tworzenia pieczęci i usług świadczonych przez DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Strona internetowa",
+            "description": "strona DigitalSeal Studio, dostępna przez https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "Ty",
+            "description": "osoba lub podmiot, który jest zarejestrowany w DigitalSeal Studio w celu korzystania z Usług."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Ograniczenia",
+        "content": "Zgadzasz się nie wykonywać i nie zezwalać innym na:",
+        "list": [
+          "Licencjonowanie, sprzedaż, wynajem, dzierżawę, przypisywanie, rozpowszechnianie, transmisję, hosting, outsourcing, ujawnianie lub komercyjne wykorzystywanie strony internetowej lub udostępnianie platformy osobom trzecim.",
+          "Modyfikowanie, tworzenie dzieł pochodnych, demontaż, deszyfrowanie, dekompilację lub inżynierię wsteczną jakiejkolwiek części strony internetowej.",
+          "Usuwanie, zmienianie lub ukrywanie jakichkolwiek informacji o prawach własności DigitalSeal Studio lub jego podmiotów stowarzyszonych, partnerów, dostawców lub licencjodawców ze strony internetowej."
+        ]
+      },
+      "contact": {
+        "title": "Skontaktuj się z nami",
+        "content": "W przypadku jakichkolwiek pytań dotyczących niniejszych Warunków użytkowania, prosimy o kontakt przez naszą stronę kontaktową."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Wybierz szablon",
+    "clickToChange": "Kliknij, aby zmienić",
+    "templates": {
+      "companySeal": "Pieczęć firmowa",
+      "contractSeal1": "Pieczęć umowy 1",
+      "companySeal2": "Pieczęć firmowa 2"
+    },
+    "menu": {
+      "basic": "Podstawowe #0",
+      "circleText1": "Tekst okrągły #1",
+      "circleText2": "Tekst okrągły #2",
+      "circleText3": "Tekst okrągły #3",
+      "circleText4": "Tekst okrągły #4",
+      "image": "Obraz #5",
+      "antiCounterfeiting": "Zabezpieczenie #6",
+      "antiAliasing": "Wygładzanie #7",
+      "stampAging": "Starzenie pieczęci #8",
+      "innerCircle": "Wewnętrzny okrąg #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Szerokość",
+        "height": "Wysokość",
+        "circleBorderWidth": "Szerokość obramowania okręgu",
+        "color": "Kolor"
+      },
+      "text": {
+        "companyName": "Nazwa firmy",
+        "font": "Czcionka",
+        "fontSize": "Rozmiar czcionki (mm)",
+        "fontWeight": "Grubość czcionki",
+        "compressionRatio": "Współczynnik kompresji",
+        "distributionFactor": "Współczynnik dystrybucji",
+        "margin": "Margines (mm)",
+        "adjustText": "Dostosuj tekst",
+        "adjustment": "Dostosowanie",
+        "startAngle": "Kąt początkowy",
+        "rotationDirection": "Kierunek obrotu",
+        "clockwise": "Zgodnie z ruchem wskazówek",
+        "counterclockwise": "Przeciwnie do ruchu wskazówek",
+        "addNewRow": "Dodaj nowy wiersz",
+        "row": "Wiersz",
+        "delete": "Usuń",
+        "letterSpacing": "Odstęp między literami",
+        "verticalPosition": "Pozycja pionowa",
+        "textContent": "Treść tekstu",
+        "enterTextContent": "Wprowadź treść tekstu",
+        "sealCode": "Kod pieczęci",
+        "enterSealCode": "Wprowadź kod pieczęci",
+        "taxNumber": "NIP",
+        "enterTaxNumber": "Wprowadź NIP"
+      },
+      "image": {
+        "selectImage": "Wybierz obraz",
+        "imageWidth": "Szerokość obrazu",
+        "imageHeight": "Wysokość obrazu",
+        "horizontalPosition": "Pozycja pozioma",
+        "verticalPosition": "Pozycja pionowa",
+        "keepAspectRatio": "Zachowaj proporcje",
+        "addPictures": "Dodaj obrazy",
+        "title": "Obraz"
+      },
+      "security": {
+        "enableSecurityPattern": "Włącz wzór zabezpieczający",
+        "refreshPattern": "Odśwież wzór",
+        "patternCount": "Liczba wzorów",
+        "patternLength": "Długość wzoru (mm)",
+        "patternWidth": "Szerokość wzoru (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Włącz efekt zadziorów",
+        "burrWidth": "Szerokość zadzioru (mm)",
+        "burrHeight": "Wysokość zadzioru (mm)",
+        "burrProbability": "Prawdopodobieństwo zadzioru",
+        "burrOffset": "Przesunięcie zadzioru (mm)",
+        "burrPoints": "Punkty zadziorów",
+        "refreshBurr": "Odśwież zadziory"
+      },
+      "aging": {
+        "enableAgingEffect": "Włącz efekt starzenia",
+        "manualAging": "Starzenie ręczne",
+        "agingIntensity": "Intensywność starzenia",
+        "refreshAging": "Odśwież starzenie"
+      },
+      "innerCircle": {
+        "addNewRow": "Dodaj nowy wiersz",
+        "row": "Wiersz",
+        "delete": "Usuń",
+        "width": "Szerokość (mm)",
+        "radiusX": "Promień X okręgu wewnętrznego (mm)",
+        "radiusY": "Promień Y okręgu wewnętrznego (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Proszę się zalogować, aby pobrać pieczęć bez znaku wodnego",
+      "joinVip": "Dołącz do VIP",
+      "downloadStamp": "Pobierz pieczęć",
+      "downloadFree": "Pobierz za darmo",
+      "flashSale": "Błyskawiczna wyprzedaż"
+    }
+  },
+  "payment": {
+    "success": "Płatność zakończona sukcesem!",
+    "failed": "Płatność nie powiodła się",
+    "downloadNotice": "Twoja pieczęć pobiera się automatycznie. Sprawdź pobrane pliki w przeglądarce.",
+    "redirecting": "Przekierowanie do strony głównej za {seconds} sekund...",
+    "backToHome": "Powrót do strony głównej",
+    "preparing": "Przygotowywanie Twojej pieczęci...",
+    "dialogTitle": "Powiadomienie o pobieraniu",
+    "download": "Pobierz",
+    "close": "Zamknij"
+  },
+  "orders": {
+    "loading": "Ładowanie...",
+    "fetchError": "Błąd podczas ładowania zamówień",
+    "paymentTime": "Czas płatności",
+    "status": "Status",
+    "action": "Akcja",
+    "paid": "Opłacone",
+    "downloadSeal": "Pobierz pieczęć",
+    "noOrders": "Nie znaleziono zamówień"
+  }
+}

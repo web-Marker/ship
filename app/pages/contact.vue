@@ -2,21 +2,31 @@
 definePageMeta({
   layout: 'landing',
 })
+
+const { t } = useI18n()
 </script>
 
 <template>
   <LandingContainer>
     <LandingSectionhead>
-      <template #title>Contact</template>
-      <template #desc>I am here to help.</template>
+      <template #title>{{ t('nav.contact') }}</template>
+      <template #desc>{{
+        t('contact.description', 'I am here to help.')
+      }}</template>
     </LandingSectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Creator</h2>
+        <h2 class="font-medium text-2xl text-gray-800">
+          {{ t('contact.title', 'Contact Creator') }}
+        </h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? I am here to help. Fill up the form or send
-          email.
+          {{
+            t(
+              'contact.message',
+              'Have something to say? I am here to help. Fill up the form or send email.'
+            )
+          }}
         </p>
         <div class="mt-5">
           <!-- <div class="flex items-center mt-2 space-x-2 text-gray-600">

@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Modifica",
+    "pricing": "Prezzi",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "login": "Accedi",
+    "signup": "Registrati",
+    "logout": "Esci",
+    "myOrders": "I miei ordini"
+  },
+  "brand": {
+    "seal": "Timbro",
+    "digital": "Digitale"
+  },
+  "auth": {
+    "signInTitle": "Accedi al tuo account",
+    "signInDesc": "Accedi al tuo account per un ordine più rapido.",
+    "email": "La tua email",
+    "password": "La tua password",
+    "emailPlaceholder": "Inserisci la tua email",
+    "passwordPlaceholder": "Inserisci la tua password",
+    "signingIn": "Accesso in corso...",
+    "signIn": "Accedi",
+    "orContinueWith": "O continua con",
+    "signInWithGoogle": "Accedi con Google",
+    "noAccount": "Non hai un account?",
+    "signUpLink": "Registrati",
+    "pleaseLoginFirst": "Per favore, accedi prima",
+    "createAccount": "Crea account",
+    "registerWithEmail": "Registrati con email",
+    "registering": "Registrazione in corso...",
+    "signUp": "Registrati",
+    "alreadyHaveAccount": "Hai già un account?"
+  },
+  "contact": {
+    "emailPlaceholder": "Indirizzo email",
+    "emailRequired": "Per favore, inserisci il tuo indirizzo email.",
+    "emailInvalid": "Per favore, inserisci un indirizzo email valido.",
+    "messagePlaceholder": "Il tuo messaggio",
+    "messageRequired": "Per favore, inserisci il tuo messaggio.",
+    "sendMessage": "Invia messaggio",
+    "sending": "Invio in corso...",
+    "sentSuccess": "Messaggio inviato con successo!",
+    "sentError": "Qualcosa è andato storto!",
+    "sendFailed": "Invio del messaggio fallito",
+    "namePlaceholder": "Nome completo",
+    "nameRequired": "Per favore, inserisci il tuo nome completo.",
+    "title": "Contatta il creatore",
+    "description": "Sono qui per aiutare.",
+    "message": "Hai qualcosa in mente? Sono qui per aiutare. Compila il modulo o invia un'email."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Genera timbro"
+    },
+    "title": "Designer Intelligente di Timbri Digitali - Crea timbri professionali facilmente",
+    "description": "Prova il nostro creatore di timbri digitali basato su AI che ti aiuta a creare timbri aziendali professionali, timbri per contratti e timbri digitali personalizzati con pochi clic.",
+    "features": {
+      "templates": {
+        "title": "Template professionali",
+        "description": "Scegli tra vari template professionali di timbri inclusi timbri aziendali, timbri per contratti e altro. Personalizza dimensioni, larghezza del bordo, colori e altri parametri secondo le tue esigenze."
+      },
+      "security": {
+        "title": "Protezione di sicurezza",
+        "description": "Generatore di pattern di sicurezza integrato con densità e dimensione del pattern regolabili. Include effetti di invecchiamento e sbavature per timbri dall'aspetto autentico con sicurezza aumentata."
+      },
+      "customization": {
+        "title": "Completamente personalizzabile",
+        "description": "Personalizza ogni aspetto del tuo timbro - dal contenuto del testo e font al rapporto di compressione e fattori di distribuzione. Aggiungi immagini e cerchi interni per creare design di timbri unici."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Informazioni e risorse sui timbri digitali",
+      "sectionDescription": "Esplora i nostri ultimi articoli sui timbri digitali, tecnologia di autenticazione e design professionale dei timbri.",
+      "readMore": "Leggi di più",
+      "wantMore": "Vuoi saperne di più?",
+      "goHere": "Vai qui"
+    }
+  },
+  "footer": {
+    "product": "Prodotto",
+    "company": "Azienda",
+    "stayUpdated": "Rimani aggiornato",
+    "subscribe": "Iscriviti",
+    "enterEmail": "Inserisci la tua email",
+    "subscribeSuccess": "Iscrizione completata con successo!",
+    "pleaseEnterEmail": "Per favore, inserisci la tua email",
+    "copyright": "Copyright © {year} SealDigital. Tutti i diritti riservati.",
+    "privacy": "Privacy",
+    "terms": "Termini d'uso",
+    "stripeClimate": "Membro Stripe Climate"
+  },
+  "pricing": {
+    "title": "Prezzi",
+    "plans": {
+      "singleSeal": {
+        "name": "Singolo timbro",
+        "price": "$1.99",
+        "features": [
+          "Crea 1 timbro senza filigrana",
+          "Template di timbri standard",
+          "Alta qualità in formato PNG",
+          "Supporto email di base",
+          "Accesso da un dispositivo",
+          "Consegna garantita entro 24 ore"
+        ],
+        "button": "Inizia"
+      },
+      "proMonthly": {
+        "name": "Pro Mensile",
+        "price": "$9.9",
+        "features": [
+          "Creazione illimitata di timbri",
+          "Tutti i template premium",
+          "Download senza filigrana",
+          "Supporto clienti prioritario",
+          "Accesso da più dispositivi",
+          "Consegna istantanea"
+        ],
+        "button": "Inizia"
+      },
+      "customDesign": {
+        "name": "Design personalizzato",
+        "price": "Contattaci",
+        "features": [
+          "Design del timbro completamente personalizzato",
+          "Creazione di template esclusivi",
+          "Servizio di design dedicato",
+          "Revisioni illimitate",
+          "Diritti di uso commerciale",
+          "Supporto prioritario"
+        ],
+        "button": "Contattaci"
+      }
+    }
+  },
+  "blog": {
+    "title": "Informazioni e risorse sui timbri digitali",
+    "description": "Esplora i nostri ultimi articoli sui timbri digitali, tecnologia di autenticazione e design professionale dei timbri. Rimani aggiornato sulle tendenze del settore e le migliori pratiche.",
+    "articleCount": "{count} articoli che ti aiuteranno a padroneggiare i timbri digitali",
+    "categories": {
+      "allPosts": "Tutti i post",
+      "designTips": "Suggerimenti di design",
+      "security": "Sicurezza",
+      "tutorials": "Tutorial"
+    }
+  },
+  "terms": {
+    "title": "Termini d'uso - DigitalSeal Studio",
+    "lastUpdated": "Ultimo aggiornamento: 12 dicembre 2024",
+    "sections": {
+      "general": {
+        "title": "Termini generali",
+        "content": "Accedendo e ordinando da DigitalSeal Studio, confermi di accettare e essere vincolato dai termini di servizio contenuti in questi Termini d'uso. Questi termini si applicano all'intero sito web e a tutte le comunicazioni email o altre tra te e DigitalSeal Studio.",
+        "liability": "In nessun caso il team di DigitalSeal Studio sarà responsabile per danni diretti, indiretti, speciali, incidentali o consequenziali, inclusi, ma non limitati a, perdita di dati o profitti, derivanti dall'uso o dall'impossibilità di utilizzare i materiali su questo sito web, anche se il team di DigitalSeal Studio o un rappresentante autorizzato è stato avvisato della possibilità di tali danni."
+      },
+      "license": {
+        "title": "Licenza",
+        "content": "DigitalSeal Studio ti concede una licenza revocabile, non esclusiva, non trasferibile, limitata per scaricare, installare e utilizzare il sito web strettamente in conformità con i termini di questo accordo."
+      },
+      "definitions": {
+        "title": "Definizioni e termini chiave",
+        "content": "Per spiegare le cose nel modo più chiaro possibile in questi Termini d'uso, ogni volta che uno di questi termini viene menzionato, sono rigorosamente definiti come:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "una piccola quantità di dati generati da un sito web e salvati dal tuo browser web. Viene utilizzato per identificare il tuo browser, fornire analisi, ricordare informazioni su di te."
+          },
+          "company": {
+            "name": "Azienda",
+            "description": "quando queste regole menzionano 'Azienda', 'noi', 'ci' o 'nostro', si riferisce a DigitalSeal Studio, che è responsabile delle tue informazioni secondo questi Termini d'uso."
+          },
+          "service": {
+            "name": "Servizio",
+            "description": "si riferisce alla piattaforma di creazione di timbri e ai servizi forniti da DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Sito web",
+            "description": "il sito di DigitalSeal Studio, accessibile tramite https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "Tu",
+            "description": "persona o entità che è registrata con DigitalSeal Studio per utilizzare i Servizi."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Restrizioni",
+        "content": "Accetti di non e non permetterai ad altri di:",
+        "list": [
+          "Concedere in licenza, vendere, affittare, trasferire, distribuire, trasmettere, ospitare, esternalizzare, divulgare o altrimenti sfruttare commercialmente il sito web o rendere la piattaforma disponibile a terze parti.",
+          "Modificare, creare opere derivate, disassemblare, decrittare, decompilare o fare reverse engineering di qualsiasi parte del sito web.",
+          "Rimuovere, alterare o nascondere qualsiasi avviso di proprietà di DigitalSeal Studio o dei suoi affiliati, partner, fornitori o licenziatari dal sito web."
+        ]
+      },
+      "contact": {
+        "title": "Contattaci",
+        "content": "Per qualsiasi domanda su questi Termini d'uso, contattaci attraverso la nostra pagina dei contatti."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Seleziona template",
+    "clickToChange": "Clicca per modificare",
+    "templates": {
+      "companySeal": "Timbro aziendale",
+      "contractSeal1": "Timbro per contratti 1",
+      "companySeal2": "Timbro aziendale 2"
+    },
+    "menu": {
+      "basic": "Base #0",
+      "circleText1": "Testo circolare #1",
+      "circleText2": "Testo circolare #2",
+      "circleText3": "Testo circolare #3",
+      "circleText4": "Testo circolare #4",
+      "image": "Immagine #5",
+      "antiCounterfeiting": "Anti-contraffazione #6",
+      "antiAliasing": "Anti-aliasing #7",
+      "stampAging": "Invecchiamento timbro #8",
+      "innerCircle": "Cerchio interno #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Larghezza",
+        "height": "Altezza",
+        "circleBorderWidth": "Larghezza bordo cerchio",
+        "color": "Colore"
+      },
+      "text": {
+        "companyName": "Nome azienda",
+        "font": "Font",
+        "fontSize": "Dimensione font (mm)",
+        "fontWeight": "Spessore font",
+        "compressionRatio": "Rapporto di compressione",
+        "distributionFactor": "Fattore di distribuzione",
+        "margin": "Margine (mm)",
+        "adjustText": "Regola testo",
+        "adjustment": "Regolazione",
+        "startAngle": "Angolo iniziale",
+        "rotationDirection": "Direzione rotazione",
+        "clockwise": "Orario",
+        "counterclockwise": "Antiorario",
+        "addNewRow": "Aggiungi nuova riga",
+        "row": "Riga",
+        "delete": "Elimina",
+        "letterSpacing": "Spaziatura lettere",
+        "verticalPosition": "Posizione verticale",
+        "textContent": "Contenuto testo",
+        "enterTextContent": "Inserisci contenuto testo",
+        "sealCode": "Codice timbro",
+        "enterSealCode": "Inserisci codice timbro",
+        "taxNumber": "Partita IVA",
+        "enterTaxNumber": "Inserisci Partita IVA"
+      },
+      "image": {
+        "selectImage": "Seleziona immagine",
+        "imageWidth": "Larghezza immagine",
+        "imageHeight": "Altezza immagine",
+        "horizontalPosition": "Posizione orizzontale",
+        "verticalPosition": "Posizione verticale",
+        "keepAspectRatio": "Mantieni proporzioni",
+        "addPictures": "Aggiungi immagini",
+        "title": "Immagine"
+      },
+      "security": {
+        "enableSecurityPattern": "Abilita pattern di sicurezza",
+        "refreshPattern": "Aggiorna pattern",
+        "patternCount": "Numero di pattern",
+        "patternLength": "Lunghezza pattern (mm)",
+        "patternWidth": "Larghezza pattern (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Abilita effetto sbavatura",
+        "burrWidth": "Larghezza sbavatura (mm)",
+        "burrHeight": "Altezza sbavatura (mm)",
+        "burrProbability": "Probabilità sbavatura",
+        "burrOffset": "Offset sbavatura (mm)",
+        "burrPoints": "Punti sbavatura",
+        "refreshBurr": "Aggiorna sbavatura"
+      },
+      "aging": {
+        "enableAgingEffect": "Abilita effetto invecchiamento",
+        "manualAging": "Invecchiamento manuale",
+        "agingIntensity": "Intensità invecchiamento",
+        "refreshAging": "Aggiorna invecchiamento"
+      },
+      "innerCircle": {
+        "addNewRow": "Aggiungi nuova riga",
+        "row": "Riga",
+        "delete": "Elimina",
+        "width": "Larghezza (mm)",
+        "radiusX": "Raggio X cerchio interno (mm)",
+        "radiusY": "Raggio Y cerchio interno (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Per favore, accedi per scaricare il timbro senza filigrana",
+      "joinVip": "Diventa VIP",
+      "downloadStamp": "Scarica timbro",
+      "downloadFree": "Scarica gratis",
+      "flashSale": "Offerta lampo"
+    }
+  },
+  "payment": {
+    "success": "Pagamento riuscito!",
+    "failed": "Pagamento fallito",
+    "downloadNotice": "Il tuo timbro si sta scaricando automaticamente. Controlla i download nel tuo browser.",
+    "redirecting": "Reindirizzamento alla home page tra {seconds} secondi...",
+    "backToHome": "Torna alla home",
+    "preparing": "Preparazione del tuo timbro...",
+    "dialogTitle": "Avviso di download",
+    "download": "Scarica",
+    "close": "Chiudi"
+  },
+  "orders": {
+    "loading": "Caricamento...",
+    "fetchError": "Errore nel caricamento delle ordinazioni",
+    "paymentTime": "Tempo di pagamento",
+    "status": "Stato",
+    "action": "Azione",
+    "paid": "Pagato",
+    "downloadSeal": "Scarica timbro",
+    "noOrders": "Nessuna ordinazione trovata"
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Rediger",
+    "pricing": "Priser",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "login": "Log ind",
+    "signup": "Tilmeld",
+    "logout": "Log ud",
+    "myOrders": "Mine ordrer"
+  },
+  "brand": {
+    "seal": "Stempel",
+    "digital": "Digital"
+  },
+  "auth": {
+    "signInTitle": "Log ind på din konto",
+    "signInDesc": "Log ind på din konto for hurtigere bestilling.",
+    "email": "Din e-mail",
+    "password": "Dit kodeord",
+    "emailPlaceholder": "Indtast din e-mail",
+    "passwordPlaceholder": "Indtast dit kodeord",
+    "signingIn": "Logger ind...",
+    "signIn": "Log ind",
+    "orContinueWith": "Eller fortsæt med",
+    "signInWithGoogle": "Log ind med Google",
+    "noAccount": "Har du ikke en konto?",
+    "signUpLink": "Tilmeld dig",
+    "pleaseLoginFirst": "Log venligst ind først",
+    "createAccount": "Opret konto",
+    "registerWithEmail": "Registrer med e-mail",
+    "registering": "Registrerer...",
+    "signUp": "Tilmeld dig",
+    "alreadyHaveAccount": "Har du allerede en konto?"
+  },
+  "contact": {
+    "emailPlaceholder": "E-mailadresse",
+    "emailRequired": "Indtast venligst din e-mailadresse.",
+    "emailInvalid": "Indtast venligst en gyldig e-mailadresse.",
+    "messagePlaceholder": "Din besked",
+    "messageRequired": "Indtast venligst din besked.",
+    "sendMessage": "Send besked",
+    "sending": "Sender...",
+    "sentSuccess": "Besked sendt med succes!",
+    "sentError": "Noget gik galt!",
+    "sendFailed": "Kunne ikke sende besked",
+    "namePlaceholder": "Fulde navn",
+    "nameRequired": "Indtast venligst dit fulde navn.",
+    "title": "Kontakt skaberen",
+    "description": "Jeg er her for at hjælpe.",
+    "message": "Har du noget på hjerte? Jeg er her for at hjælpe. Udfyld formularen eller send en e-mail."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Generer stempel"
+    },
+    "title": "Smart Digital Stempel Designer - Lav professionelle stempler nemt",
+    "description": "Prøv vores AI-drevne digitale stempeldesigner, der hjælper dig med at skabe professionelle firmatempler, kontraktstempler og brugerdefinerede digitale stempler med få klik.",
+    "features": {
+      "templates": {
+        "title": "Professionelle skabeloner",
+        "description": "Vælg mellem forskellige professionelle stempelskabeloner, herunder firmatempler, kontraktstempler og mere. Tilpas størrelse, kantbredde, farver og andre parametre efter dine behov."
+      },
+      "security": {
+        "title": "Sikkerhedsbeskyttelse",
+        "description": "Indbygget sikkerhedsmønstergenerator med justerbar tæthed og mønsterstørrelse. Inkluderer aldrings- og gradefekter for autentisk udseende stempler med øget sikkerhed."
+      },
+      "customization": {
+        "title": "Fuldt tilpasning",
+        "description": "Tilpas hvert aspekt af dit stempel - fra tekstindhold og skrifttyper til kompressionsforhold og fordelingsfaktorer. Tilføj billeder og indercirkler for at skabe unikke stempeldesign."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Information og ressourcer om digitale stempler",
+      "sectionDescription": "Udforsk vores seneste artikler om digitale stempler, autentificeringsteknologi og professionelt stempeldesign.",
+      "readMore": "Læs mere",
+      "wantMore": "Vil du vide mere?",
+      "goHere": "Gå hertil"
+    }
+  },
+  "footer": {
+    "product": "Produkt",
+    "company": "Virksomhed",
+    "stayUpdated": "Hold dig opdateret",
+    "subscribe": "Abonnér",
+    "enterEmail": "Indtast din e-mail",
+    "subscribeSuccess": "Abonnement aktiveret med succes!",
+    "pleaseEnterEmail": "Indtast venligst din e-mail",
+    "copyright": "Copyright © {year} SealDigital. Alle rettigheder forbeholdes.",
+    "privacy": "Privatlivspolitik",
+    "terms": "Brugervilkår",
+    "stripeClimate": "Stripe Climate medlem"
+  },
+  "pricing": {
+    "title": "Priser",
+    "plans": {
+      "singleSeal": {
+        "name": "Enkelt stempel",
+        "price": "$1.99",
+        "features": [
+          "Opret 1 stempel uden vandmærke",
+          "Standard stempelskabeloner",
+          "Høj kvalitet PNG-format",
+          "Basis e-mailsupport",
+          "Adgang fra én enhed",
+          "Garanteret levering inden for 24 timer"
+        ],
+        "button": "Start"
+      },
+      "proMonthly": {
+        "name": "Pro Månedlig",
+        "price": "$9.9",
+        "features": [
+          "Ubegrænset stempeloprettelse",
+          "Alle premium skabeloner",
+          "Download uden vandmærke",
+          "Prioriteret kundesupport",
+          "Adgang fra flere enheder",
+          "Øjeblikkelig levering"
+        ],
+        "button": "Start"
+      },
+      "customDesign": {
+        "name": "Tilpasset design",
+        "price": "Kontakt os",
+        "features": [
+          "Fuldt tilpasset stempeldesign",
+          "Oprettelse af eksklusive skabeloner",
+          "Dedikeret designservice",
+          "Ubegrænsede revisioner",
+          "Kommercielle brugsrettigheder",
+          "Prioriteret support"
+        ],
+        "button": "Kontakt os"
+      }
+    }
+  },
+  "blog": {
+    "title": "Information og ressourcer om digitale stempler",
+    "description": "Udforsk vores seneste artikler om digitale stempler, autentificeringsteknologi og professionelt stempeldesign. Hold dig opdateret om branchens trends og bedste praksis.",
+    "articleCount": "{count} artikler der hjælper dig med at beherske digitale stempler",
+    "categories": {
+      "allPosts": "Alle indlæg",
+      "designTips": "Designtips",
+      "security": "Sikkerhed",
+      "tutorials": "Vejledninger"
+    }
+  },
+  "terms": {
+    "title": "Brugervilkår - DigitalSeal Studio",
+    "lastUpdated": "Sidst opdateret: 12. december 2024",
+    "sections": {
+      "general": {
+        "title": "Generelle vilkår",
+        "content": "Ved at tilgå og bestille fra DigitalSeal Studio bekræfter du, at du accepterer og er bundet af servicevilkårene i disse brugervilkår. Disse vilkår gælder for hele hjemmesiden og al e-mail eller anden kommunikation mellem dig og DigitalSeal Studio.",
+        "liability": "Under ingen omstændigheder vil DigitalSeal Studio-teamet være ansvarlig for nogen direkte, indirekte, særlige, tilfældige eller følgeskader, herunder, men ikke begrænset til, tab af data eller fortjeneste, der opstår som følge af brug eller manglende mulighed for at bruge materialerne på denne hjemmeside, selv hvis DigitalSeal Studio-teamet eller en autoriseret repræsentant er blevet adviseret om muligheden for sådanne skader."
+      },
+      "license": {
+        "title": "Licens",
+        "content": "DigitalSeal Studio giver dig en tilbagekaldelig, ikke-eksklusiv, ikke-overførbar, begrænset licens til at downloade, installere og bruge hjemmesiden i nøje overensstemmelse med vilkårene i denne aftale."
+      },
+      "definitions": {
+        "title": "Definitioner og nøglebegreber",
+        "content": "For at forklare tingene så klart som muligt i disse brugervilkår, er hver gang nogen af disse termer nævnes, er de strengt defineret som:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "en lille mængde data genereret af en hjemmeside og gemt af din webbrowser. Det bruges til at identificere din browser, levere analyser, huske information om dig."
+          },
+          "company": {
+            "name": "Virksomhed",
+            "description": "når disse regler nævner 'Virksomhed', 'vi', 'os' eller 'vores', henviser det til DigitalSeal Studio, som er ansvarlig for dine oplysninger under disse brugervilkår."
+          },
+          "service": {
+            "name": "Tjeneste",
+            "description": "henviser til stempeloprettelsesplatformen og tjenester leveret af DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Hjemmeside",
+            "description": "DigitalSeal Studios side, som er tilgængelig via https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "Du",
+            "description": "person eller enhed, der er registreret hos DigitalSeal Studio til at bruge tjenesterne."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Begrænsninger",
+        "content": "Du accepterer ikke at og vil ikke tillade andre at:",
+        "list": [
+          "Licensere, sælge, udleje, overføre, distribuere, transmittere, hoste, outsource, offentliggøre eller på anden måde kommercielt udnytte hjemmesiden eller gøre platformen tilgængelig for tredjeparter.",
+          "Modificere, skabe afledte værker, adskille, dekryptere, dekompilere eller reverse engineer nogen del af hjemmesiden.",
+          "Fjerne, ændre eller skjule eventuelle meddelelser om ejerskab fra DigitalSeal Studio eller dets tilknyttede selskaber, partnere, leverandører eller licensgivere af hjemmesiden."
+        ]
+      },
+      "contact": {
+        "title": "Kontakt os",
+        "content": "For eventuelle spørgsmål om disse brugervilkår, kontakt os venligst gennem vores kontaktside."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Vælg skabelon",
+    "clickToChange": "Klik for at ændre",
+    "templates": {
+      "companySeal": "Firmastempel",
+      "contractSeal1": "Kontraktstempel 1",
+      "companySeal2": "Firmastempel 2"
+    },
+    "menu": {
+      "basic": "Basis #0",
+      "circleText1": "Cirkeltext #1",
+      "circleText2": "Cirkeltext #2",
+      "circleText3": "Cirkeltext #3",
+      "circleText4": "Cirkeltext #4",
+      "image": "Billede #5",
+      "antiCounterfeiting": "Antiforfalskning #6",
+      "antiAliasing": "Anti-aliasing #7",
+      "stampAging": "Stempelældning #8",
+      "innerCircle": "Indre cirkel #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Bredde",
+        "height": "Højde",
+        "circleBorderWidth": "Cirkelkantbredde",
+        "color": "Farve"
+      },
+      "text": {
+        "companyName": "Firmanavn",
+        "font": "Skrifttype",
+        "fontSize": "Skriftstørrelse (mm)",
+        "fontWeight": "Skrifttykkelse",
+        "compressionRatio": "Kompressionsforhold",
+        "distributionFactor": "Fordelingsfaktor",
+        "margin": "Margin (mm)",
+        "adjustText": "Juster tekst",
+        "adjustment": "Justering",
+        "startAngle": "Startvinkel",
+        "rotationDirection": "Rotationsretning",
+        "clockwise": "Med uret",
+        "counterclockwise": "Mod uret",
+        "addNewRow": "Tilføj ny række",
+        "row": "Række",
+        "delete": "Slet",
+        "letterSpacing": "Bogstavafstand",
+        "verticalPosition": "Vertikal position",
+        "textContent": "Tekstindhold",
+        "enterTextContent": "Indtast tekstindhold",
+        "sealCode": "Stempelkode",
+        "enterSealCode": "Indtast stempelkode",
+        "taxNumber": "CVR-nummer",
+        "enterTaxNumber": "Indtast CVR-nummer"
+      },
+      "image": {
+        "selectImage": "Vælg billede",
+        "imageWidth": "Billedbredde",
+        "imageHeight": "Billedhøjde",
+        "horizontalPosition": "Horisontal position",
+        "verticalPosition": "Vertikal position",
+        "keepAspectRatio": "Bevar aspektforhold",
+        "addPictures": "Tilføj billeder",
+        "title": "Billede"
+      },
+      "security": {
+        "enableSecurityPattern": "Aktivér sikkerhedsmønster",
+        "refreshPattern": "Opdater mønster",
+        "patternCount": "Antal mønstre",
+        "patternLength": "Mønsterlængde (mm)",
+        "patternWidth": "Mønsterbredde (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Aktivér gradeffekt",
+        "burrWidth": "Gradbredde (mm)",
+        "burrHeight": "Gradhøjde (mm)",
+        "burrProbability": "Gradsandsynlighed",
+        "burrOffset": "Gradforskydning (mm)",
+        "burrPoints": "Gradpunkter",
+        "refreshBurr": "Opdater grader"
+      },
+      "aging": {
+        "enableAgingEffect": "Aktivér aldringseffekt",
+        "manualAging": "Manuel aldring",
+        "agingIntensity": "Aldringsintensitet",
+        "refreshAging": "Opdater aldring"
+      },
+      "innerCircle": {
+        "addNewRow": "Tilføj ny række",
+        "row": "Række",
+        "delete": "Slet",
+        "width": "Bredde (mm)",
+        "radiusX": "Indre cirkel radius X (mm)",
+        "radiusY": "Indre cirkel radius Y (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Log venligst ind for at downloade stempel uden vandmærke",
+      "joinVip": "Bliv VIP",
+      "downloadStamp": "Download stempel",
+      "downloadFree": "Download gratis",
+      "flashSale": "Tilbud"
+    }
+  },
+  "payment": {
+    "success": "Betaling gennemført!",
+    "failed": "Betaling mislykkedes",
+    "downloadNotice": "Dit stempel downloades automatisk. Tjek dine downloads i browseren.",
+    "redirecting": "Omdirigerer til forsiden om {seconds} sekunder...",
+    "backToHome": "Tilbage til forsiden",
+    "preparing": "Forbereder dit stempel...",
+    "dialogTitle": "Download meddelelse",
+    "download": "Download",
+    "close": "Luk"
+  },
+  "orders": {
+    "loading": "Indlæser...",
+    "fetchError": "Fejl ved indlæsning af ordrer",
+    "paymentTime": "Betalingsdato",
+    "status": "Status",
+    "action": "Handling",
+    "paid": "Betalt",
+    "downloadSeal": "Download stempel",
+    "noOrders": "Ingen ordrer fundet"
+  }
+}

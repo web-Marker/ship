@@ -4,38 +4,43 @@
     <el-result
       v-if="!loading"
       :icon="status === 'success' ? 'success' : 'error'"
-      :title="status === 'success' ? 'Payment Successful!' : 'Payment Failed'"
+      :title="
+        status === 'success' ? $t('payment.success') : $t('payment.failed')
+      "
       :sub-title="
         status === 'success'
-          ? 'Your seal is being downloaded automatically. Please check your browser downloads.'
-          : 'Redirecting to homepage in ' + countdown + ' seconds...'
+          ? $t('payment.downloadNotice')
+          : $t('payment.redirecting', { seconds: countdown })
       "
     >
       <template #extra>
-        <el-button type="primary" @click="goToHome">Back to Homepage</el-button>
+        <el-button type="primary" @click="goToHome">{{
+          $t('payment.backToHome')
+        }}</el-button>
       </template>
     </el-result>
     <div v-else class="loading-container">
       <el-icon class="is-loading" :size="48">
         <Loading />
       </el-icon>
-      <p class="mt-4 text-gray-600 font-bold text-xl">Preparing your seal...</p>
+      <p class="mt-4 text-gray-600 font-bold text-xl">
+        {{ $t('payment.preparing') }}
+      </p>
     </div>
   </div>
   <el-dialog
     v-model="downloadDialogVisible"
-    title="Download Notice"
+    :title="$t('payment.dialogTitle')"
     width="500"
     center
     align-center
     class="download-dialog"
   >
     <span class="text-gray-600 text-lg">
-      Your seal is being downloaded automatically. Please check your browser
-      downloads.
+      {{ $t('payment.downloadNotice') }}
     </span>
     <template #header>
-      <div class="font-bold text-lg">Download Notice</div>
+      <div class="font-bold text-lg">{{ $t('payment.dialogTitle') }}</div>
     </template>
     <template #footer>
       <div class="dialog-footer mt-3">
@@ -47,13 +52,13 @@
           <el-icon class="mr-1 text-white">
             <Download />
           </el-icon>
-          Download
+          {{ $t('payment.download') }}
         </el-button>
         <el-button
           class="!font-bold hover:!bg-transparent hover:!border-[#dcdfe6]"
           @click="downloadDialogVisible = false"
         >
-          Close
+          {{ $t('payment.close') }}
         </el-button>
       </div>
     </template>

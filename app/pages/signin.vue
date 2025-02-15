@@ -13,12 +13,12 @@
                 <h3
                   class="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl"
                 >
-                  Sign in to your account
+                  {{ $t('auth.signInTitle') }}
                 </h3>
                 <p
                   class="mb-11 text-center text-base font-medium text-body-color"
                 >
-                  Login to your account for a faster checkout.
+                  {{ $t('auth.signInDesc') }}
                 </p>
 
                 <form @submit.prevent="handleLogin">
@@ -26,12 +26,12 @@
                     <label
                       for="email"
                       class="mb-3 block text-sm text-dark dark:text-white"
-                      >Your Email</label
+                      >{{ $t('auth.email') }}</label
                     >
                     <input
                       v-model="form.email"
                       type="email"
-                      placeholder="Enter your Email"
+                      :placeholder="$t('auth.emailPlaceholder')"
                       class="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
                       required
                     />
@@ -40,12 +40,12 @@
                     <label
                       for="password"
                       class="mb-3 block text-sm text-dark dark:text-white"
-                      >Your Password</label
+                      >{{ $t('auth.password') }}</label
                     >
                     <input
                       v-model="form.password"
                       type="password"
-                      placeholder="Enter your Password"
+                      :placeholder="$t('auth.passwordPlaceholder')"
                       class="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
                       required
                     />
@@ -57,7 +57,7 @@
                       class="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm px-9 py-4 text-base font-medium text-white duration-300 hover:bg-black/90 bg-black"
                       :disabled="loading"
                     >
-                      {{ loading ? 'Signing in...' : 'Sign in' }}
+                      {{ loading ? $t('auth.signingIn') : $t('auth.signIn') }}
                     </button>
                   </div>
                 </form>
@@ -68,9 +68,9 @@
                     <div class="w-full border-t border-gray-300"></div>
                   </div>
                   <div class="relative flex justify-center text-sm">
-                    <span class="bg-white px-2 text-gray-500"
-                      >Or continue with</span
-                    >
+                    <span class="bg-white px-2 text-gray-500">{{
+                      $t('auth.orContinueWith')
+                    }}</span>
                   </div>
                 </div>
 
@@ -99,17 +99,17 @@
                         fill="#EA4335"
                       />
                     </svg>
-                    <span>Sign in with Google</span>
+                    <span>{{ $t('auth.signInWithGoogle') }}</span>
                   </button>
                 </div>
 
                 <p
                   class="text-center text-base font-medium text-body-color pt-3"
                 >
-                  Don't you have an account?
-                  <NuxtLink to="/signup" class="text-black hover:underline"
-                    >Sign up</NuxtLink
-                  >
+                  {{ $t('auth.noAccount') }}
+                  <NuxtLink to="/signup" class="text-black hover:underline">{{
+                    $t('auth.signUpLink')
+                  }}</NuxtLink>
                 </p>
               </div>
             </div>

@@ -13,11 +13,16 @@
             <Search />
           </el-icon>
           <span
-            class="ml-1.5 text-base font-medium text-gray-700 group-hover:text-blue-600 select-none animate-pulse"
+            class="ml-1.5 text-base font-medium text-gray-700 group-hover:text-blue-600 select-none animate-pulse pb-2 border-b-2 transition-colors"
+            :class="[
+              activeMenu === -1
+                ? 'border-blue-500'
+                : 'border-transparent hover:border-blue-500',
+            ]"
           >
-            Select Template
+            {{ $t('edit.selectTemplate') }}
             <el-tag size="small" class="ml-2" type="info" effect="light">
-              Click to change
+              {{ $t('edit.clickToChange') }}
             </el-tag>
           </span>
         </div>
@@ -91,7 +96,7 @@
 
     <!-- 右侧设置区域(原底部设置区域) -->
     <div
-      class="w-full lg:w-72 bg-white rounded-lg shadow-sm flex flex-col"
+      class="w-full lg:w-96 bg-white rounded-lg shadow-sm flex flex-col"
       style="height: 600px"
     >
       <!-- 模板列表，仅在 Stamp template 激活时显示 -->
@@ -106,7 +111,7 @@
                 @click="loadDefaultTemplate(template)"
               >
                 <div
-                  class="template-preview w-16 h-16 md:w-24 md:h-24 rounded overflow-hidden border border-gray-200"
+                  class="template-preview w-16 h-16 md:w-32 md:h-32 rounded overflow-hidden border border-gray-200"
                   :class="{
                     'template-active': currentTemplateIndex === -1 - index,
                   }"
@@ -123,6 +128,12 @@
                   </span>
                 </div>
               </div>
+              <!-- 添加 More coming soon 提示 -->
+              <div class="text-center py-4">
+                <span class="text-gray-400 text-sm italic"
+                  >More coming soon...</span
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -133,7 +144,9 @@
             <div class="w-full space-y-4">
               <!-- 印章宽度 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600">Width</label>
+                <label class="min-w-[120px] text-sm text-gray-600">{{
+                  $t('edit.settings.basic.width')
+                }}</label>
                 <el-input-number
                   v-model="drawStampWidth"
                   :min="1"
@@ -147,9 +160,9 @@
 
               <!-- 印章高度 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Height</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">{{
+                  $t('edit.settings.basic.height')
+                }}</label>
                 <el-input-number
                   v-model="drawStampHeight"
                   :min="1"
@@ -179,7 +192,9 @@
 
               <!-- 印章颜色 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600">Color</label>
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.basic.color') }}
+                </label>
                 <div class="w-[100px]">
                   <el-color-picker
                     v-model="primaryColor"
@@ -188,12 +203,6 @@
                     size="large"
                     @active-change="updatePrimaryColor"
                   />
-
-                  <!-- <input
-                    v-model="primaryColor"
-                    type="color"
-                    class="w-[100px] h-[32px] rounded border border-gray-300"
-                  /> -->
                 </div>
               </div>
             </div>
@@ -213,12 +222,14 @@
             >
               <!-- 标题行 -->
               <div class="flex justify-between items-center mb-4">
-                <span class="text-gray-600">Row {{ index + 1 }}</span>
+                <span class="text-gray-600">
+                  {{ $t('edit.settings.text.row') }} {{ index + 1 }}
+                </span>
                 <el-button
                   type="danger"
                   size="small"
                   @click="removeCompany(index)"
-                  >Delete</el-button
+                  >{{ $t('edit.settings.text.delete') }}</el-button
                 >
               </div>
 
@@ -226,21 +237,21 @@
               <div class="space-y-4">
                 <!-- 公司名称 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Company Name</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.companyName') }}
+                  </label>
                   <el-input
                     v-model="company.companyName"
                     class="flex-1"
-                    placeholder="Enter company name"
+                    :placeholder="$t('edit.settings.text.companyName')"
                   />
                 </div>
 
                 <!-- 字体 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Font</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.font') }}
+                  </label>
                   <div class="flex w-[150px]">
                     <el-select
                       v-model="company.fontFamily"
@@ -260,9 +271,9 @@
 
                 <!-- 字体大小 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Font Size (mm)</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.fontSize') }}
+                  </label>
                   <el-input-number
                     v-model="company.fontHeight"
                     :min="1"
@@ -275,9 +286,9 @@
 
                 <!-- 字体粗细 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Font Weight</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.fontWeight') }}
+                  </label>
                   <div class="w-[150px]">
                     <el-select v-model="company.fontWeight">
                       <el-option label="normal" value="normal" />
@@ -297,9 +308,9 @@
 
                 <!-- 压缩比例 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Compression Ratio</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.compressionRatio') }}
+                  </label>
                   <el-input-number
                     v-model="company.compression"
                     :min="0.5"
@@ -312,9 +323,9 @@
 
                 <!-- 分布因子 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Distribution Factor</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.distributionFactor') }}
+                  </label>
                   <el-input-number
                     v-model="company.textDistributionFactor"
                     :min="0"
@@ -327,9 +338,9 @@
 
                 <!-- 边距 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Margin (mm)</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.margin') }}
+                  </label>
                   <el-input-number
                     v-model="company.borderOffset"
                     :min="-10"
@@ -342,9 +353,9 @@
                 <!-- 调整椭圆文字 -->
                 <div class="flex items-center justify-between">
                   <label class="min-w-[120px] text-sm text-gray-600"></label>
-                  <el-checkbox v-model="company.adjustEllipseText"
-                    >Adjust Text</el-checkbox
-                  >
+                  <el-checkbox v-model="company.adjustEllipseText">{{
+                    $t('edit.settings.text.adjustText')
+                  }}</el-checkbox>
                 </div>
 
                 <!-- 椭圆文字调整 -->
@@ -352,9 +363,9 @@
                   v-if="company.adjustEllipseText"
                   class="flex items-center justify-between"
                 >
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >adjustmen</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.adjustment')
+                  }}</label>
                   <el-input-number
                     v-model="company.adjustEllipseTextFactor"
                     :min="0"
@@ -367,9 +378,9 @@
 
                 <!-- 开始角度 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Start Angle</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.startAngle')
+                  }}</label>
                   <el-input-number
                     v-model="company.startAngle"
                     :min="-6.5"
@@ -382,14 +393,17 @@
 
                 <!-- 旋转方向 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Rotation Direction</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.rotationDirection')
+                  }}</label>
                   <div class="w-[150px]">
                     <el-select v-model="company.rotateDirection">
-                      <el-option label="Clockwise" value="clockwise" />
                       <el-option
-                        label="Counterclockwise"
+                        label="{{ $t('edit.settings.text.clockwise') }}"
+                        value="clockwise"
+                      />
+                      <el-option
+                        label="{{ $t('edit.settings.text.counterclockwise') }}"
                         value="counterclockwise"
                       />
                     </el-select>
@@ -403,7 +417,7 @@
               type="primary"
               class="mt-4 hover:!bg-[#1e2736]/90 !border-0"
               @click="addNewCompany"
-              >Add New Row</el-button
+              >{{ $t('edit.settings.text.addNewRow') }}</el-button
             >
           </div>
         </div>
@@ -418,12 +432,14 @@
             >
               <!-- 标题行 -->
               <div class="flex justify-between items-center mb-4">
-                <span class="text-gray-600">Row {{ index + 1 }}</span>
+                <span class="text-gray-600"
+                  >{{ $t('edit.settings.text.row') }} {{ index + 1 }}</span
+                >
                 <el-button
                   type="danger"
                   size="small"
                   @click="() => removeStampType(index)"
-                  >Delete</el-button
+                  >{{ $t('edit.settings.text.delete') }}</el-button
                 >
               </div>
 
@@ -431,21 +447,21 @@
               <div class="space-y-4">
                 <!-- 文字内容 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Text Content</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">
+                    {{ $t('edit.settings.text.textContent') }}
+                  </label>
                   <el-input
                     v-model="type.stampType"
                     class="flex-1"
-                    placeholder="Enter text content"
+                    :placeholder="$t('edit.settings.text.enterTextContent')"
                   />
                 </div>
 
                 <!-- 字体大小 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Font Size (mm)</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.fontSize')
+                  }}</label>
                   <div class="w-[150px]">
                     <el-input-number
                       v-model="type.fontHeight"
@@ -459,9 +475,9 @@
 
                 <!-- 字体 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Font</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.font')
+                  }}</label>
                   <div class="w-[150px]">
                     <el-select v-model="type.fontFamily" class="flex-1">
                       <el-option
@@ -477,9 +493,9 @@
 
                 <!-- 字体粗细 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Font Weight</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.fontWeight')
+                  }}</label>
                   <div class="w-[150px]">
                     <el-select v-model="type.fontWeight" class="w-[200px]">
                       <el-option label="normal" value="normal" />
@@ -499,9 +515,9 @@
 
                 <!-- 压缩比例 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Compression Ratio</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.compressionRatio')
+                  }}</label>
                   <div class="w-[150px]">
                     <el-input-number
                       v-model="type.compression"
@@ -516,9 +532,9 @@
 
                 <!-- 字符间距 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Letter Spacing (mm)</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.letterSpacing')
+                  }}</label>
                   <div class="w-[150px]">
                     <el-input-number
                       v-model="type.letterSpacing"
@@ -533,9 +549,9 @@
 
                 <!-- 垂直位置 -->
                 <div class="flex items-center justify-between">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Vertical Position (mm)</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.text.verticalPosition')
+                  }}</label>
                   <div class="w-[150px]">
                     <el-input-number
                       v-model="type.positionY"
@@ -554,7 +570,7 @@
               type="primary"
               class="mt-4 hover:!bg-[#1e2736]/90 !border-0"
               @click="addNewStampType"
-              >Add New Row</el-button
+              >{{ $t('edit.settings.text.addNewRow') }}</el-button
             >
           </div>
         </div>
@@ -565,21 +581,21 @@
             <div class="w-full space-y-4">
               <!-- 印章编码 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Seal Code</label
-                >
-                <div class="w-[150px]">
-                  <el-input
-                    v-model="stampCode"
-                    class="flex-1"
-                    placeholder="Enter seal code"
-                  />
-                </div>
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.sealCode') }}
+                </label>
+                <el-input
+                  v-model="stampCode"
+                  class="flex-1"
+                  :placeholder="$t('edit.settings.text.enterSealCode')"
+                />
               </div>
 
               <!-- 字体选择 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600">Font</label>
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.font') }}
+                </label>
                 <div class="w-[150px]">
                   <el-select
                     v-model="codeFontFamily"
@@ -600,8 +616,8 @@
               <!-- 字体大小 -->
               <div class="flex items-center justify-between">
                 <label class="min-w-[120px] text-sm text-gray-600">
-                  Font Size (mm)</label
-                >
+                  {{ $t('edit.settings.text.fontSize') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="codeFontSizeMM"
@@ -613,9 +629,9 @@
 
               <!-- 字体粗细 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Font Weight</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.fontWeight') }}
+                </label>
                 <div class="w-[150px]">
                   <el-select v-model="codeFontWeight" class="w-[200px]">
                     <el-option label="normal" value="normal" />
@@ -635,9 +651,9 @@
 
               <!-- 压缩比例 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Compression Ratio</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.compressionRatio') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="codeCompression"
@@ -652,9 +668,9 @@
 
               <!-- 分布因子 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Distribution Factor</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.distributionFactor') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="codeDistributionFactor"
@@ -662,22 +678,6 @@
                     :max="100"
                     :step="0.5"
                     :precision="1"
-                    class="w-[200px]"
-                  />
-                </div>
-              </div>
-
-              <!-- 边距 -->
-              <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Margin (mm)</label
-                >
-                <div class="w-[150px]">
-                  <el-input-number
-                    v-model="codeMarginMM"
-                    :min="-10"
-                    :max="20"
-                    :step="0.05"
                     class="w-[200px]"
                   />
                 </div>
@@ -692,21 +692,21 @@
             <div class="w-full space-y-4">
               <!-- 税号 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >ID number</label
-                >
-                <div class="w-[150px]">
-                  <el-input
-                    v-model="taxNumberValue"
-                    class="w-[200px]"
-                    placeholder="Enter tax ID number"
-                  />
-                </div>
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.taxNumber') }}
+                </label>
+                <el-input
+                  v-model="taxNumberValue"
+                  class="flex-1"
+                  :placeholder="$t('edit.settings.text.enterTaxNumber')"
+                />
               </div>
 
               <!-- 字体 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600">Font</label>
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.font') }}
+                </label>
                 <div class="w-[150px]">
                   <el-select
                     v-model="taxNumberFontFamily"
@@ -726,9 +726,9 @@
 
               <!-- 字体粗细 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Font Weight</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.fontWeight') }}
+                </label>
                 <div class="w-[150px]">
                   <el-select v-model="taxNumberFontWeight">
                     <el-option label="normal" value="normal" />
@@ -748,9 +748,9 @@
 
               <!-- 压缩比例 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Compression Ratio</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.compressionRatio') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="taxNumberCompression"
@@ -765,9 +765,9 @@
 
               <!-- 字符间距 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Letter Spacing</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.letterSpacing') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="taxNumberLetterSpacing"
@@ -783,9 +783,9 @@
 
               <!-- 垂直位置调整 -->
               <div class="flex items-center justify-between">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Vertical Position</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.text.verticalPosition') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="taxNumberPositionY"
@@ -814,13 +814,16 @@
                 <!-- 图片标题和删除按钮 -->
                 <template #header>
                   <div class="flex justify-between items-center">
-                    <span class="font-medium">Image {{ index + 1 }}</span>
+                    <span class="font-medium"
+                      >{{ $t('edit.settings.image.title') }}
+                      {{ index + 1 }}</span
+                    >
                     <el-button
                       type="danger"
                       size="small"
                       :icon="Delete"
                       @click="removeImage(index)"
-                      >Delete</el-button
+                      >{{ $t('edit.settings.text.delete') }}</el-button
                     >
                   </div>
                 </template>
@@ -837,9 +840,9 @@
 
                   <!-- 选择图片 -->
                   <div class="flex items-center">
-                    <label class="min-w-[120px] text-sm text-gray-600"
-                      >Select Image</label
-                    >
+                    <label class="min-w-[120px] text-sm text-gray-600">
+                      {{ $t('edit.settings.image.selectImage') }}
+                    </label>
                     <el-upload
                       class="w-[200px]"
                       accept="image/*"
@@ -850,7 +853,7 @@
                       <el-button
                         type="primary"
                         class="hover:!bg-[#1e2736]/90 !border-0"
-                        >Select Image</el-button
+                        >{{ $t('edit.settings.image.selectImage') }}</el-button
                       >
                     </el-upload>
                   </div>
@@ -858,9 +861,8 @@
                   <!-- 图片宽度 -->
                   <div class="flex items-center">
                     <label class="min-w-[120px] text-sm text-gray-600">
-                      Image Width</label
+                      {{ $t('edit.settings.image.imageWidth') }}</label
                     >
-
                     <el-input-number
                       v-model="image.imageWidth"
                       :min="1"
@@ -876,8 +878,8 @@
 
                   <!-- 图片高度 -->
                   <div class="flex items-center">
-                    <label class="min-w-[120px] text-sm text-gray-600"
-                      >Image Height</label
+                    <label class="min-w-[120px] text-sm text-gray-600">
+                      {{ $t('edit.settings.image.imageHeight') }}</label
                     >
                     <el-input-number
                       v-model="image.imageHeight"
@@ -894,8 +896,8 @@
 
                   <!-- 水平位置 -->
                   <div class="flex items-center">
-                    <label class="min-w-[120px] text-sm text-gray-600"
-                      >Horizontal Position</label
+                    <label class="min-w-[120px] text-sm text-gray-600">
+                      {{ $t('edit.settings.image.horizontalPosition') }}</label
                     >
                     <el-input-number
                       v-model="image.positionX"
@@ -913,7 +915,7 @@
                   <!-- 垂直位置 -->
                   <div class="flex items-center">
                     <label class="min-w-[120px] text-sm text-gray-600">
-                      Vertical Position</label
+                      {{ $t('edit.settings.image.verticalPosition') }}</label
                     >
                     <el-input-number
                       v-model="image.positionY"
@@ -930,8 +932,8 @@
 
                   <!-- 保持宽高比 -->
                   <div class="flex items-center">
-                    <label class="min-w-[130px] text-sm text-gray-600"
-                      >Keep Aspect Ratio</label
+                    <label class="min-w-[130px] text-sm text-gray-600">
+                      {{ $t('edit.settings.image.keepAspectRatio') }}</label
                     >
                     <el-switch v-model="image.keepAspectRatio" />
                   </div>
@@ -946,7 +948,7 @@
                 class="hover:!bg-[#1e2736]/90 !border-0"
                 :icon="Plus"
                 @click="addNewImage"
-                >Add Pictures</el-button
+                >{{ $t('edit.settings.image.addPictures') }}</el-button
               >
             </div>
           </div>
@@ -958,9 +960,9 @@
             <div class="w-full space-y-4">
               <!-- 启用防伪纹路 -->
               <div class="flex justify-between items-center">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Enable Security Pattern</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.security.enableSecurityPattern') }}
+                </label>
                 <el-switch v-model="securityPatternEnabled" />
               </div>
 
@@ -971,15 +973,15 @@
                   class="hover:!bg-[#1e2736]/90 !border-0"
                   @click="drawStamp(true, false)"
                 >
-                  Refresh Pattern
+                  {{ $t('edit.settings.security.refreshPattern') }}
                 </el-button>
               </div>
 
               <!-- 纹路数量 -->
               <div class="flex justify-between items-center">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Pattern Count</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.security.patternCount') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="securityPatternCount"
@@ -993,9 +995,9 @@
 
               <!-- 纹路长度 -->
               <div class="flex justify-between items-center">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Pattern Length (mm)</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.security.patternLength') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="securityPatternLength"
@@ -1010,9 +1012,9 @@
 
               <!-- 纹路宽度 -->
               <div class="flex justify-between items-center">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Pattern Width (mm)</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.security.patternWidth') }}
+                </label>
                 <div class="w-[150px]">
                   <el-input-number
                     v-model="securityPatternWidth"
@@ -1034,9 +1036,9 @@
             <div class="w-full space-y-4">
               <!-- 启用毛边效果 -->
               <div class="flex justify-between items-center">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Enable Burr Effect</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.burr.enableBurrEffect') }}
+                </label>
                 <el-switch v-model="shouldDrawRoughEdge" />
               </div>
 
@@ -1045,7 +1047,7 @@
                 <!-- 毛边宽度 -->
                 <div class="flex justify-between items-center">
                   <label class="min-w-[120px] text-sm text-gray-600"
-                    >Burr Width (mm)</label
+                    >{{ $t('edit.settings.burr.burrWidth') }} (mm)</label
                   >
                   <el-input-number
                     v-model="roughEdgeWidth"
@@ -1060,7 +1062,7 @@
                 <!-- 毛边高度 -->
                 <div class="flex justify-between items-center">
                   <label class="min-w-[120px] text-sm text-gray-600"
-                    >Burr Height (mm)</label
+                    >{{ $t('edit.settings.burr.burrHeight') }} (mm)</label
                   >
                   <el-input-number
                     v-model="roughEdgeHeight"
@@ -1074,9 +1076,9 @@
 
                 <!-- 毛边概率 -->
                 <div class="flex justify-between items-center">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Burr Probability</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.burr.burrProbability')
+                  }}</label>
                   <el-input-number
                     v-model="roughEdgeProbability"
                     :min="0"
@@ -1089,8 +1091,8 @@
 
                 <!-- 毛边偏移 -->
                 <div class="flex justify-between items-center">
-                  <label class="min-w-[120px] text-sm text-gray-600">
-                    Burr Offset (mm)</label
+                  <label class="min-w-[120px] text-sm text-gray-600"
+                    >{{ $t('edit.settings.burr.burrOffset') }} (mm)</label
                   >
                   <el-input-number
                     v-model="roughEdgeShift"
@@ -1104,9 +1106,9 @@
 
                 <!-- 毛边点数 -->
                 <div class="flex justify-between items-center">
-                  <label class="min-w-[120px] text-sm text-gray-600"
-                    >Burr Points</label
-                  >
+                  <label class="min-w-[120px] text-sm text-gray-600">{{
+                    $t('edit.settings.burr.burrPoints')
+                  }}</label>
                   <el-input-number
                     v-model="roughEdgePoints"
                     :min="100"
@@ -1123,7 +1125,7 @@
                     class="hover:!bg-[#1e2736]/90 !border-0"
                     @click="drawStamp(false, false, true)"
                   >
-                    Refresh Burr
+                    {{ $t('edit.settings.burr.refreshBurr') }}
                   </el-button>
                 </div>
               </template>
@@ -1137,25 +1139,25 @@
             <div class="w-full space-y-4">
               <!-- 启用做旧效果 -->
               <div class="flex justify-between items-center">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Enable Aging Effect</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">
+                  {{ $t('edit.settings.aging.enableAgingEffect') }}
+                </label>
                 <el-switch v-model="applyAging" />
               </div>
 
               <!-- 手动做旧 -->
               <div class="flex justify-between items-center">
                 <label class="min-w-[120px] text-sm text-gray-600">
-                  Manual Aging</label
-                >
+                  {{ $t('edit.settings.aging.manualAging') }}
+                </label>
                 <el-switch v-model="manualAging" />
               </div>
 
               <!-- 做旧强度 -->
               <div v-if="applyAging" class="flex justify-between items-center">
-                <label class="min-w-[120px] text-sm text-gray-600"
-                  >Aging Intensity</label
-                >
+                <label class="min-w-[120px] text-sm text-gray-600">{{
+                  $t('edit.settings.aging.agingIntensity')
+                }}</label>
                 <el-input-number
                   v-model="agingIntensity"
                   :min="0"
@@ -1172,7 +1174,7 @@
                   class="hover:!bg-[#1e2736]/90 !border-0"
                   @click="drawStamp(false, true)"
                 >
-                  Refresh Aging
+                  {{ $t('edit.settings.aging.refreshAging') }}
                 </el-button>
               </div>
             </div>
@@ -1189,7 +1191,7 @@
                 class="hover:!bg-[#1e2736]/90 !border-0"
                 @click="addNewInnerCircle"
               >
-                Add New Row
+                {{ $t('edit.settings.innerCircle.addNewRow') }}
               </el-button>
 
               <!-- 内圈配置列表 -->
@@ -1200,20 +1202,22 @@
               >
                 <!-- 标题和删除按钮 -->
                 <div class="flex items-center justify-between mb-4">
-                  <span class="text-lg font-medium">Row {{ index + 1 }} </span>
+                  <span class="text-lg font-medium">
+                    {{ $t('edit.settings.innerCircle.row') }} {{ index + 1 }}
+                  </span>
                   <el-button
                     type="danger"
                     size="small"
                     @click="removeInnerCircle(index)"
                   >
-                    Delete
+                    {{ $t('edit.settings.innerCircle.delete') }}
                   </el-button>
                 </div>
 
                 <!-- 内圈圆线宽 -->
                 <div class="flex items-center justify-between w-full">
                   <label class="text-sm text-gray-600 w-[100px]"
-                    >Width (mm)</label
+                    >{{ $t('edit.settings.innerCircle.width') }} (mm)</label
                   >
                   <el-input-number
                     v-model="innerCircle.innerCircleLineWidth"
@@ -1227,7 +1231,7 @@
                 <!-- 内圈圆半径X -->
                 <div class="flex items-center justify-between w-full">
                   <label class="text-sm text-gray-600 w-[100px]"
-                    >Inner Circle Radius X (mm)</label
+                    >{{ $t('edit.settings.innerCircle.radiusX') }} (mm)</label
                   >
                   <el-input-number
                     v-model="innerCircle.innerCircleLineRadiusX"
@@ -1241,7 +1245,7 @@
                 <!-- 内圈圆半径Y -->
                 <div class="flex items-center justify-between w-full">
                   <label class="text-sm text-gray-600 w-[100px]"
-                    >Inner Circle Radius Y (mm)</label
+                    >{{ $t('edit.settings.innerCircle.radiusY') }} (mm)</label
                   >
                   <el-input-number
                     v-model="innerCircle.innerCircleLineRadiusY"
@@ -1260,18 +1264,18 @@
   </div>
   <!-- 添加友情提示 -->
   <div class="text-gray-500 text-xs text-center w-full mt-2">
-    Please login to download seal without watermark
+    {{ $t('edit.download.loginRequired') }}
   </div>
   <!-- 下载按钮区域 -->
   <div
-    class="flex flex-col sm:flex-row justify-center items-center gap-4 py-4 mb-8"
+    class="flex flex-col sm:flex-row justify-center items-center gap-5 pt-7 mb-8"
   >
     <a
       href="/pricing"
       target="_blank"
       class="text-black underline cursor-pointer hover:opacity-80 font-bold text-center w-full sm:w-auto"
     >
-      Join VIP
+      {{ $t('edit.download.joinVip') }}
     </a>
     <div class="relative w-full sm:w-auto">
       <el-button
@@ -1279,16 +1283,18 @@
         :loading="downloadLoading"
         @click="confirmSave"
       >
-        <span class="hidden sm:inline">Generate Seal</span>
-        <span class="sm:hidden">Generate Seal</span>
+        <span class="hidden sm:inline">{{
+          $t('edit.download.downloadStamp')
+        }}</span>
+        <span class="sm:hidden">{{ $t('edit.download.downloadStamp') }}</span>
       </el-button>
 
       <!-- Promotion tag -->
-      <div class="absolute -top-3 -right-2 animate-bounce-slow">
+      <div class="absolute -top-3 -right-5 animate-bounce-slow">
         <div
           class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full transform rotate-12 shadow-lg"
         >
-          <span class="animate-pulse">Sale</span>
+          <span class="animate-pulse">{{ $t('edit.download.flashSale') }}</span>
         </div>
       </div>
     </div>
@@ -1298,8 +1304,10 @@
       :loading="watermarkLoading"
       @click="downloadWithWatermark"
     >
-      <span class="hidden sm:inline">Download Free</span>
-      <span class="sm:hidden">Download Free</span>
+      <span class="hidden sm:inline">{{
+        $t('edit.download.downloadFree')
+      }}</span>
+      <span class="sm:hidden">{{ $t('edit.download.downloadFree') }}</span>
     </el-button>
   </div>
 
@@ -1313,7 +1321,7 @@
     class="download-dialog"
   >
     <span class="text-gray-600 text-lg">
-      Your seal is being downloaded automatically. Please check your browser
+      Your stamp is being downloaded automatically. Please check your browser
       downloads.
     </span>
     <template #header>
@@ -1366,20 +1374,21 @@ import type {
 const downloadLoading = ref(false)
 const watermarkLoading = ref(false)
 const downloadDialogVisible = ref(false)
+const { t } = useI18n()
 
 const defaultTemplates = ref<Template[]>([
   {
-    name: 'Company Seal',
+    name: t('edit.templates.companySeal'),
     preview: '',
     config: companyStamp2 as any,
   },
   {
-    name: 'Contract Seal 1',
+    name: t('edit.templates.contractSeal1'),
     preview: '',
     config: contractStamp1 as any,
   },
   {
-    name: 'Company Seal 2',
+    name: t('edit.templates.companySeal2'),
     preview: '',
     config: companyStamp1 as any,
   },
@@ -1395,16 +1404,26 @@ const payLoading = ref(false)
 
 const activeMenu = ref(-1)
 const menuItems = [
-  { text: 'Basic', icon: House, id: 0 },
-  { text: 'Text 1', icon: EditPen, id: 1 },
-  { text: 'Text 2', icon: EditPen, id: 2 },
-  { text: 'Text 3', icon: EditPen, id: 3 },
-  { text: 'Text 4', icon: EditPen, id: 4 },
-  { text: 'Image', icon: Picture, id: 5 },
-  { text: 'Anti-counterfeiting', icon: MagicStick, id: 6, special: true },
-  { text: 'Anti-aliasing', icon: MagicStick, id: 7, special: true },
-  { text: 'Stamp aging', icon: MagicStick, id: 8, special: true },
-  { text: 'Inner circle', icon: Help, id: 9 },
+  { text: t('edit.menu.basic'), icon: House, id: 0 },
+  { text: t('edit.menu.circleText1'), icon: EditPen, id: 1 },
+  { text: t('edit.menu.circleText2'), icon: EditPen, id: 2 },
+  { text: t('edit.menu.circleText3'), icon: EditPen, id: 3 },
+  { text: t('edit.menu.circleText4'), icon: EditPen, id: 4 },
+  { text: t('edit.menu.image'), icon: Picture, id: 5 },
+  {
+    text: t('edit.menu.antiCounterfeiting'),
+    icon: MagicStick,
+    id: 6,
+    special: true,
+  },
+  {
+    text: t('edit.menu.antiAliasing'),
+    icon: MagicStick,
+    id: 7,
+    special: true,
+  },
+  { text: t('edit.menu.stampAging'), icon: MagicStick, id: 8, special: true },
+  { text: t('edit.menu.innerCircle'), icon: Help, id: 9 },
 ]
 import {
   Setting,
@@ -1610,7 +1629,6 @@ const addNewImage = () => {
   if (imageList.value === undefined || imageList.value === null) {
     imageList.value = []
   }
-  console.log('imageList', imageList)
   if (imageList.value.length < 10) {
     imageList.value.push({
       imageUrl: '',
@@ -1978,38 +1996,10 @@ const downloadWithWatermark = () => {
   }
 }
 
-// 添加水印的方法
-const addWatermark = (
-  ctx: CanvasRenderingContext2D,
-  width: number,
-  height: number
-) => {
-  // 设置水印样式
-  ctx.save()
-  ctx.globalAlpha = 0.2 // 水印透明度
-  ctx.fillStyle = '#999'
-  ctx.font = '16px Arial'
+const { watchUserLogin, paymentUrl, handlePaymentClick, emitter } = usePayment()
 
-  // 计算水印文本
-  const text = 'Seal Digital' // 替换为你的水印文本
-  const textWidth = ctx.measureText(text).width
-
-  // 旋转画布并绘制多个水印
-  ctx.translate(width / 2, height / 2)
-  ctx.rotate(-Math.PI / 4) // 45度角旋转
-
-  // 绘制水印网格
-  for (let i = -width; i < width; i += textWidth + 40) {
-    for (let j = -height; j < height; j += 30) {
-      ctx.fillText(text, i, j)
-    }
-  }
-
-  ctx.restore()
-}
-
-const { handlePayment } = usePayment()
 const { trackEvent } = useAnalytics()
+watchUserLogin('one_time')
 
 // 添加登录状态检查
 const checkAuth = async () => {
@@ -2023,6 +2013,23 @@ const checkAuth = async () => {
   }
   return true
 }
+
+onMounted(() => {
+  emitter.on('payment_success', () => {
+    downloadDialogVisible.value = true
+    drawStampUtils.saveStampAsPNG(512, true)
+    trackEvent('download_after_payment', {
+      payment_type: 'one_time',
+      download_type: 'seal',
+    })
+    // 其他操作...
+  })
+})
+
+onUnmounted(() => {
+  // 清理事件监听
+  emitter.off('payment_success')
+})
 // 确认保存
 const confirmSave = async () => {
   // 跟踪按钮点击
@@ -2039,10 +2046,7 @@ const confirmSave = async () => {
   downloadLoading.value = true
 
   try {
-    const session = await useUserSession()
     const { data: paymentStatus } = await useFetch('/api/user/payment-status')
-
-    console.log('Payment status check:', paymentStatus.value)
 
     if (paymentStatus.value?.subscription) {
       drawStampUtils.saveStampAsPNG(512, true)
@@ -2057,15 +2061,20 @@ const confirmSave = async () => {
       return
     }
 
-    handlePayment('one_time', () => {
-      downloadDialogVisible.value = true // 显示对话框而不是直接调用 alert
+    if (paymentUrl.value) {
+      window.open(paymentUrl.value!, '_blank')
+      handlePaymentClick()
+    }
 
-      drawStampUtils.saveStampAsPNG(512, true)
-      trackEvent('download_after_payment', {
-        payment_type: 'one_time',
-        download_type: 'seal',
-      })
-    })
+    // handlePayment('one_time', () => {
+    //   downloadDialogVisible.value = true // 显示对话框而不是直接调用 alert
+
+    //   drawStampUtils.saveStampAsPNG(512, true)
+    //   trackEvent('download_after_payment', {
+    //     payment_type: 'one_time',
+    //     download_type: 'seal',
+    //   })
+    // })
   } catch (error) {
     console.error('Save error:', error)
     ElMessage.error('Failed to process the request')

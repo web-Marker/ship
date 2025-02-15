@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Editar",
+    "pricing": "Preços",
+    "blog": "Blog",
+    "contact": "Contato",
+    "login": "Entrar",
+    "signup": "Cadastrar",
+    "logout": "Sair",
+    "myOrders": "Meus Pedidos"
+  },
+  "brand": {
+    "seal": "Selo",
+    "digital": "Digital"
+  },
+  "auth": {
+    "signInTitle": "Entre na sua conta",
+    "signInDesc": "Entre na sua conta para fazer pedidos mais rápidos.",
+    "email": "Seu E-mail",
+    "password": "Sua Senha",
+    "emailPlaceholder": "Digite seu e-mail",
+    "passwordPlaceholder": "Digite sua senha",
+    "signingIn": "Entrando...",
+    "signIn": "Entrar",
+    "orContinueWith": "Ou continue com",
+    "signInWithGoogle": "Entrar com Google",
+    "noAccount": "Não tem uma conta?",
+    "signUpLink": "Cadastre-se",
+    "pleaseLoginFirst": "Por favor, faça login primeiro",
+    "createAccount": "Criar Conta",
+    "registerWithEmail": "Cadastrar com e-mail",
+    "registering": "Cadastrando...",
+    "signUp": "Cadastrar",
+    "alreadyHaveAccount": "Já tem uma conta?"
+  },
+  "contact": {
+    "emailPlaceholder": "Endereço de e-mail",
+    "emailRequired": "Por favor, digite seu endereço de e-mail.",
+    "emailInvalid": "Por favor, digite um endereço de e-mail válido.",
+    "messagePlaceholder": "Sua mensagem",
+    "messageRequired": "Por favor, digite sua mensagem.",
+    "sendMessage": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "sentSuccess": "Mensagem enviada com sucesso!",
+    "sentError": "Algo deu errado!",
+    "sendFailed": "Falha ao enviar mensagem",
+    "namePlaceholder": "Nome completo",
+    "nameRequired": "Por favor, digite seu nome completo.",
+    "title": "Contatar Criador",
+    "description": "Estou aqui para ajudar.",
+    "message": "Tem dúvidas? Estou aqui para ajudar. Preencha o formulário ou envie um e-mail."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Gerar Selo"
+    },
+    "title": "Designer Inteligente de Selos Digitais - Crie selos profissionais facilmente",
+    "description": "Experimente nosso criador de selos digitais com IA que ajuda você a criar selos profissionais para empresas, contratos e selos digitais personalizados com apenas alguns cliques.",
+    "features": {
+      "templates": {
+        "title": "Modelos Profissionais",
+        "description": "Escolha entre vários modelos profissionais de selos, incluindo selos empresariais, selos contratuais e mais. Personalize tamanho, largura da borda, cores e outros parâmetros de acordo com suas necessidades."
+      },
+      "security": {
+        "title": "Proteção de Segurança",
+        "description": "Gerador de padrão de segurança integrado com densidade e tamanho de padrão ajustáveis. Inclui efeitos de envelhecimento e rebarbas para selos com aparência autêntica e segurança aprimorada."
+      },
+      "customization": {
+        "title": "Totalmente Personalizável",
+        "description": "Personalize cada aspecto do seu selo - desde o conteúdo do texto e fonte até a taxa de compressão e fatores de distribuição. Adicione imagens e círculos internos para criar designs únicos de selos."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Informações e Recursos sobre Selos Digitais",
+      "sectionDescription": "Explore nossos últimos artigos sobre selos digitais, tecnologia de autenticação e design profissional de selos.",
+      "readMore": "Ler Mais",
+      "wantMore": "Quer saber mais?",
+      "goHere": "Clique aqui"
+    }
+  },
+  "footer": {
+    "product": "Produto",
+    "company": "Empresa",
+    "stayUpdated": "Fique Atualizado",
+    "subscribe": "Inscrever-se",
+    "enterEmail": "Digite seu e-mail",
+    "subscribeSuccess": "Inscrição realizada com sucesso!",
+    "pleaseEnterEmail": "Por favor, digite seu e-mail",
+    "copyright": "Copyright © {year} SealDigital. Todos os direitos reservados.",
+    "privacy": "Privacidade",
+    "terms": "Termos de Uso",
+    "stripeClimate": "Membro Stripe Climate"
+  },
+  "pricing": {
+    "title": "Preços",
+    "plans": {
+      "singleSeal": {
+        "name": "Selo Único",
+        "price": "R$9,90",
+        "features": [
+          "Crie 1 selo sem marca d'água",
+          "Modelos padrão de selos",
+          "Formato PNG de alta qualidade",
+          "Suporte básico por e-mail",
+          "Acesso de um dispositivo",
+          "Entrega garantida em 24 horas"
+        ],
+        "button": "Começar"
+      },
+      "proMonthly": {
+        "name": "Pro Mensal",
+        "price": "R$49,90",
+        "features": [
+          "Criação ilimitada de selos",
+          "Todos os modelos premium",
+          "Download sem marca d'água",
+          "Suporte prioritário ao cliente",
+          "Acesso de múltiplos dispositivos",
+          "Entrega instantânea"
+        ],
+        "button": "Começar"
+      },
+      "customDesign": {
+        "name": "Design Personalizado",
+        "price": "Contate-nos",
+        "features": [
+          "Design de selo totalmente personalizado",
+          "Criação de modelos exclusivos",
+          "Serviço dedicado de design",
+          "Revisões ilimitadas",
+          "Direitos de uso comercial",
+          "Suporte prioritário"
+        ],
+        "button": "Contatar"
+      }
+    }
+  },
+  "blog": {
+    "title": "Informações e Recursos sobre Selos Digitais",
+    "description": "Explore nossos últimos artigos sobre selos digitais, tecnologia de autenticação e design profissional de selos. Mantenha-se atualizado com as tendências do setor e melhores práticas.",
+    "articleCount": "{count} artigos para ajudar você a dominar selos digitais",
+    "categories": {
+      "allPosts": "Todas as Publicações",
+      "designTips": "Dicas de Design",
+      "security": "Segurança",
+      "tutorials": "Tutoriais"
+    }
+  },
+  "terms": {
+    "title": "Termos de Uso - DigitalSeal Studio",
+    "lastUpdated": "Última atualização: 12 de dezembro de 2024",
+    "sections": {
+      "general": {
+        "title": "Termos Gerais",
+        "content": "Ao acessar e fazer pedidos no DigitalSeal Studio, você confirma que concorda e está vinculado aos termos de serviço contidos nestes Termos de Uso. Estes termos se aplicam ao site inteiro e a todas as comunicações por e-mail ou outras entre você e o DigitalSeal Studio.",
+        "liability": "Em nenhuma circunstância a equipe do DigitalSeal Studio será responsável por quaisquer danos diretos, indiretos, especiais, incidentais ou consequenciais, incluindo, mas não se limitando a, perda de dados ou lucro, decorrentes do uso ou da impossibilidade de uso dos materiais neste site, mesmo que a equipe do DigitalSeal Studio ou um representante autorizado tenha sido notificado da possibilidade de tais danos."
+      },
+      "license": {
+        "title": "Licença",
+        "content": "O DigitalSeal Studio concede a você uma licença revogável, não exclusiva, intransferível e limitada para baixar, instalar e usar o site estritamente de acordo com os termos deste acordo."
+      },
+      "definitions": {
+        "title": "Definições e Termos-Chave",
+        "content": "Para explicar as coisas da forma mais clara possível nestes Termos de Uso, sempre que estes termos são mencionados, eles são estritamente definidos como:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "pequena quantidade de dados gerada por um site e salva pelo seu navegador web. É usado para identificar seu navegador, fornecer análises, lembrar informações sobre você."
+          },
+          "company": {
+            "name": "Empresa",
+            "description": "quando estas regras mencionam 'Empresa', 'nós', 'nos' ou 'nosso', refere-se ao DigitalSeal Studio, que é responsável por suas informações sob estes Termos de Uso."
+          },
+          "service": {
+            "name": "Serviço",
+            "description": "refere-se à plataforma de criação de selos e serviços fornecidos pelo DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Site",
+            "description": "o site do DigitalSeal Studio, que pode ser acessado via https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "Você",
+            "description": "o indivíduo ou entidade que está registrado no DigitalSeal Studio para usar os Serviços."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Restrições",
+        "content": "Você concorda em não fazer e não permitir que outros façam:",
+        "list": [
+          "Licenciar, vender, alugar, arrendar, atribuir, distribuir, transmitir, hospedar, terceirizar, divulgar ou explorar comercialmente o site ou disponibilizar a plataforma para terceiros.",
+          "Modificar, fazer trabalhos derivados, desmontar, descriptografar, descompilar ou fazer engenharia reversa de qualquer parte do site.",
+          "Remover, alterar ou ocultar qualquer aviso de propriedade do DigitalSeal Studio ou seus afiliados, parceiros, fornecedores ou licenciadores do site."
+        ]
+      },
+      "contact": {
+        "title": "Contate-nos",
+        "content": "Para quaisquer dúvidas sobre estes Termos de Uso, por favor, contate-nos através da nossa página de contato."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Selecionar Modelo",
+    "clickToChange": "Clique para alterar",
+    "templates": {
+      "companySeal": "Selo Empresarial",
+      "contractSeal1": "Selo Contratual 1",
+      "companySeal2": "Selo Empresarial 2"
+    },
+    "menu": {
+      "basic": "Básico #0",
+      "circleText1": "Texto Circular #1",
+      "circleText2": "Texto Circular #2",
+      "circleText3": "Texto Circular #3",
+      "circleText4": "Texto Circular #4",
+      "image": "Imagem #5",
+      "antiCounterfeiting": "Anti-Falsificação #6",
+      "antiAliasing": "Anti-Serrilhamento #7",
+      "stampAging": "Envelhecimento do Selo #8",
+      "innerCircle": "Círculo Interno #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Largura",
+        "height": "Altura",
+        "circleBorderWidth": "Largura da Borda do Círculo",
+        "color": "Cor"
+      },
+      "text": {
+        "companyName": "Nome da Empresa",
+        "font": "Fonte",
+        "fontSize": "Tamanho da Fonte (mm)",
+        "fontWeight": "Peso da Fonte",
+        "compressionRatio": "Taxa de Compressão",
+        "distributionFactor": "Fator de Distribuição",
+        "margin": "Margem (mm)",
+        "adjustText": "Ajustar Texto",
+        "adjustment": "Ajuste",
+        "startAngle": "Ângulo Inicial",
+        "rotationDirection": "Direção de Rotação",
+        "clockwise": "Horário",
+        "counterclockwise": "Anti-horário",
+        "addNewRow": "Adicionar Nova Linha",
+        "row": "Linha",
+        "delete": "Excluir",
+        "letterSpacing": "Espaçamento entre Letras",
+        "verticalPosition": "Posição Vertical",
+        "textContent": "Conteúdo do Texto",
+        "enterTextContent": "Digite o conteúdo do texto",
+        "sealCode": "Código do Selo",
+        "enterSealCode": "Digite o código do selo",
+        "taxNumber": "CNPJ",
+        "enterTaxNumber": "Digite o CNPJ"
+      },
+      "image": {
+        "selectImage": "Selecionar Imagem",
+        "imageWidth": "Largura da Imagem",
+        "imageHeight": "Altura da Imagem",
+        "horizontalPosition": "Posição Horizontal",
+        "verticalPosition": "Posição Vertical",
+        "keepAspectRatio": "Manter Proporção",
+        "addPictures": "Adicionar Imagens",
+        "title": "Imagem"
+      },
+      "security": {
+        "enableSecurityPattern": "Ativar Padrão de Segurança",
+        "refreshPattern": "Atualizar Padrão",
+        "patternCount": "Quantidade de Padrões",
+        "patternLength": "Comprimento do Padrão (mm)",
+        "patternWidth": "Largura do Padrão (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Ativar Efeito de Rebarba",
+        "burrWidth": "Largura da Rebarba (mm)",
+        "burrHeight": "Altura da Rebarba (mm)",
+        "burrProbability": "Probabilidade de Rebarba",
+        "burrOffset": "Deslocamento da Rebarba (mm)",
+        "burrPoints": "Pontos de Rebarba",
+        "refreshBurr": "Atualizar Rebarba"
+      },
+      "aging": {
+        "enableAgingEffect": "Ativar Efeito de Envelhecimento",
+        "manualAging": "Envelhecimento Manual",
+        "agingIntensity": "Intensidade do Envelhecimento",
+        "refreshAging": "Atualizar Envelhecimento"
+      },
+      "innerCircle": {
+        "addNewRow": "Adicionar Nova Linha",
+        "row": "Linha",
+        "delete": "Excluir",
+        "width": "Largura (mm)",
+        "radiusX": "Raio X do Círculo Interno (mm)",
+        "radiusY": "Raio Y do Círculo Interno (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Por favor, faça login para baixar o selo sem marca d'água",
+      "joinVip": "Tornar-se VIP",
+      "downloadStamp": "Baixar Selo",
+      "downloadFree": "Baixar Grátis",
+      "flashSale": "Oferta Relâmpago"
+    }
+  },
+  "payment": {
+    "success": "Pagamento realizado com sucesso!",
+    "failed": "Falha no pagamento",
+    "downloadNotice": "Seu selo está sendo baixado automaticamente. Verifique os downloads do seu navegador.",
+    "redirecting": "Redirecionando para a página inicial em {seconds} segundos...",
+    "backToHome": "Voltar para o Início",
+    "preparing": "Preparando seu selo...",
+    "dialogTitle": "Aviso de Download",
+    "download": "Baixar",
+    "close": "Fechar"
+  },
+  "orders": {
+    "loading": "Carregando...",
+    "fetchError": "Erro ao buscar pedidos",
+    "paymentTime": "Tempo de pagamento",
+    "status": "Status",
+    "action": "Ação",
+    "paid": "Pago",
+    "downloadSeal": "Baixar Selo",
+    "noOrders": "Nenhum pedido encontrado"
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Szerkesztés",
+    "pricing": "Árak",
+    "blog": "Blog",
+    "contact": "Kapcsolat",
+    "login": "Bejelentkezés",
+    "signup": "Regisztráció",
+    "logout": "Kijelentkezés",
+    "myOrders": "Rendeléseim"
+  },
+  "brand": {
+    "seal": "Pecsét",
+    "digital": "Digitális"
+  },
+  "auth": {
+    "signInTitle": "Bejelentkezés fiókjába",
+    "signInDesc": "Jelentkezzen be fiókjába a gyorsabb rendeléshez.",
+    "email": "Email címe",
+    "password": "Jelszava",
+    "emailPlaceholder": "Adja meg email címét",
+    "passwordPlaceholder": "Adja meg jelszavát",
+    "signingIn": "Bejelentkezés...",
+    "signIn": "Bejelentkezés",
+    "orContinueWith": "Vagy folytassa ezzel",
+    "signInWithGoogle": "Bejelentkezés Google-lal",
+    "noAccount": "Nincs még fiókja?",
+    "signUpLink": "Regisztráljon",
+    "pleaseLoginFirst": "Kérjük, először jelentkezzen be",
+    "createAccount": "Fiók létrehozása",
+    "registerWithEmail": "Regisztráció email címmel",
+    "registering": "Regisztráció...",
+    "signUp": "Regisztráció",
+    "alreadyHaveAccount": "Már van fiókja?"
+  },
+  "contact": {
+    "emailPlaceholder": "Email cím",
+    "emailRequired": "Kérjük, adja meg email címét.",
+    "emailInvalid": "Kérjük, adjon meg egy érvényes email címet.",
+    "messagePlaceholder": "Üzenete",
+    "messageRequired": "Kérjük, írja meg üzenetét.",
+    "sendMessage": "Üzenet küldése",
+    "sending": "Küldés...",
+    "sentSuccess": "Üzenet sikeresen elküldve!",
+    "sentError": "Valami hiba történt!",
+    "sendFailed": "Az üzenet küldése sikertelen",
+    "namePlaceholder": "Teljes név",
+    "nameRequired": "Kérjük, adja meg teljes nevét.",
+    "title": "Kapcsolat a készítővel",
+    "description": "Itt vagyok, hogy segítsek.",
+    "message": "Van valami kérdése? Itt vagyok, hogy segítsek. Töltse ki az űrlapot vagy küldjön emailt."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Pecsét készítése"
+    },
+    "title": "Intelligens Digitális Pecsét Tervező - Készítsen professzionális pecséteket egyszerűen",
+    "description": "Próbálja ki AI-alapú digitális pecsétkészítőnket, amely segít professzionális céges pecséteket, szerződéses pecséteket és egyedi digitális pecséteket készíteni néhány kattintással.",
+    "features": {
+      "templates": {
+        "title": "Professzionális sablonok",
+        "description": "Válasszon különböző professzionális pecsétsablonok közül, beleértve a céges pecséteket, szerződéses pecséteket és egyebeket. Testreszabhatja a méretet, keretvastagságot, színeket és egyéb paramétereket igényei szerint."
+      },
+      "security": {
+        "title": "Biztonsági védelem",
+        "description": "Beépített biztonsági mintázat generátor állítható sűrűséggel és mintamérettel. Tartalmaz öregedési és sorja effektusokat az autentikus megjelenésű pecsétek fokozott biztonságáért."
+      },
+      "customization": {
+        "title": "Teljes testreszabhatóság",
+        "description": "Szabja testre pecsétje minden aspektusát - a szövegtartalomtól és betűtípusoktól a tömörítési arányig és eloszlási tényezőkig. Adjon hozzá képeket és belső köröket egyedi pecsétdizájnok létrehozásához."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Információk és források digitális pecsétekről",
+      "sectionDescription": "Fedezze fel legújabb cikkeinket a digitális pecsétekről, hitelesítési technológiáról és professzionális pecséttervezésről.",
+      "readMore": "További információ",
+      "wantMore": "Többet szeretne tudni?",
+      "goHere": "Kattintson ide"
+    }
+  },
+  "footer": {
+    "product": "Termék",
+    "company": "Cég",
+    "stayUpdated": "Maradjon naprakész",
+    "subscribe": "Feliratkozás",
+    "enterEmail": "Adja meg email címét",
+    "subscribeSuccess": "Sikeres feliratkozás!",
+    "pleaseEnterEmail": "Kérjük, adja meg email címét",
+    "copyright": "Copyright © {year} SealDigital. Minden jog fenntartva.",
+    "privacy": "Adatvédelem",
+    "terms": "Felhasználási feltételek",
+    "stripeClimate": "Stripe Climate tag"
+  },
+  "pricing": {
+    "title": "Árak",
+    "plans": {
+      "singleSeal": {
+        "name": "Egyszeri pecsét",
+        "price": "$1.99",
+        "features": [
+          "1 pecsét készítése vízjel nélkül",
+          "Alapvető pecsétsablonok",
+          "Magas minőségű PNG formátum",
+          "Alap email támogatás",
+          "Egy eszközről való hozzáférés",
+          "Garantált szállítás 24 órán belül"
+        ],
+        "button": "Kezdés"
+      },
+      "proMonthly": {
+        "name": "Pro Havi",
+        "price": "$9.9",
+        "features": [
+          "Korlátlan pecsétkészítés",
+          "Minden prémium sablon",
+          "Letöltés vízjel nélkül",
+          "Kiemelt ügyfélszolgálat",
+          "Több eszközről való hozzáférés",
+          "Azonnali szállítás"
+        ],
+        "button": "Kezdés"
+      },
+      "customDesign": {
+        "name": "Egyedi tervezés",
+        "price": "Érdeklődjön",
+        "features": [
+          "Teljesen egyedi pecséttervezés",
+          "Exkluzív sablonok készítése",
+          "Dedikált tervezési szolgáltatás",
+          "Korlátlan módosítások",
+          "Kereskedelmi felhasználási jogok",
+          "Kiemelt támogatás"
+        ],
+        "button": "Kapcsolatfelvétel"
+      }
+    }
+  },
+  "blog": {
+    "title": "Információk és források digitális pecsétekről",
+    "description": "Fedezze fel legújabb cikkeinket a digitális pecsétekről, hitelesítési technológiáról és professzionális pecséttervezésről. Maradjon naprakész az iparági trendekkel és legjobb gyakorlatokkal.",
+    "articleCount": "{count} cikk, amely segít elsajátítani a digitális pecséteket",
+    "categories": {
+      "allPosts": "Minden bejegyzés",
+      "designTips": "Tervezési tippek",
+      "security": "Biztonság",
+      "tutorials": "Útmutatók"
+    }
+  },
+  "terms": {
+    "title": "Felhasználási feltételek - DigitalSeal Studio",
+    "lastUpdated": "Utolsó frissítés: 2024. december 12.",
+    "sections": {
+      "general": {
+        "title": "Általános feltételek",
+        "content": "A DigitalSeal Studio használatával és megrendelésével Ön megerősíti, hogy elfogadja és kötelező érvényűnek tekinti a jelen Felhasználási feltételekben foglalt szolgáltatási feltételeket. Ezek a feltételek vonatkoznak a teljes weboldalra és minden email vagy egyéb kommunikációra Ön és a DigitalSeal Studio között.",
+        "liability": "A DigitalSeal Studio csapata semmilyen körülmények között nem vállal felelősséget semmilyen közvetlen, közvetett, különleges, véletlen vagy következményes kárért, beleértve, de nem kizárólagosan, az adatok vagy nyereség elvesztését, amely a weboldal anyagainak használatából vagy használhatatlanságából ered, még akkor sem, ha a DigitalSeal Studio csapatát vagy egy meghatalmazott képviselőt értesítettek az ilyen károk lehetőségéről."
+      },
+      "license": {
+        "title": "Licenc",
+        "content": "A DigitalSeal Studio visszavonható, nem kizárólagos, nem átruházható, korlátozott licencet biztosít a weboldal letöltéséhez, telepítéséhez és használatához, szigorúan ezen megállapodás feltételeinek megfelelően."
+      },
+      "definitions": {
+        "title": "Definíciók és kulcsfogalmak",
+        "content": "A Felhasználási feltételekben szereplő dolgok lehető legvilágosabb magyarázata érdekében, amikor ezeket a kifejezéseket említjük, szigorúan a következőket jelentik:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "kis mennyiségű adat, amelyet a weboldal hoz létre és a böngészője tárol. Az Ön böngészőjének azonosítására, elemzések szolgáltatására és az Önről szóló információk megjegyzésére szolgál."
+          },
+          "company": {
+            "name": "Cég",
+            "description": "amikor ezek a szabályok 'Céget', 'mi', 'minket' vagy 'miénk' említenek, az a DigitalSeal Studio-ra utal, amely felelős az Ön információiért ezen Felhasználási feltételek szerint."
+          },
+          "service": {
+            "name": "Szolgáltatás",
+            "description": "a DigitalSeal Studio által nyújtott pecsétkészítő platform és szolgáltatások."
+          },
+          "website": {
+            "name": "Weboldal",
+            "description": "a DigitalSeal Studio oldala, amely elérhető a https://sealsdigital.com/ címen"
+          },
+          "user": {
+            "name": "Ön",
+            "description": "személy vagy entitás, aki regisztrált a DigitalSeal Studio-nál a Szolgáltatások használatára."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Korlátozások",
+        "content": "Ön vállalja, hogy nem és nem engedi másoknak:",
+        "list": [
+          "Licencelni, eladni, bérbe adni, átruházni, terjeszteni, továbbítani, hosztolni, kiszervezni, közzétenni vagy más módon kereskedelmileg hasznosítani a weboldalt, vagy a platformot harmadik felek számára elérhetővé tenni.",
+          "Módosítani, származékos műveket létrehozni, szétszedni, visszafejteni, dekompiálni vagy visszafejteni a weboldal bármely részét.",
+          "Eltávolítani, módosítani vagy elrejteni a DigitalSeal Studio vagy kapcsolt vállalkozásai, partnerei, szállítói vagy licencadói tulajdonjogi értesítéseit a weboldalról."
+        ]
+      },
+      "contact": {
+        "title": "Kapcsolat",
+        "content": "Ha bármilyen kérdése van ezekkel a Felhasználási feltételekkel kapcsolatban, kérjük, vegye fel velünk a kapcsolatot a kapcsolati oldalunkon keresztül."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Sablon választása",
+    "clickToChange": "Kattintson a módosításhoz",
+    "templates": {
+      "companySeal": "Céges pecsét",
+      "contractSeal1": "Szerződéses pecsét 1",
+      "companySeal2": "Céges pecsét 2"
+    },
+    "menu": {
+      "basic": "Alapvető #0",
+      "circleText1": "Körbefutó szöveg #1",
+      "circleText2": "Körbefutó szöveg #2",
+      "circleText3": "Körbefutó szöveg #3",
+      "circleText4": "Körbefutó szöveg #4",
+      "image": "Kép #5",
+      "antiCounterfeiting": "Hamisítás elleni védelem #6",
+      "antiAliasing": "Élsimítás #7",
+      "stampAging": "Pecsét öregítés #8",
+      "innerCircle": "Belső kör #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Szélesség",
+        "height": "Magasság",
+        "circleBorderWidth": "Körszegély szélessége",
+        "color": "Szín"
+      },
+      "text": {
+        "companyName": "Cégnév",
+        "font": "Betűtípus",
+        "fontSize": "Betűméret (mm)",
+        "fontWeight": "Betűvastagság",
+        "compressionRatio": "Tömörítési arány",
+        "distributionFactor": "Eloszlási tényező",
+        "margin": "Margó (mm)",
+        "adjustText": "Szöveg igazítása",
+        "adjustment": "Igazítás",
+        "startAngle": "Kezdőszög",
+        "rotationDirection": "Forgásirány",
+        "clockwise": "Óramutató járásával megegyező",
+        "counterclockwise": "Óramutató járásával ellentétes",
+        "addNewRow": "Új sor hozzáadása",
+        "row": "Sor",
+        "delete": "Törlés",
+        "letterSpacing": "Betűköz",
+        "verticalPosition": "Függőleges pozíció",
+        "textContent": "Szövegtartalom",
+        "enterTextContent": "Írja be a szöveget",
+        "sealCode": "Pecsét kód",
+        "enterSealCode": "Írja be a pecsét kódot",
+        "taxNumber": "Adószám",
+        "enterTaxNumber": "Írja be az adószámot"
+      },
+      "image": {
+        "selectImage": "Kép kiválasztása",
+        "imageWidth": "Kép szélessége",
+        "imageHeight": "Kép magassága",
+        "horizontalPosition": "Vízszintes pozíció",
+        "verticalPosition": "Függőleges pozíció",
+        "keepAspectRatio": "Képarány megtartása",
+        "addPictures": "Képek hozzáadása",
+        "title": "Kép"
+      },
+      "security": {
+        "enableSecurityPattern": "Biztonsági minta engedélyezése",
+        "refreshPattern": "Minta frissítése",
+        "patternCount": "Minták száma",
+        "patternLength": "Minta hossza (mm)",
+        "patternWidth": "Minta szélessége (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Sorja effektus engedélyezése",
+        "burrWidth": "Sorja szélessége (mm)",
+        "burrHeight": "Sorja magassága (mm)",
+        "burrProbability": "Sorja valószínűsége",
+        "burrOffset": "Sorja eltolás (mm)",
+        "burrPoints": "Sorja pontok",
+        "refreshBurr": "Sorja frissítése"
+      },
+      "aging": {
+        "enableAgingEffect": "Öregítési effektus engedélyezése",
+        "manualAging": "Kézi öregítés",
+        "agingIntensity": "Öregítés intenzitása",
+        "refreshAging": "Öregítés frissítése"
+      },
+      "innerCircle": {
+        "addNewRow": "Új sor hozzáadása",
+        "row": "Sor",
+        "delete": "Törlés",
+        "width": "Szélesség (mm)",
+        "radiusX": "Belső kör X sugara (mm)",
+        "radiusY": "Belső kör Y sugara (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Kérjük, jelentkezzen be a pecsét vízjel nélküli letöltéséhez",
+      "joinVip": "VIP tagság",
+      "downloadStamp": "Pecsét letöltése",
+      "downloadFree": "Ingyenes letöltés",
+      "flashSale": "Villámakció"
+    }
+  },
+  "payment": {
+    "success": "Sikeres fizetés!",
+    "failed": "Sikertelen fizetés",
+    "downloadNotice": "A pecsétje automatikusan letöltődik. Ellenőrizze a letöltéseket a böngészőjében.",
+    "redirecting": "Átirányítás a kezdőlapra {seconds} másodperc múlva...",
+    "backToHome": "Vissza a kezdőlapra",
+    "preparing": "Pecsétje előkészítése...",
+    "dialogTitle": "Letöltési értesítés",
+    "download": "Letöltés",
+    "close": "Bezárás"
+  },
+  "orders": {
+    "loading": "Betöltés...",
+    "fetchError": "Hiba történt a rendelések betöltésekor",
+    "paymentTime": "Fizetési idő",
+    "status": "Állapot",
+    "action": "Művelet",
+    "paid": "Fizetve",
+    "downloadSeal": "Pecsét letöltése",
+    "noOrders": "Nincs rendelés"
+  }
+}

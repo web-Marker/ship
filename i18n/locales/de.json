@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Bearbeiten",
+    "pricing": "Preise",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "logout": "Abmelden",
+    "myOrders": "Meine Bestellungen"
+  },
+  "brand": {
+    "seal": "Stempel",
+    "digital": "Digital"
+  },
+  "auth": {
+    "signInTitle": "In Ihr Konto einloggen",
+    "signInDesc": "Melden Sie sich in Ihrem Konto an für eine schnellere Bestellung.",
+    "email": "Ihre E-Mail",
+    "password": "Ihr Passwort",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "signingIn": "Anmeldung läuft...",
+    "signIn": "Anmelden",
+    "orContinueWith": "Oder fortfahren mit",
+    "signInWithGoogle": "Mit Google anmelden",
+    "noAccount": "Noch kein Konto?",
+    "signUpLink": "Registrieren",
+    "pleaseLoginFirst": "Bitte melden Sie sich zuerst an",
+    "createAccount": "Konto erstellen",
+    "registerWithEmail": "Mit E-Mail registrieren",
+    "registering": "Registrierung läuft...",
+    "signUp": "Registrieren",
+    "alreadyHaveAccount": "Haben Sie bereits ein Konto?"
+  },
+  "contact": {
+    "emailPlaceholder": "E-Mail-Adresse",
+    "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+    "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "messagePlaceholder": "Ihre Nachricht",
+    "messageRequired": "Bitte geben Sie Ihre Nachricht ein.",
+    "sendMessage": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "sentSuccess": "Nachricht erfolgreich gesendet!",
+    "sentError": "Etwas ist schiefgelaufen!",
+    "sendFailed": "Nachricht konnte nicht gesendet werden",
+    "namePlaceholder": "Vollständiger Name",
+    "nameRequired": "Bitte geben Sie Ihren vollständigen Namen ein.",
+    "title": "Kontaktieren Sie den Ersteller",
+    "description": "Ich bin hier, um zu helfen.",
+    "message": "Haben Sie Fragen? Ich bin hier, um zu helfen. Füllen Sie das Formular aus oder senden Sie eine E-Mail."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Stempel erstellen"
+    },
+    "title": "Intelligenter digitaler Stempeldesigner - Erstellen Sie professionelle Stempel einfach",
+    "description": "Probieren Sie unseren KI-basierten digitalen Stempelersteller aus, der Ihnen hilft, professionelle Firmenstempel, Vertragsstempel und individuelle digitale Stempel mit wenigen Klicks zu erstellen.",
+    "features": {
+      "templates": {
+        "title": "Professionelle Vorlagen",
+        "description": "Wählen Sie aus verschiedenen professionellen Stempelvorlagen einschließlich Firmenstempel, Vertragsstempel und mehr. Passen Sie Größe, Randbreite, Farben und andere Parameter nach Ihren Bedürfnissen an."
+      },
+      "security": {
+        "title": "Sicherheitsschutz",
+        "description": "Integrierter Sicherheitsmustergenerator mit einstellbarer Dichte und Mustergröße. Enthält Alterungs- und Grateffekte für authentisch aussehende Stempel mit erhöhter Sicherheit."
+      },
+      "customization": {
+        "title": "Vollständig anpassbar",
+        "description": "Passen Sie jeden Aspekt Ihres Stempels an - vom Textinhalt und der Schriftart bis zum Kompressionsgrad und den Verteilungsfaktoren. Fügen Sie Bilder und innere Kreise hinzu, um einzigartige Stempeldesigns zu erstellen."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Informationen und Ressourcen zu digitalen Stempeln",
+      "sectionDescription": "Entdecken Sie unsere neuesten Artikel über digitale Stempel, Authentifizierungstechnologie und professionelles Stempeldesign.",
+      "readMore": "Weiterlesen",
+      "wantMore": "Möchten Sie mehr erfahren?",
+      "goHere": "Hier klicken"
+    }
+  },
+  "footer": {
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "stayUpdated": "Bleiben Sie auf dem Laufenden",
+    "subscribe": "Abonnieren",
+    "enterEmail": "Geben Sie Ihre E-Mail ein",
+    "subscribeSuccess": "Erfolgreich abonniert!",
+    "pleaseEnterEmail": "Bitte geben Sie Ihre E-Mail ein",
+    "copyright": "Copyright © {year} SealDigital. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "stripeClimate": "Stripe Climate Mitglied"
+  },
+  "pricing": {
+    "title": "Preise",
+    "plans": {
+      "singleSeal": {
+        "name": "Einzelstempel",
+        "price": "$1.99",
+        "features": [
+          "Erstellen Sie 1 Stempel ohne Wasserzeichen",
+          "Standard-Stempelvorlagen",
+          "Hohe Qualität im PNG-Format",
+          "Grundlegender E-Mail-Support",
+          "Zugriff von einem Gerät",
+          "Garantierte Lieferung innerhalb von 24 Stunden"
+        ],
+        "button": "Starten"
+      },
+      "proMonthly": {
+        "name": "Pro Monatlich",
+        "price": "$9.9",
+        "features": [
+          "Unbegrenzte Stempelerstellung",
+          "Alle Premium-Vorlagen",
+          "Download ohne Wasserzeichen",
+          "Prioritäts-Kundensupport",
+          "Zugriff von mehreren Geräten",
+          "Sofortige Lieferung"
+        ],
+        "button": "Starten"
+      },
+      "customDesign": {
+        "name": "Individuelles Design",
+        "price": "Kontaktieren",
+        "features": [
+          "Vollständig individuelles Stempeldesign",
+          "Exklusive Vorlagenerstellung",
+          "Dedizierter Design-Service",
+          "Unbegrenzte Überarbeitungen",
+          "Kommerzielle Nutzungsrechte",
+          "Prioritäts-Support"
+        ],
+        "button": "Kontaktieren"
+      }
+    }
+  },
+  "blog": {
+    "title": "Informationen und Ressourcen zu digitalen Stempeln",
+    "description": "Entdecken Sie unsere neuesten Artikel über digitale Stempel, Authentifizierungstechnologie und professionelles Stempeldesign. Bleiben Sie auf dem Laufenden über Branchentrends und Best Practices.",
+    "articleCount": "{count} Artikel, die Ihnen helfen, digitale Stempel zu meistern",
+    "categories": {
+      "allPosts": "Alle Beiträge",
+      "designTips": "Design-Tipps",
+      "security": "Sicherheit",
+      "tutorials": "Tutorials"
+    }
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen - DigitalSeal Studio",
+    "lastUpdated": "Zuletzt aktualisiert: 12. Dezember 2024",
+    "sections": {
+      "general": {
+        "title": "Allgemeine Bestimmungen",
+        "content": "Durch den Zugriff auf und die Bestellung von DigitalSeal Studio bestätigen Sie, dass Sie den in diesen Nutzungsbedingungen enthaltenen Servicebedingungen zustimmen und an diese gebunden sind. Diese Bedingungen gelten für die gesamte Website und alle E-Mail- oder sonstigen Kommunikationen zwischen Ihnen und DigitalSeal Studio.",
+        "liability": "Unter keinen Umständen haftet das DigitalSeal Studio Team für direkte, indirekte, besondere, zufällige oder Folgeschäden, einschließlich, aber nicht beschränkt auf, Datenverlust oder entgangenen Gewinn, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung der Materialien auf dieser Website ergeben, selbst wenn das DigitalSeal Studio Team oder ein autorisierter Vertreter über die Möglichkeit solcher Schäden informiert wurde."
+      },
+      "license": {
+        "title": "Lizenz",
+        "content": "DigitalSeal Studio gewährt Ihnen eine widerrufliche, nicht-exklusive, nicht übertragbare, beschränkte Lizenz zum Herunterladen, Installieren und Nutzen der Website streng gemäß den Bedingungen dieser Vereinbarung."
+      },
+      "definitions": {
+        "title": "Definitionen und Schlüsselbegriffe",
+        "content": "Um die Dinge in diesen Nutzungsbedingungen so klar wie möglich zu erklären, werden diese Begriffe, wann immer sie erwähnt werden, streng wie folgt definiert:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "eine kleine Datenmenge, die von einer Website generiert und von Ihrem Webbrowser gespeichert wird. Wird verwendet, um Ihren Browser zu identifizieren, Analysen bereitzustellen und Informationen über Sie zu speichern."
+          },
+          "company": {
+            "name": "Unternehmen",
+            "description": "wenn in diesen Regeln 'Unternehmen', 'wir', 'uns' oder 'unser' erwähnt wird, bezieht sich dies auf DigitalSeal Studio, das gemäß diesen Nutzungsbedingungen für Ihre Informationen verantwortlich ist."
+          },
+          "service": {
+            "name": "Service",
+            "description": "bezieht sich auf die Stempelerstellungsplattform und Dienstleistungen, die von DigitalSeal Studio bereitgestellt werden."
+          },
+          "website": {
+            "name": "Website",
+            "description": "die DigitalSeal Studio-Site, die über https://sealsdigital.com/ zugänglich ist"
+          },
+          "user": {
+            "name": "Sie",
+            "description": "die Person oder Einheit, die bei DigitalSeal Studio registriert ist, um die Dienste zu nutzen."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Einschränkungen",
+        "content": "Sie stimmen zu, Folgendes nicht zu tun und anderen nicht zu erlauben:",
+        "list": [
+          "Die Website zu lizenzieren, zu verkaufen, zu vermieten, zu übertragen, zu vertreiben, zu übertragen, zu hosten, auszulagern, offenzulegen oder anderweitig kommerziell zu nutzen oder die Plattform Dritten zur Verfügung zu stellen.",
+          "Teile der Website zu modifizieren, abgeleitete Werke zu erstellen, zu disassemblieren, zu entschlüsseln, zu dekompilieren oder zurückzuentwickeln.",
+          "Eigentumshinweise von DigitalSeal Studio oder seinen verbundenen Unternehmen, Partnern, Lieferanten oder Lizenzgebern von der Website zu entfernen, zu ändern oder zu verbergen."
+        ]
+      },
+      "contact": {
+        "title": "Kontaktieren Sie uns",
+        "content": "Bei Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns bitte über unsere Kontaktseite."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Vorlage auswählen",
+    "clickToChange": "Zum Ändern klicken",
+    "templates": {
+      "companySeal": "Firmenstempel",
+      "contractSeal1": "Vertragsstempel 1",
+      "companySeal2": "Firmenstempel 2"
+    },
+    "menu": {
+      "basic": "Basis #0",
+      "circleText1": "Kreistext #1",
+      "circleText2": "Kreistext #2",
+      "circleText3": "Kreistext #3",
+      "circleText4": "Kreistext #4",
+      "image": "Bild #5",
+      "antiCounterfeiting": "Fälschungsschutz #6",
+      "antiAliasing": "Anti-Aliasing #7",
+      "stampAging": "Stempelalterung #8",
+      "innerCircle": "Innerer Kreis #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Breite",
+        "height": "Höhe",
+        "circleBorderWidth": "Kreisrandbreite",
+        "color": "Farbe"
+      },
+      "text": {
+        "companyName": "Firmenname",
+        "font": "Schriftart",
+        "fontSize": "Schriftgröße (mm)",
+        "fontWeight": "Schriftstärke",
+        "compressionRatio": "Kompressionsrate",
+        "distributionFactor": "Verteilungsfaktor",
+        "margin": "Rand (mm)",
+        "adjustText": "Text anpassen",
+        "adjustment": "Anpassung",
+        "startAngle": "Startwinkel",
+        "rotationDirection": "Drehrichtung",
+        "clockwise": "Im Uhrzeigersinn",
+        "counterclockwise": "Gegen den Uhrzeigersinn",
+        "addNewRow": "Neue Zeile hinzufügen",
+        "row": "Zeile",
+        "delete": "Löschen",
+        "letterSpacing": "Buchstabenabstand",
+        "verticalPosition": "Vertikale Position",
+        "textContent": "Textinhalt",
+        "enterTextContent": "Textinhalt eingeben",
+        "sealCode": "Stempelcode",
+        "enterSealCode": "Stempelcode eingeben",
+        "taxNumber": "Steuernummer",
+        "enterTaxNumber": "Steuernummer eingeben"
+      },
+      "image": {
+        "selectImage": "Bild auswählen",
+        "imageWidth": "Bildbreite",
+        "imageHeight": "Bildhöhe",
+        "horizontalPosition": "Horizontale Position",
+        "verticalPosition": "Vertikale Position",
+        "keepAspectRatio": "Seitenverhältnis beibehalten",
+        "addPictures": "Bilder hinzufügen",
+        "title": "Bild"
+      },
+      "security": {
+        "enableSecurityPattern": "Sicherheitsmuster aktivieren",
+        "refreshPattern": "Muster aktualisieren",
+        "patternCount": "Anzahl der Muster",
+        "patternLength": "Musterlänge (mm)",
+        "patternWidth": "Musterbreite (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Grateffekt aktivieren",
+        "burrWidth": "Gratbreite (mm)",
+        "burrHeight": "Grathöhe (mm)",
+        "burrProbability": "Gratwahrscheinlichkeit",
+        "burrOffset": "Gratversatz (mm)",
+        "burrPoints": "Gratpunkte",
+        "refreshBurr": "Grat aktualisieren"
+      },
+      "aging": {
+        "enableAgingEffect": "Alterungseffekt aktivieren",
+        "manualAging": "Manuelle Alterung",
+        "agingIntensity": "Alterungsintensität",
+        "refreshAging": "Alterung aktualisieren"
+      },
+      "innerCircle": {
+        "addNewRow": "Neue Zeile hinzufügen",
+        "row": "Zeile",
+        "delete": "Löschen",
+        "width": "Breite (mm)",
+        "radiusX": "Radius X innerer Kreis (mm)",
+        "radiusY": "Radius Y innerer Kreis (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Bitte melden Sie sich an, um den Stempel ohne Wasserzeichen herunterzuladen",
+      "joinVip": "VIP werden",
+      "downloadStamp": "Stempel herunterladen",
+      "downloadFree": "Kostenlos herunterladen",
+      "flashSale": "Blitzverkauf"
+    }
+  },
+  "payment": {
+    "success": "Zahlung erfolgreich!",
+    "failed": "Zahlung fehlgeschlagen",
+    "downloadNotice": "Ihr Stempel wird automatisch heruntergeladen. Überprüfen Sie die Downloads in Ihrem Browser.",
+    "redirecting": "Weiterleitung zur Startseite in {seconds} Sekunden...",
+    "backToHome": "Zurück zur Startseite",
+    "preparing": "Ihr Stempel wird vorbereitet...",
+    "dialogTitle": "Download-Benachrichtigung",
+    "download": "Herunterladen",
+    "close": "Schließen"
+  },
+  "orders": {
+    "loading": "Laden...",
+    "fetchError": "Fehler beim Laden der Bestellungen",
+    "paymentTime": "Zahlungszeit",
+    "status": "Status",
+    "action": "Aktion",
+    "paid": "Bezahlt",
+    "downloadSeal": "Stempel herunterladen",
+    "noOrders": "Keine Bestellungen gefunden"
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "編集",
+    "pricing": "料金",
+    "blog": "ブログ",
+    "contact": "お問い合わせ",
+    "login": "ログイン",
+    "signup": "登録",
+    "logout": "ログアウト",
+    "myOrders": "注文履歴"
+  },
+  "brand": {
+    "seal": "印鑑",
+    "digital": "デジタル"
+  },
+  "auth": {
+    "signInTitle": "アカウントにログイン",
+    "signInDesc": "より迅速な注文のためにアカウントにログインしてください。",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "emailPlaceholder": "メールアドレスを入力",
+    "passwordPlaceholder": "パスワードを入力",
+    "signingIn": "ログイン中...",
+    "signIn": "ログイン",
+    "orContinueWith": "または次で続ける",
+    "signInWithGoogle": "Googleでログイン",
+    "noAccount": "アカウントをお持ちでない方",
+    "signUpLink": "登録する",
+    "pleaseLoginFirst": "最初にログインしてください",
+    "createAccount": "アカウント作成",
+    "registerWithEmail": "メールアドレスで登録",
+    "registering": "登録中...",
+    "signUp": "登録",
+    "alreadyHaveAccount": "すでにアカウントをお持ちですか？"
+  },
+  "contact": {
+    "emailPlaceholder": "メールアドレス",
+    "emailRequired": "メールアドレスを入力してください。",
+    "emailInvalid": "有効なメールアドレスを入力してください。",
+    "messagePlaceholder": "メッセージ",
+    "messageRequired": "メッセージを入力してください。",
+    "sendMessage": "メッセージを送信",
+    "sending": "送信中...",
+    "sentSuccess": "メッセージが正常に送信されました！",
+    "sentError": "エラーが発生しました！",
+    "sendFailed": "メッセージの送信に失敗しました",
+    "namePlaceholder": "氏名",
+    "nameRequired": "氏名を入力してください。",
+    "title": "作成者に連絡",
+    "description": "サポートいたします。",
+    "message": "ご質問がありますか？サポートいたします。フォームに記入するかメールをお送りください。"
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "印鑑を作成"
+    },
+    "title": "スマートデジタル印鑑デザイナー - プロフェッショナルな印鑑を簡単に作成",
+    "description": "AI搭載のデジタル印鑑作成ツールを使用して、わずか数クリックでプロフェッショナルな会社印、契約印、カスタムデジタル印鑑を作成できます。",
+    "features": {
+      "templates": {
+        "title": "プロフェッショナルなテンプレート",
+        "description": "会社印、契約印などの様々なプロフェッショナルな印鑑テンプレートから選択できます。サイズ、枠線の太さ、色、その他のパラメータをニーズに合わせてカスタマイズできます。"
+      },
+      "security": {
+        "title": "セキュリティ保護",
+        "description": "密度とパターンサイズを調整可能な内蔵セキュリティパターンジェネレーター。セキュリティを強化した本物のような印影のための経年効果とバリ効果を含みます。"
+      },
+      "customization": {
+        "title": "完全カスタマイズ可能",
+        "description": "テキストの内容とフォントから圧縮率と分布係数まで、印鑑のあらゆる側面をカスタマイズできます。画像や内円を追加して、ユニークな印鑑デザインを作成できます。"
+      }
+    },
+    "blog": {
+      "sectionTitle": "デジタル印鑑に関する情報とリソース",
+      "sectionDescription": "デジタル印鑑、認証技術、プロフェッショナルな印鑑デザインに関する最新の記事をご覧ください。",
+      "readMore": "詳細を見る",
+      "wantMore": "もっと知りたいですか？",
+      "goHere": "こちらへ"
+    }
+  },
+  "footer": {
+    "product": "製品",
+    "company": "会社",
+    "stayUpdated": "最新情報を入手",
+    "subscribe": "登録",
+    "enterEmail": "メールアドレスを入力",
+    "subscribeSuccess": "登録が完了しました！",
+    "pleaseEnterEmail": "メールアドレスを入力してください",
+    "copyright": "Copyright © {year} SealDigital. All rights reserved.",
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "stripeClimate": "Stripe Climate メンバー"
+  },
+  "pricing": {
+    "title": "料金",
+    "plans": {
+      "singleSeal": {
+        "name": "シングル印鑑",
+        "price": "$1.99",
+        "features": [
+          "透かしなしで1つの印鑑を作成",
+          "標準印鑑テンプレート",
+          "高品質PNG形式",
+          "基本的なメールサポート",
+          "1デバイスからのアクセス",
+          "24時間以内の納品保証"
+        ],
+        "button": "開始する"
+      },
+      "proMonthly": {
+        "name": "プロ月額",
+        "price": "$9.9",
+        "features": [
+          "無制限の印鑑作成",
+          "すべてのプレミアムテンプレート",
+          "透かしなしでダウンロード",
+          "優先カスタマーサポート",
+          "複数デバイスからのアクセス",
+          "即時納品"
+        ],
+        "button": "開始する"
+      },
+      "customDesign": {
+        "name": "カスタムデザイン",
+        "price": "お問い合わせ",
+        "features": [
+          "完全カスタマイズ印鑑デザイン",
+          "独占テンプレートの作成",
+          "専用デザインサービス",
+          "無制限の修正",
+          "商用利用権",
+          "優先サポート"
+        ],
+        "button": "お問い合わせ"
+      }
+    }
+  },
+  "blog": {
+    "title": "デジタル印鑑に関する情報とリソース",
+    "description": "デジタル印鑑、認証技術、プロフェッショナルな印鑑デザインに関する最新の記事をご覧ください。業界のトレンドとベストプラクティスを把握しましょう。",
+    "articleCount": "デジタル印鑑をマスターするための{count}件の記事",
+    "categories": {
+      "allPosts": "すべての投稿",
+      "designTips": "デザインのヒント",
+      "security": "セキュリティ",
+      "tutorials": "チュートリアル"
+    }
+  },
+  "terms": {
+    "title": "利用規約 - DigitalSeal Studio",
+    "lastUpdated": "最終更新日: 2024年12月12日",
+    "sections": {
+      "general": {
+        "title": "一般条項",
+        "content": "DigitalSeal Studioにアクセスし注文することにより、あなたはこの利用規約に含まれるサービス条件に同意し拘束されることを確認します。これらの条件は、ウェブサイト全体およびあなたとDigitalSeal Studioとの間のすべてのメールまたはその他の通信に適用されます。",
+        "liability": "いかなる場合も、DigitalSeal Studioチームは、データまたは利益の損失を含むがこれに限定されない、直接的、間接的、特別、偶発的、または結果的な損害について、たとえDigitalSeal Studioチームまたは認定代理人がそのような損害の可能性について通知されていた場合でも、このウェブサイトの資料の使用または使用不能から生じる責任を負いません。"
+      },
+      "license": {
+        "title": "ライセンス",
+        "content": "DigitalSeal Studioは、本契約の条件に厳密に従って、ウェブサイトをダウンロード、インストール、使用するための取消可能、非独占的、譲渡不可能、限定的なライセンスを付与します。"
+      },
+      "definitions": {
+        "title": "定義と主要用語",
+        "content": "この利用規約で物事をできるだけ明確に説明するために、これらの用語が言及される際は、厳密に以下のように定義されます：",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "ウェブサイトによって生成され、ブラウザに保存される少量のデータ。ブラウザの識別、分析の提供、あなたに関する情報の記憶に使用されます。"
+          },
+          "company": {
+            "name": "会社",
+            "description": "これらの規則で「会社」、「私たち」、「私たちの」と言及される場合、この利用規約に基づいてあなたの情報に責任を持つDigitalSeal Studioを指します。"
+          },
+          "service": {
+            "name": "サービス",
+            "description": "DigitalSeal Studioが提供する印鑑作成プラットフォームとサービスを指します。"
+          },
+          "website": {
+            "name": "ウェブサイト",
+            "description": "https://sealsdigital.com/でアクセス可能なDigitalSeal Studioのサイト"
+          },
+          "user": {
+            "name": "あなた",
+            "description": "サービスを利用するためにDigitalSeal Studioに登録した個人または法人"
+          }
+        }
+      },
+      "restrictions": {
+        "title": "制限事項",
+        "content": "あなたは以下を行わないことに同意し、他者にも許可しないことに同意します：",
+        "list": [
+          "ウェブサイトのライセンス供与、販売、賃貸、譲渡、配布、送信、ホスティング、アウトソーシング、開示、または商業的利用、またはプラットフォームを第三者が利用できるようにすること。",
+          "ウェブサイトのいかなる部分も修正、派生物の作成、分解、解読、逆コンパイル、またはリバースエンジニアリングすること。",
+          "ウェブサイトからDigitalSeal Studioまたはその関連会社、パートナー、サプライヤー、またはライセンサーの所有権表示を削除、変更、または隠すこと。"
+        ]
+      },
+      "contact": {
+        "title": "お問い合わせ",
+        "content": "この利用規約に関するご質問は、お問い合わせページからご連絡ください。"
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "テンプレートを選択",
+    "clickToChange": "クリックして変更",
+    "templates": {
+      "companySeal": "会社印",
+      "contractSeal1": "契約印1",
+      "companySeal2": "会社印2"
+    },
+    "menu": {
+      "basic": "基本 #0",
+      "circleText1": "円形テキスト #1",
+      "circleText2": "円形テキスト #2",
+      "circleText3": "円形テキスト #3",
+      "circleText4": "円形テキスト #4",
+      "image": "画像 #5",
+      "antiCounterfeiting": "偽造防止 #6",
+      "antiAliasing": "アンチエイリアス #7",
+      "stampAging": "印鑑の経年効果 #8",
+      "innerCircle": "内円 #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "幅",
+        "height": "高さ",
+        "circleBorderWidth": "円の枠線の太さ",
+        "color": "色"
+      },
+      "text": {
+        "companyName": "会社名",
+        "font": "フォント",
+        "fontSize": "フォントサイズ (mm)",
+        "fontWeight": "フォントの太さ",
+        "compressionRatio": "圧縮率",
+        "distributionFactor": "分布係数",
+        "margin": "余白 (mm)",
+        "adjustText": "テキスト調整",
+        "adjustment": "調整",
+        "startAngle": "開始角度",
+        "rotationDirection": "回転方向",
+        "clockwise": "時計回り",
+        "counterclockwise": "反時計回り",
+        "addNewRow": "新しい行を追加",
+        "row": "行",
+        "delete": "削除",
+        "letterSpacing": "文字間隔",
+        "verticalPosition": "垂直位置",
+        "textContent": "テキスト内容",
+        "enterTextContent": "テキスト内容を入力",
+        "sealCode": "印鑑コード",
+        "enterSealCode": "印鑑コードを入力",
+        "taxNumber": "法人番号",
+        "enterTaxNumber": "法人番号を入力"
+      },
+      "image": {
+        "selectImage": "画像を選択",
+        "imageWidth": "画像の幅",
+        "imageHeight": "画像の高さ",
+        "horizontalPosition": "水平位置",
+        "verticalPosition": "垂直位置",
+        "keepAspectRatio": "縦横比を維持",
+        "addPictures": "画像を追加",
+        "title": "画像"
+      },
+      "security": {
+        "enableSecurityPattern": "セキュリティパターンを有効化",
+        "refreshPattern": "パターンを更新",
+        "patternCount": "パターン数",
+        "patternLength": "パターンの長さ (mm)",
+        "patternWidth": "パターンの幅 (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "バリ効果を有効化",
+        "burrWidth": "バリの幅 (mm)",
+        "burrHeight": "バリの高さ (mm)",
+        "burrProbability": "バリの確率",
+        "burrOffset": "バリのオフセット (mm)",
+        "burrPoints": "バリのポイント",
+        "refreshBurr": "バリを更新"
+      },
+      "aging": {
+        "enableAgingEffect": "経年効果を有効化",
+        "manualAging": "手動経年効果",
+        "agingIntensity": "経年効果の強度",
+        "refreshAging": "経年効果を更新"
+      },
+      "innerCircle": {
+        "addNewRow": "新しい行を追加",
+        "row": "行",
+        "delete": "削除",
+        "width": "幅 (mm)",
+        "radiusX": "内円のX半径 (mm)",
+        "radiusY": "内円のY半径 (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "透かしなしで印鑑をダウンロードするにはログインしてください",
+      "joinVip": "VIPに参加",
+      "downloadStamp": "印鑑をダウンロード",
+      "downloadFree": "無料ダウンロード",
+      "flashSale": "タイムセール"
+    }
+  },
+  "payment": {
+    "success": "支払い成功！",
+    "failed": "支払い失敗",
+    "downloadNotice": "印鑑は自動的にダウンロードされます。ブラウザのダウンロードを確認してください。",
+    "redirecting": "{seconds}秒後にホームページにリダイレクトします...",
+    "backToHome": "ホームに戻る",
+    "preparing": "印鑑を準備中...",
+    "dialogTitle": "ダウンロード通知",
+    "download": "ダウンロード",
+    "close": "閉じる"
+  },
+  "orders": {
+    "loading": "ローディング中...",
+    "fetchError": "注文の取得に失敗しました",
+    "paymentTime": "支払い時間",
+    "status": "ステータス",
+    "action": "アクション",
+    "paid": "支払われた",
+    "downloadSeal": "印鑑をダウンロード",
+    "noOrders": "注文が見つかりません"
+  }
+}

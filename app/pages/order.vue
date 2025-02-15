@@ -9,11 +9,11 @@
         <div
           class="animate-spin rounded-full h-12 w-12 border-4 border-gray-200 border-t-black"
         ></div>
-        <div class="font-bold text-gray-600">Loading...</div>
+        <div class="font-bold text-gray-600">{{ $t('orders.loading') }}</div>
       </div>
 
       <div v-if="error" class="text-red-500 text-center py-4">
-        {{ error }}
+        {{ $t('orders.fetchError') }}
       </div>
 
       <div
@@ -32,7 +32,7 @@
                         <div class="flex items-center gap-x-2">
                           <span
                             class="text-xs font-semibold uppercase tracking-wide text-gray-800"
-                            >Payment Time</span
+                            >{{ $t('orders.paymentTime') }}</span
                           >
                         </div>
                       </th>
@@ -40,7 +40,7 @@
                         <div class="flex items-center gap-x-2">
                           <span
                             class="text-xs font-semibold uppercase tracking-wide text-gray-800"
-                            >Status</span
+                            >{{ $t('orders.status') }}</span
                           >
                         </div>
                       </th>
@@ -48,7 +48,7 @@
                         <div class="flex items-center justify-end gap-x-2">
                           <span
                             class="text-xs font-semibold uppercase tracking-wide text-gray-800"
-                            >Action</span
+                            >{{ $t('orders.action') }}</span
                           >
                         </div>
                       </th>
@@ -80,7 +80,7 @@
                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
                               />
                             </svg>
-                            Paid
+                            {{ $t('orders.paid') }}
                           </span>
                         </div>
                       </td>
@@ -105,7 +105,7 @@
                                 d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
                               />
                             </svg>
-                            Download Seal
+                            {{ $t('orders.downloadSeal') }}
                           </button>
                         </div>
                       </td>
@@ -123,7 +123,7 @@
         v-if="!loading && !error && orders.length === 0"
         class="text-center py-4 font-semibold text-gray-500 text-lg"
       >
-        No Orders Found
+        {{ $t('orders.noOrders') }}
       </div>
     </div>
     <!-- End Table Section -->

@@ -15,9 +15,7 @@ export default defineEventHandler(async event => {
   }
 
   try {
-    console.log('Checking session:', sessionId)
     const session = await stripe.checkout.sessions.retrieve(sessionId)
-    console.log('Session data:', session)
 
     if (session.payment_status === 'paid') {
       // 如果是订阅支付，立即更新用户订阅状态

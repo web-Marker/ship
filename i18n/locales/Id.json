@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Edit",
+    "pricing": "Harga",
+    "blog": "Blog",
+    "contact": "Kontak",
+    "login": "Masuk",
+    "signup": "Daftar",
+    "logout": "Keluar",
+    "myOrders": "Pesanan Saya"
+  },
+  "brand": {
+    "seal": "Stempel",
+    "digital": "Digital"
+  },
+  "auth": {
+    "signInTitle": "Masuk ke akun Anda",
+    "signInDesc": "Masuk ke akun Anda untuk pemesanan yang lebih cepat.",
+    "email": "Email Anda",
+    "password": "Kata Sandi Anda",
+    "emailPlaceholder": "Masukkan email Anda",
+    "passwordPlaceholder": "Masukkan kata sandi Anda",
+    "signingIn": "Sedang masuk...",
+    "signIn": "Masuk",
+    "orContinueWith": "Atau lanjutkan dengan",
+    "signInWithGoogle": "Masuk dengan Google",
+    "noAccount": "Belum punya akun?",
+    "signUpLink": "Daftar",
+    "pleaseLoginFirst": "Silakan masuk terlebih dahulu",
+    "createAccount": "Buat Akun",
+    "registerWithEmail": "Daftar dengan email",
+    "registering": "Sedang mendaftar...",
+    "signUp": "Daftar",
+    "alreadyHaveAccount": "Sudah punya akun?"
+  },
+  "contact": {
+    "emailPlaceholder": "Alamat email",
+    "emailRequired": "Mohon masukkan alamat email Anda.",
+    "emailInvalid": "Mohon masukkan alamat email yang valid.",
+    "messagePlaceholder": "Pesan Anda",
+    "messageRequired": "Mohon masukkan pesan Anda.",
+    "sendMessage": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "sentSuccess": "Pesan berhasil dikirim!",
+    "sentError": "Terjadi kesalahan!",
+    "sendFailed": "Gagal mengirim pesan",
+    "namePlaceholder": "Nama lengkap",
+    "nameRequired": "Mohon masukkan nama lengkap Anda.",
+    "title": "Hubungi Pembuat",
+    "description": "Saya di sini untuk membantu.",
+    "message": "Ada yang ingin ditanyakan? Saya di sini untuk membantu. Isi formulir atau kirim email."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Buat Stempel"
+    },
+    "title": "Perancang Stempel Digital Cerdas - Buat stempel profesional dengan mudah",
+    "description": "Coba pembuat stempel digital berbasis AI kami yang membantu Anda membuat stempel perusahaan profesional, stempel kontrak, dan stempel digital kustom hanya dengan beberapa klik.",
+    "features": {
+      "templates": {
+        "title": "Template Profesional",
+        "description": "Pilih dari berbagai template stempel profesional termasuk stempel perusahaan, stempel kontrak, dan lainnya. Sesuaikan ukuran, lebar tepi, warna, dan parameter lainnya sesuai kebutuhan Anda."
+      },
+      "security": {
+        "title": "Perlindungan Keamanan",
+        "description": "Generator pola keamanan bawaan dengan kepadatan dan ukuran pola yang dapat disesuaikan. Termasuk efek penuaan dan keausan untuk tampilan stempel yang otentik dengan keamanan yang ditingkatkan."
+      },
+      "customization": {
+        "title": "Sepenuhnya Dapat Disesuaikan",
+        "description": "Sesuaikan setiap aspek stempel Anda - dari konten teks dan font hingga rasio kompresi dan faktor distribusi. Tambahkan gambar dan lingkaran dalam untuk membuat desain stempel yang unik."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Informasi dan Sumber Daya tentang Stempel Digital",
+      "sectionDescription": "Jelajahi artikel terbaru kami tentang stempel digital, teknologi otentikasi, dan desain stempel profesional.",
+      "readMore": "Baca selengkapnya",
+      "wantMore": "Ingin tahu lebih banyak?",
+      "goHere": "Klik di sini"
+    }
+  },
+  "footer": {
+    "product": "Produk",
+    "company": "Perusahaan",
+    "stayUpdated": "Tetap Update",
+    "subscribe": "Berlangganan",
+    "enterEmail": "Masukkan email Anda",
+    "subscribeSuccess": "Berhasil berlangganan!",
+    "pleaseEnterEmail": "Mohon masukkan email Anda",
+    "copyright": "Hak Cipta © {year} SealDigital. Seluruh hak dilindungi undang-undang.",
+    "privacy": "Privasi",
+    "terms": "Ketentuan Penggunaan",
+    "stripeClimate": "Anggota Stripe Climate"
+  },
+  "pricing": {
+    "title": "Harga",
+    "plans": {
+      "singleSeal": {
+        "name": "Satu Stempel",
+        "price": "$1.99",
+        "features": [
+          "Buat 1 stempel tanpa watermark",
+          "Template stempel standar",
+          "Kualitas tinggi dalam format PNG",
+          "Dukungan email dasar",
+          "Akses dari satu perangkat",
+          "Pengiriman dijamin dalam 24 jam"
+        ],
+        "button": "Mulai"
+      },
+      "proMonthly": {
+        "name": "Pro Bulanan",
+        "price": "$9.9",
+        "features": [
+          "Pembuatan stempel tak terbatas",
+          "Semua template premium",
+          "Unduh tanpa watermark",
+          "Dukungan pelanggan prioritas",
+          "Akses dari beberapa perangkat",
+          "Pengiriman instan"
+        ],
+        "button": "Mulai"
+      },
+      "customDesign": {
+        "name": "Desain Kustom",
+        "price": "Hubungi Kami",
+        "features": [
+          "Desain stempel sepenuhnya kustom",
+          "Pembuatan template eksklusif",
+          "Layanan desain khusus",
+          "Revisi tak terbatas",
+          "Hak penggunaan komersial",
+          "Dukungan prioritas"
+        ],
+        "button": "Hubungi Kami"
+      }
+    }
+  },
+  "blog": {
+    "title": "Informasi dan Sumber Daya tentang Stempel Digital",
+    "description": "Jelajahi artikel terbaru kami tentang stempel digital, teknologi otentikasi, dan desain stempel profesional. Tetap update dengan tren industri dan praktik terbaik.",
+    "articleCount": "{count} artikel yang akan membantu Anda menguasai stempel digital",
+    "categories": {
+      "allPosts": "Semua Posting",
+      "designTips": "Tips Desain",
+      "security": "Keamanan",
+      "tutorials": "Tutorial"
+    }
+  },
+  "terms": {
+    "title": "Ketentuan Penggunaan - DigitalSeal Studio",
+    "lastUpdated": "Terakhir diperbarui: 12 Desember 2024",
+    "sections": {
+      "general": {
+        "title": "Ketentuan Umum",
+        "content": "Dengan mengakses dan memesan dari DigitalSeal Studio, Anda mengonfirmasi bahwa Anda setuju dan terikat dengan ketentuan layanan yang terkandung dalam Ketentuan Penggunaan ini. Ketentuan ini berlaku untuk seluruh situs web dan setiap komunikasi email atau lainnya antara Anda dan DigitalSeal Studio.",
+        "liability": "Dalam keadaan apa pun tim DigitalSeal Studio tidak bertanggung jawab atas kerugian langsung, tidak langsung, khusus, insidental, atau konsekuensial, termasuk namun tidak terbatas pada, kehilangan data atau keuntungan, yang timbul dari penggunaan atau ketidakmampuan menggunakan materi di situs web ini, bahkan jika tim DigitalSeal Studio atau perwakilan resmi telah diberitahu tentang kemungkinan kerugian tersebut."
+      },
+      "license": {
+        "title": "Lisensi",
+        "content": "DigitalSeal Studio memberi Anda lisensi yang dapat dibatalkan, non-eksklusif, tidak dapat dipindahtangankan, terbatas untuk mengunduh, memasang, dan menggunakan situs web secara ketat sesuai dengan ketentuan perjanjian ini."
+      },
+      "definitions": {
+        "title": "Definisi dan Istilah Kunci",
+        "content": "Untuk menjelaskan hal-hal sejernih mungkin dalam Ketentuan Penggunaan ini, setiap kali salah satu dari istilah ini disebutkan, mereka secara ketat didefinisikan sebagai:",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "sejumlah kecil data yang dihasilkan oleh situs web dan disimpan oleh browser web Anda. Digunakan untuk mengidentifikasi browser Anda, menyediakan analitik, mengingat informasi tentang Anda."
+          },
+          "company": {
+            "name": "Perusahaan",
+            "description": "ketika aturan ini menyebutkan 'Perusahaan', 'kami', 'kita' atau 'milik kami', mengacu pada DigitalSeal Studio, yang bertanggung jawab atas informasi Anda berdasarkan Ketentuan Penggunaan ini."
+          },
+          "service": {
+            "name": "Layanan",
+            "description": "mengacu pada platform pembuatan stempel dan layanan yang disediakan oleh DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Situs Web",
+            "description": "situs DigitalSeal Studio, yang dapat diakses melalui https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "Anda",
+            "description": "orang atau entitas yang terdaftar di DigitalSeal Studio untuk menggunakan Layanan."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Pembatasan",
+        "content": "Anda setuju untuk tidak dan tidak akan mengizinkan orang lain untuk:",
+        "list": [
+          "Melisensikan, menjual, menyewakan, mentransfer, mendistribusikan, mentransmisikan, menghosting, mengalihdayakan, mengungkapkan, atau mengeksploitasi secara komersial situs web atau membuat platform tersedia bagi pihak ketiga.",
+          "Memodifikasi, membuat karya turunan, membongkar, mendekripsi, mendekompilasi, atau merekayasa balik bagian mana pun dari situs web.",
+          "Menghapus, mengubah, atau menyembunyikan pemberitahuan kepemilikan DigitalSeal Studio atau afiliasi, mitra, pemasok, atau pemberi lisensinya dari situs web."
+        ]
+      },
+      "contact": {
+        "title": "Hubungi Kami",
+        "content": "Untuk pertanyaan apa pun tentang Ketentuan Penggunaan ini, silakan hubungi kami melalui halaman kontak kami."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Pilih Template",
+    "clickToChange": "Klik untuk mengubah",
+    "templates": {
+      "companySeal": "Stempel Perusahaan",
+      "contractSeal1": "Stempel Kontrak 1",
+      "companySeal2": "Stempel Perusahaan 2"
+    },
+    "menu": {
+      "basic": "Dasar #0",
+      "circleText1": "Teks Melingkar #1",
+      "circleText2": "Teks Melingkar #2",
+      "circleText3": "Teks Melingkar #3",
+      "circleText4": "Teks Melingkar #4",
+      "image": "Gambar #5",
+      "antiCounterfeiting": "Anti Pemalsuan #6",
+      "antiAliasing": "Anti-aliasing #7",
+      "stampAging": "Penuaan Stempel #8",
+      "innerCircle": "Lingkaran Dalam #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Lebar",
+        "height": "Tinggi",
+        "circleBorderWidth": "Lebar Garis Lingkaran",
+        "color": "Warna"
+      },
+      "text": {
+        "companyName": "Nama Perusahaan",
+        "font": "Font",
+        "fontSize": "Ukuran Font (mm)",
+        "fontWeight": "Ketebalan Font",
+        "compressionRatio": "Rasio Kompresi",
+        "distributionFactor": "Faktor Distribusi",
+        "margin": "Margin (mm)",
+        "adjustText": "Sesuaikan Teks",
+        "adjustment": "Penyesuaian",
+        "startAngle": "Sudut Awal",
+        "rotationDirection": "Arah Rotasi",
+        "clockwise": "Searah Jarum Jam",
+        "counterclockwise": "Berlawanan Jarum Jam",
+        "addNewRow": "Tambah Baris Baru",
+        "row": "Baris",
+        "delete": "Hapus",
+        "letterSpacing": "Jarak Huruf",
+        "verticalPosition": "Posisi Vertikal",
+        "textContent": "Konten Teks",
+        "enterTextContent": "Masukkan konten teks",
+        "sealCode": "Kode Stempel",
+        "enterSealCode": "Masukkan kode stempel",
+        "taxNumber": "NPWP",
+        "enterTaxNumber": "Masukkan NPWP"
+      },
+      "image": {
+        "selectImage": "Pilih Gambar",
+        "imageWidth": "Lebar Gambar",
+        "imageHeight": "Tinggi Gambar",
+        "horizontalPosition": "Posisi Horizontal",
+        "verticalPosition": "Posisi Vertikal",
+        "keepAspectRatio": "Pertahankan Rasio Aspek",
+        "addPictures": "Tambah Gambar",
+        "title": "Gambar"
+      },
+      "security": {
+        "enableSecurityPattern": "Aktifkan Pola Keamanan",
+        "refreshPattern": "Perbarui Pola",
+        "patternCount": "Jumlah Pola",
+        "patternLength": "Panjang Pola (mm)",
+        "patternWidth": "Lebar Pola (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Aktifkan Efek Keausan",
+        "burrWidth": "Lebar Keausan (mm)",
+        "burrHeight": "Tinggi Keausan (mm)",
+        "burrProbability": "Probabilitas Keausan",
+        "burrOffset": "Offset Keausan (mm)",
+        "burrPoints": "Titik Keausan",
+        "refreshBurr": "Perbarui Keausan"
+      },
+      "aging": {
+        "enableAgingEffect": "Aktifkan Efek Penuaan",
+        "manualAging": "Penuaan Manual",
+        "agingIntensity": "Intensitas Penuaan",
+        "refreshAging": "Perbarui Penuaan"
+      },
+      "innerCircle": {
+        "addNewRow": "Tambah Baris Baru",
+        "row": "Baris",
+        "delete": "Hapus",
+        "width": "Lebar (mm)",
+        "radiusX": "Radius X Lingkaran Dalam (mm)",
+        "radiusY": "Radius Y Lingkaran Dalam (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Silakan masuk untuk mengunduh stempel tanpa watermark",
+      "joinVip": "Gabung VIP",
+      "downloadStamp": "Unduh Stempel",
+      "downloadFree": "Unduh Gratis",
+      "flashSale": "Diskon Kilat"
+    }
+  },
+  "payment": {
+    "success": "Pembayaran Berhasil!",
+    "failed": "Pembayaran Gagal",
+    "downloadNotice": "Stempel Anda sedang diunduh secara otomatis. Periksa unduhan di browser Anda.",
+    "redirecting": "Mengalihkan ke halaman utama dalam {seconds} detik...",
+    "backToHome": "Kembali ke Beranda",
+    "preparing": "Menyiapkan stempel Anda...",
+    "dialogTitle": "Pemberitahuan Unduhan",
+    "download": "Unduh",
+    "close": "Tutup"
+  },
+  "orders": {
+    "loading": "Memuat...",
+    "fetchError": "Error mengambil pesanan",
+    "paymentTime": "Waktu Pembayaran",
+    "status": "Status",
+    "action": "Aksi",
+    "paid": "Dibayar",
+    "downloadSeal": "Unduh Stempel",
+    "noOrders": "Tidak ada pesanan ditemukan"
+  }
+}

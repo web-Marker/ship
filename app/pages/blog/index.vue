@@ -6,7 +6,7 @@ definePageMeta({
   layout: 'landing',
 })
 
-type Category = 'All Posts' | 'Design Tips' | 'Security' | 'Tutorials'
+type Category = 'allPosts' | 'designTips' | 'security' | 'tutorials'
 
 const allPosts = ref<any>(postdata)
 
@@ -22,22 +22,24 @@ useHead({
 })
 
 // 当前选中的分类
-const selectedCategory = ref<Category>('All Posts')
+const selectedCategory = ref<Category>('allPosts')
 
 // 分类列表
 const categories = ref<Category[]>([
-  'All Posts',
-  'Design Tips',
-  'Security',
-  'Tutorials',
+  'allPosts',
+  'designTips',
+  'security',
+  'tutorials',
 ])
 
 // 根据分类筛选文章
 const posts = computed(() => {
-  if (selectedCategory.value === 'All Posts') {
+  if (selectedCategory.value === 'allPosts') {
     return allPosts.value
   }
-  return allPosts.value.filter(post => post.category === selectedCategory.value)
+  return allPosts.value.filter(
+    post => post.category.toLowerCase() === selectedCategory.value
+  )
 })
 
 // 处理分类点击
@@ -51,22 +53,18 @@ const handleCategoryClick = (category: Category) => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold mb-4">
-          Digital Seal Insights & Resources
+          {{ $t('blog.title') }}
         </h1>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Explore our latest articles about digital seals, authentication
-          technology, and professional stamp design. Stay informed about
-          industry trends and best practices.
+          {{ $t('blog.description') }}
         </p>
       </div>
       <div class="flex flex-col sm:flex-row justify-between items-center mb-8">
         <div class="text-gray-600 mb-4 sm:mb-0">
           <p class="text-sm">
-            <span class="font-semibold">{{ posts.length }}</span> articles to
-            help you master digital sealing
+            {{ $t('blog.articleCount', { count: posts.length }) }}
           </p>
         </div>
-        <!-- 分类标签 -->
         <div class="flex gap-2 flex-wrap justify-center">
           <span
             v-for="category in categories"
@@ -79,7 +77,7 @@ const handleCategoryClick = (category: Category) => {
             ]"
             @click="handleCategoryClick(category)"
           >
-            {{ category }}
+            {{ $t(`blog.categories.${category}`) }}
           </span>
         </div>
       </div>

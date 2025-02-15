@@ -1,4 +1,8 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 onMounted(() => {
   const form = document.getElementById('form')
   const result = document.getElementById('result')
@@ -13,7 +17,7 @@ onMounted(() => {
     const formData = new FormData(form)
     const object = Object.fromEntries(formData)
 
-    result.innerHTML = 'Sending...'
+    result.innerHTML = t('contact.sending')
 
     fetch('/api/messages/submit', {
       method: 'POST',
@@ -27,17 +31,17 @@ onMounted(() => {
         if (response.ok) {
           result.classList.remove('text-red-500')
           result.classList.add('text-green-500')
-          result.innerHTML = 'Message sent successfully!'
+          result.innerHTML = t('contact.sentSuccess')
         } else {
           result.classList.remove('text-green-500')
           result.classList.add('text-red-500')
-          result.innerHTML = json.message || 'Something went wrong!'
+          result.innerHTML = json.message || t('contact.sentError')
         }
       })
       .catch(error => {
         console.error(error)
         result.classList.add('text-red-500')
-        result.innerHTML = 'Failed to send message'
+        result.innerHTML = t('contact.sendFailed')
       })
       .finally(() => {
         form.reset()
@@ -55,44 +59,48 @@ onMounted(() => {
     <div class="mb-5">
       <input
         type="text"
-        placeholder="Full Name"
+        :placeholder="t('contact.namePlaceholder')"
         required
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
         name="name"
       />
       <div class="hidden-feedback text-red-400 text-sm mt-1">
-        Please provide your full name.
+        {{ t('contact.nameRequired') }}
       </div>
     </div>
     <div class="mb-5">
-      <label for="email_address" class="sr-only">Email Address</label>
+      <label for="email_address" class="sr-only">{{
+        t('contact.emailPlaceholder')
+      }}</label>
       <input
         id="email_address"
         type="email"
-        placeholder="Email Address"
+        :placeholder="t('contact.emailPlaceholder')"
         name="email"
         required
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       />
       <div class="hidden-feedback text-red-400 text-sm mt-1">
-        Please provide your email address.
+        {{ t('contact.emailRequired') }}
       </div>
       <div class="hidden-feedback-invalid text-red-400 text-sm mt-1">
-        Please provide a valid email address.
+        {{ t('contact.emailInvalid') }}
       </div>
     </div>
     <div class="mb-3">
       <textarea
         name="message"
         required
-        placeholder="Your Message"
+        :placeholder="t('contact.messagePlaceholder')"
         class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
       ></textarea>
       <div class="hidden-feedback text-red-400 text-sm mt-1">
-        Please enter your message.
+        {{ t('contact.messageRequired') }}
       </div>
     </div>
-    <LandingButton type="submit" size="lg" block>Send Message</LandingButton>
+    <LandingButton type="submit" size="lg" block>{{
+      t('contact.sendMessage')
+    }}</LandingButton>
     <div id="result" class="mt-3 text-center"></div>
   </form>
 </template>

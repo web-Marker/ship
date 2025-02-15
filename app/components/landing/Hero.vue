@@ -37,12 +37,10 @@
     <div class="grid md:grid-cols-2 gap-12">
       <div class="lg:w-3/4">
         <h2 class="text-3xl text-gray-800 font-bold lg:text-4xl">
-          Smart Digital Seal Designer - Create Professional Stamps Effortlessly
+          {{ $t('hero.title') }}
         </h2>
         <p class="mt-3 text-gray-800">
-          Experience our AI-powered digital seal maker that helps you create
-          professional company seals, contract stamps, and custom digital stamps
-          with just a few clicks.
+          {{ $t('hero.description') }}
         </p>
       </div>
       <!-- End Col -->
@@ -72,12 +70,10 @@
           </span>
           <div class="grow">
             <h3 class="text-base sm:text-lg font-semibold text-gray-800">
-              Professional Templates
+              {{ $t('hero.features.templates.title') }}
             </h3>
             <p class="mt-1 text-gray-600">
-              Choose from a variety of professional seal templates including
-              company seals, contract stamps, and more. Customize size, border
-              width, colors, and other parameters to match your needs.
+              {{ $t('hero.features.templates.description') }}
             </p>
           </div>
         </div>
@@ -109,12 +105,10 @@
           </span>
           <div class="grow">
             <h3 class="text-base sm:text-lg font-semibold text-gray-800">
-              Anti-counterfeiting Features
+              {{ $t('hero.features.security.title') }}
             </h3>
             <p class="mt-1 text-gray-600">
-              Built-in security pattern generator with customizable pattern
-              density and size. Includes aging effects and burr effects for
-              authentic-looking seals with enhanced security.
+              {{ $t('hero.features.security.description') }}
             </p>
           </div>
         </div>
@@ -146,12 +140,10 @@
           </span>
           <div class="grow">
             <h3 class="text-base sm:text-lg font-semibold text-gray-800">
-              Fully Customizable
+              {{ $t('hero.features.customization.title') }}
             </h3>
             <p class="mt-1 text-gray-600">
-              Customize every aspect of your seal - from text content and fonts
-              to compression ratio and distribution factors. Add images and
-              inner circles to create unique seal designs.
+              {{ $t('hero.features.customization.description') }}
             </p>
           </div>
         </div>
@@ -167,11 +159,10 @@
   <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
       <h2 class="text-2xl font-bold md:text-4xl md:leading-tight">
-        Digital Seal Insights & Resources
+        {{ $t('hero.blog.sectionTitle') }}
       </h2>
       <p class="mt-1 text-gray-600">
-        Explore our latest articles about digital seals, authentication
-        technology, and professional stamp design.
+        {{ $t('hero.blog.sectionDescription') }}
       </p>
     </div>
     <!-- Grid -->
@@ -206,7 +197,7 @@
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
             >
-              Read more
+              {{ $t('hero.blog.readMore') }}
               <svg
                 class="shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +247,7 @@
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
             >
-              Read more
+              {{ $t('hero.blog.readMore') }}
               <svg
                 class="shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +297,7 @@
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
             >
-              Read more
+              {{ $t('hero.blog.readMore') }}
               <svg
                 class="shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -354,9 +345,9 @@
               vector-based designs to...
             </p>
             <p
-              class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium"
+              class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
             >
-              Read more
+              {{ $t('hero.blog.readMore') }}
               <svg
                 class="shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -407,7 +398,7 @@
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
             >
-              Read more
+              {{ $t('hero.blog.readMore') }}
               <svg
                 class="shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -457,7 +448,7 @@
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
             >
-              Read more
+              {{ $t('hero.blog.readMore') }}
               <svg
                 class="shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -510,7 +501,7 @@
             <p
               class="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500"
             >
-              Read more
+              {{ $t('hero.blog.readMore') }}
               <svg
                 class="shrink-0 size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -535,12 +526,12 @@
     <div class="text-center mt-10">
       <div class="inline-block border shadow-sm rounded-full">
         <div class="py-3 px-4 flex items-center gap-x-2">
-          <p class="text-gray-600">Want to read more?</p>
+          <p class="text-gray-600">{{ $t('hero.blog.wantMore') }}</p>
           <NuxtLink
             to="/blog"
             class="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
           >
-            Go here
+            {{ $t('hero.blog.goHere') }}
             <svg
               class="shrink-0 size-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -575,8 +566,11 @@ import p18 from '@/assets/img/18.jpg'
 import p19 from '@/assets/img/19.jpg'
 import p20 from '@/assets/img/20.jpg'
 import p21 from '@/assets/img/21.jpg'
+import { useI18n } from 'vue-i18n'
 
-const tabs = ref(['Generate Stamp'])
+const { t } = useI18n()
+
+const tabs = ref([t('hero.tabs.generateStamp')])
 const activeTab = ref(0)
 </script>
 <style scoped></style>

@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "edit": "Éditer",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "contact": "Contact",
+    "login": "Connexion",
+    "signup": "S'inscrire",
+    "logout": "Déconnexion",
+    "myOrders": "Mes commandes"
+  },
+  "brand": {
+    "seal": "Sceau",
+    "digital": "Numérique"
+  },
+  "blog": {
+    "title": "Aperçus et ressources sur les tampons numériques",
+    "description": "Explorez nos derniers articles sur les sceaux numériques, la technologie d'authentification et la conception de tampons professionnels. Restez informé des tendances et des meilleures pratiques du secteur.",
+    "articleCount": "{count} articles pour vous aider à maîtriser le sceau numérique",
+    "categories": {
+      "allPosts": "Tous les articles",
+      "designTips": "Conseils de design",
+      "security": "Sécurité",
+      "tutorials": "Tutoriels"
+    }
+  },
+  "auth": {
+    "signInTitle": "Connectez-vous à votre compte",
+    "signInDesc": "Connectez-vous à votre compte pour une commande plus rapide.",
+    "email": "Votre e-mail",
+    "password": "Votre mot de passe",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "signingIn": "Connexion en cours...",
+    "signIn": "Se connecter",
+    "orContinueWith": "Ou continuer avec",
+    "signInWithGoogle": "Se connecter avec Google",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUpLink": "S'inscrire",
+    "pleaseLoginFirst": "Veuillez vous connecter d'abord",
+    "createAccount": "Créez votre compte",
+    "registerWithEmail": "Inscrivez-vous avec votre e-mail",
+    "registering": "Inscription en cours...",
+    "signUp": "S'inscrire",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?"
+  },
+  "contact": {
+    "emailPlaceholder": "Adresse e-mail",
+    "emailRequired": "Veuillez fournir votre adresse e-mail.",
+    "emailInvalid": "Veuillez fournir une adresse e-mail valide.",
+    "messagePlaceholder": "Votre message",
+    "messageRequired": "Veuillez saisir votre message.",
+    "sendMessage": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "sentSuccess": "Message envoyé avec succès !",
+    "sentError": "Une erreur s'est produite !",
+    "sendFailed": "Échec de l'envoi du message",
+    "namePlaceholder": "Nom complet",
+    "nameRequired": "Veuillez fournir votre nom complet.",
+    "title": "Contacter le Créateur",
+    "description": "Je suis là pour vous aider.",
+    "message": "Vous avez quelque chose à dire ? Je suis là pour vous aider. Remplissez le formulaire ou envoyez un e-mail."
+  },
+  "hero": {
+    "tabs": {
+      "generateStamp": "Générer un tampon"
+    },
+    "title": "Concepteur de sceau numérique intelligent - Créez des tampons professionnels facilement",
+    "description": "Découvrez notre créateur de sceaux numériques alimenté par l'IA qui vous aide à créer des sceaux d'entreprise professionnels, des tampons de contrat et des tampons numériques personnalisés en quelques clics.",
+    "features": {
+      "templates": {
+        "title": "Modèles professionnels",
+        "description": "Choisissez parmi une variété de modèles de sceaux professionnels, y compris les sceaux d'entreprise, les tampons de contrat et plus encore. Personnalisez la taille, la largeur de la bordure, les couleurs et d'autres paramètres selon vos besoins."
+      },
+      "security": {
+        "title": "Fonctionnalités anti-contrefaçon",
+        "description": "Générateur de motifs de sécurité intégré avec densité et taille de motif personnalisables. Inclut des effets de vieillissement et des effets de bavure pour des sceaux d'aspect authentique avec une sécurité renforcée."
+      },
+      "customization": {
+        "title": "Entièrement personnalisable",
+        "description": "Personnalisez chaque aspect de votre sceau - du contenu du texte et des polices au taux de compression et aux facteurs de distribution. Ajoutez des images et des cercles intérieurs pour créer des designs de sceaux uniques."
+      }
+    },
+    "blog": {
+      "sectionTitle": "Aperçus et ressources sur les sceaux numériques",
+      "sectionDescription": "Explorez nos derniers articles sur les sceaux numériques, la technologie d'authentification et la conception de tampons professionnels.",
+      "readMore": "Lire la suite",
+      "wantMore": "Vous voulez en lire plus ?",
+      "goHere": "Cliquez ici"
+    }
+  },
+  "footer": {
+    "product": "Produit",
+    "company": "Entreprise",
+    "stayUpdated": "Restez informé",
+    "subscribe": "S'abonner",
+    "enterEmail": "Entrez votre e-mail",
+    "subscribeSuccess": "Abonnement envoyé avec succès !",
+    "pleaseEnterEmail": "Veuillez entrer votre e-mail",
+    "copyright": "Copyright © {year} SealDigital. Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions générales",
+    "stripeClimate": "Membre Stripe Climate"
+  },
+  "pricing": {
+    "title": "Tarifs",
+    "plans": {
+      "singleSeal": {
+        "name": "Sceau Unique",
+        "price": "1,99 €",
+        "features": [
+          "Créer 1 sceau sans filigrane",
+          "Modèles de sceaux standard",
+          "Format PNG haute qualité",
+          "Support par e-mail basique",
+          "Accès sur un seul appareil",
+          "Livraison garantie sous 24h"
+        ],
+        "button": "Commencer"
+      },
+      "proMonthly": {
+        "name": "Pro Mensuel",
+        "price": "9,9 €",
+        "features": [
+          "Création illimitée de sceaux",
+          "Tous les modèles premium",
+          "Téléchargements sans filigrane",
+          "Support client prioritaire",
+          "Accès multi-appareils",
+          "Livraison instantanée"
+        ],
+        "button": "Commencer"
+      },
+      "customDesign": {
+        "name": "Design Personnalisé",
+        "price": "Contact",
+        "features": [
+          "Design de sceau entièrement personnalisé",
+          "Création de modèle exclusif",
+          "Service de design dédié",
+          "Révisions illimitées",
+          "Droits d'utilisation commerciale",
+          "Support prioritaire"
+        ],
+        "button": "Contactez-nous"
+      }
+    }
+  },
+  "terms": {
+    "title": "Conditions générales - DigitalSeal Studio",
+    "lastUpdated": "Dernière mise à jour : 12 décembre 2024",
+    "sections": {
+      "general": {
+        "title": "Conditions générales",
+        "content": "En accédant et en passant une commande auprès de DigitalSeal Studio, vous confirmez que vous acceptez et êtes lié par les conditions de service contenues dans les Conditions générales décrites ci-dessous. Ces conditions s'appliquent à l'ensemble du site Web et à toute communication par e-mail ou autre type entre vous et DigitalSeal Studio.",
+        "liability": "En aucun cas, l'équipe de DigitalSeal Studio ne pourra être tenue responsable des dommages directs, indirects, spéciaux, accessoires ou consécutifs, y compris, mais sans s'y limiter, la perte de données ou de profit, découlant de l'utilisation ou de l'impossibilité d'utiliser les matériaux sur ce site, même si l'équipe de DigitalSeal Studio ou un représentant autorisé a été informé de la possibilité de tels dommages."
+      },
+      "license": {
+        "title": "Licence",
+        "content": "DigitalSeal Studio vous accorde une licence révocable, non exclusive, non transférable et limitée pour télécharger, installer et utiliser le site Web strictement conformément aux conditions de cet Accord."
+      },
+      "definitions": {
+        "title": "Définitions et termes clés",
+        "content": "Pour expliquer les choses le plus clairement possible dans ces Conditions générales, chaque fois que ces termes sont référencés, ils sont strictement définis comme suit :",
+        "terms": {
+          "cookie": {
+            "name": "Cookie",
+            "description": "petite quantité de données générée par un site Web et enregistrée par votre navigateur Web. Il est utilisé pour identifier votre navigateur, fournir des analyses et mémoriser des informations vous concernant."
+          },
+          "company": {
+            "name": "Société",
+            "description": "lorsque cette politique mentionne \"Société\", \"nous\", \"notre\" ou \"nos\", elle fait référence à DigitalSeal Studio qui est responsable de vos informations en vertu de ces Conditions générales."
+          },
+          "service": {
+            "name": "Service",
+            "description": "fait référence à la plateforme de création de sceaux et aux services fournis par DigitalSeal Studio."
+          },
+          "website": {
+            "name": "Site Web",
+            "description": "le site de DigitalSeal Studio, accessible via https://sealsdigital.com/"
+          },
+          "user": {
+            "name": "Vous",
+            "description": "une personne ou une entité qui est inscrite auprès de DigitalSeal Studio pour utiliser les Services."
+          }
+        }
+      },
+      "restrictions": {
+        "title": "Restrictions",
+        "content": "Vous acceptez de ne pas, et vous ne permettrez pas à d'autres de :",
+        "list": [
+          "Licencier, vendre, louer, céder, distribuer, transmettre, héberger, externaliser, divulguer ou exploiter commercialement le site Web ou rendre la plateforme accessible à des tiers.",
+          "Modifier, créer des œuvres dérivées, désassembler, décrypter, décompiler ou désosser toute partie du site Web.",
+          "Supprimer, modifier ou masquer tout avis de propriété de DigitalSeal Studio ou de ses affiliés, partenaires, fournisseurs ou concédants du site Web."
+        ]
+      },
+      "contact": {
+        "title": "Nous contacter",
+        "content": "Pour toute question concernant ces Conditions générales, veuillez nous contacter via notre page de contact."
+      }
+    }
+  },
+  "edit": {
+    "selectTemplate": "Sélectionner un modèle",
+    "clickToChange": "Cliquer pour changer",
+    "templates": {
+      "companySeal": "Sceau d'entreprise",
+      "contractSeal1": "Sceau de contrat 1",
+      "companySeal2": "Sceau d'entreprise 2"
+    },
+    "menu": {
+      "basic": "Base #0",
+      "circleText1": "Texte circulaire #1",
+      "circleText2": "Texte circulaire #2",
+      "circleText3": "Texte circulaire #3", 
+      "circleText4": "Texte circulaire #4",
+      "image": "Image #5",
+      "antiCounterfeiting": "Anti-contrefaçon #6",
+      "antiAliasing": "Anti-crénelage #7",
+      "stampAging": "Vieillissement #8",
+      "innerCircle": "Cercle intérieur #9"
+    },
+    "settings": {
+      "basic": {
+        "width": "Largeur",
+        "height": "Hauteur",
+        "circleBorderWidth": "Largeur de la bordure du cercle",
+        "color": "Couleur"
+      },
+      "text": {
+        "companyName": "Nom de l'entreprise",
+        "font": "Police",
+        "fontSize": "Taille de police (mm)",
+        "fontWeight": "Épaisseur de police",
+        "compressionRatio": "Taux de compression",
+        "distributionFactor": "Facteur de distribution",
+        "margin": "Marge (mm)",
+        "adjustText": "Ajuster le texte",
+        "adjustment": "Ajustement",
+        "startAngle": "Angle de départ",
+        "rotationDirection": "Sens de rotation",
+        "clockwise": "Sens horaire",
+        "counterclockwise": "Sens antihoraire",
+        "addNewRow": "Ajouter une ligne",
+        "row": "Ligne",
+        "delete": "Supprimer",
+        "letterSpacing": "Espacement des lettres",
+        "verticalPosition": "Position verticale",
+        "textContent": "Contenu du texte",
+        "enterTextContent": "Entrez le contenu du texte",
+        "sealCode": "Code du sceau",
+        "enterSealCode": "Entrez le code du sceau",
+        "taxNumber": "Numéro fiscal",
+        "enterTaxNumber": "Entrez le numéro fiscal"
+      },
+      "image": {
+        "selectImage": "Sélectionner une image",
+        "imageWidth": "Largeur de l'image",
+        "imageHeight": "Hauteur de l'image",
+        "horizontalPosition": "Position horizontale",
+        "verticalPosition": "Position verticale",
+        "keepAspectRatio": "Conserver les proportions",
+        "addPictures": "Ajouter des images",
+        "title": "Image"
+      },
+      "security": {
+        "enableSecurityPattern": "Activer le motif de sécurité",
+        "refreshPattern": "Actualiser le motif",
+        "patternCount": "Nombre de motifs",
+        "patternLength": "Longueur du motif (mm)",
+        "patternWidth": "Largeur du motif (mm)"
+      },
+      "burr": {
+        "enableBurrEffect": "Activer l'effet de bavure",
+        "burrWidth": "Largeur de bavure (mm)",
+        "burrHeight": "Hauteur de bavure (mm)",
+        "burrProbability": "Probabilité de bavure",
+        "burrOffset": "Décalage de bavure (mm)",
+        "burrPoints": "Points de bavure",
+        "refreshBurr": "Actualiser la bavure"
+      },
+      "aging": {
+        "enableAgingEffect": "Activer l'effet de vieillissement",
+        "manualAging": "Vieillissement manuel",
+        "agingIntensity": "Intensité du vieillissement",
+        "refreshAging": "Actualiser le vieillissement"
+      },
+      "innerCircle": {
+        "addNewRow": "Ajouter une ligne",
+        "row": "Ligne",
+        "delete": "Supprimer",
+        "width": "Largeur (mm)",
+        "radiusX": "Rayon X du cercle intérieur (mm)",
+        "radiusY": "Rayon Y du cercle intérieur (mm)"
+      }
+    },
+    "download": {
+      "loginRequired": "Veuillez vous connecter pour télécharger le tampon sans filigrane",
+      "joinVip": "Devenir VIP",
+      "downloadStamp": "Télécharger le tampon",
+      "downloadFree": "Télécharger gratuitement",
+      "flashSale": "Remise"
+    }
+  },
+  "payment": {
+    "success": "Paiement réussi !",
+    "failed": "Paiement échoué",
+    "downloadNotice": "Votre sceau est en cours de téléchargement automatique. Veuillez vérifier vos téléchargements.",
+    "redirecting": "Redirection vers la page d'accueil dans {seconds} secondes...",
+    "backToHome": "Retour à l'accueil",
+    "preparing": "Préparation de votre tampon...",
+    "dialogTitle": "Avis de téléchargement",
+    "download": "Télécharger",
+    "close": "Fermer"
+  },
+  "orders": {
+    "loading": "Chargement...",
+    "fetchError": "Erreur lors du chargement des commandes",
+    "paymentTime": "Temps de paiement",
+    "status": "Statut",
+    "action": "Action",
+    "paid": "Payé",
+    "downloadSeal": "Télécharger le sceau",
+    "noOrders": "Aucune commande trouvée"
+  }
+}

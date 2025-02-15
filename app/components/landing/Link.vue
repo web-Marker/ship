@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 interface Props {
   href: string
   size?: 'md' | 'lg'
@@ -15,6 +17,8 @@ withDefaults(defineProps<Props>(), {
   loading: false,
 })
 
+const { t } = useI18n()
+
 const sizes = {
   lg: 'px-5 py-2.5',
   md: 'px-4 py-2',
@@ -30,7 +34,11 @@ const styles = {
 
 <template>
   <NuxtLink
-    :to="href"
+    :to="
+      typeof href === 'string' && href.startsWith('t:')
+        ? t(href.slice(2))
+        : href
+    "
     :class="[
       'rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 relative',
       'disabled:cursor-not-allowed',
