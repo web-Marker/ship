@@ -17,7 +17,7 @@ const menuitems = computed(() => [
 
 const open = ref(false)
 const router = useRouter()
-const { user, logout, getUserDisplay, pending } = useAuth()
+const { user, logout, getUserDisplay } = useAuth()
 const showUserMenu = ref(false) // 添加这行来定义showUserMenu响应式变量
 
 // 添加语言切换处理函数
@@ -101,74 +101,14 @@ watch(() => route.path, closeMenu)
         </ul>
 
         <!-- 移动端认证状态 -->
-        <template v-if="!pending">
-          <div
-            v-if="!user"
-            class="lg:hidden flex flex-col mt-3 gap-4 border-t pt-3 border-gray-100"
-          >
-            <!-- 修改移动端的语言选择器 -->
-            <select
-              :value="locale"
-              class="w-full px-3 py-2 rounded-md text-gray-600 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary"
-              @change="e => handleLocaleChange(e.target.value)"
-            >
-              <option
-                v-for="loc in locales"
-                :key="loc.code"
-                :value="loc.code"
-                :class="{ 'font-bold': loc.code === locale }"
-              >
-                {{ loc.name }}
-              </option>
-            </select>
-
-            <LandingLink to="/signin" style-name="muted" block size="md">
-              {{ $t('nav.login') }}
-            </LandingLink>
-            <LandingLink to="/signup" size="md" block>
-              {{ $t('nav.signup') }}
-            </LandingLink>
-          </div>
-          <div
-            v-else
-            class="lg:hidden flex items-center justify-between mt-3 pt-3 border-t border-gray-100"
-          >
-            <div class="text-gray-600 truncate">{{ user.email }}</div>
-            <button
-              class="text-primary hover:underline px-4 py-2"
-              @click="handleLogout"
-            >
-              Log out
-            </button>
-          </div>
-        </template>
         <div
-          v-else
-          class="lg:hidden h-[100px] bg-gray-100 animate-pulse rounded mt-3"
-        ></div>
-      </nav>
-
-      <!-- 桌面端认证状态 -->
-      <div class="hidden lg:block">
-        <div v-if="!pending" class="flex items-center gap-4">
-          <!-- <el-select
-            v-model="locale"
-            placeholder="Select"
-            size="large"
-            style="width: 240px"
-            @change="v => handleLocaleChange(v)"
-          >
-            <el-option
-              v-for="loc in locales"
-              :key="loc.code"
-              :value="loc.code"
-              :class="{ 'font-bold': loc.code === locale }"
-            />
-          </el-select> -->
-          <!-- 修改桌面端的语言选择器 -->
+          v-if="!user"
+          class="lg:hidden flex flex-col mt-3 gap-4 border-t pt-3 border-gray-100"
+        >
+          <!-- 修改移动端的语言选择器 -->
           <select
             :value="locale"
-            class="px-2 py-1 rounded-md text-sm text-gray-600 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary"
+            class="w-full px-3 py-2 rounded-md text-gray-600 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary"
             @change="e => handleLocaleChange(e.target.value)"
           >
             <option
@@ -181,6 +121,61 @@ watch(() => route.path, closeMenu)
             </option>
           </select>
 
+          <LandingLink to="/signin" style-name="muted" block size="md">
+            {{ $t('nav.login') }}
+          </LandingLink>
+          <LandingLink to="/signup" size="md" block>
+            {{ $t('nav.signup') }}
+          </LandingLink>
+        </div>
+        <div
+          v-else
+          class="lg:hidden flex items-center justify-between mt-3 pt-3 border-t border-gray-100"
+        >
+          <div class="text-gray-600 truncate">{{ user.email }}</div>
+          <button
+            class="text-primary hover:underline px-4 py-2"
+            @click="handleLogout"
+          >
+            Log out
+          </button>
+        </div>
+      </nav>
+
+      <!-- 桌面端认证状态 -->
+      <div class="hidden lg:block">
+        <div v-if="!user" class="flex items-center gap-4">
+          <el-select
+            :model-value="locale"
+            placeholder="Select"
+            size="large"
+            style="width: 130px"
+            @change="v => handleLocaleChange(v)"
+          >
+            <el-option
+              v-for="loc in locales"
+              :key="loc.code"
+              :label="loc.name"
+              :value="loc.code"
+              :class="{ 'font-bold': loc.code === locale }"
+            />
+          </el-select>
+          <!-- 修改桌面端的语言选择器 -->
+          <!-- <select
+            :value="locale"
+            class="px-2 py-1 rounded-md text-sm text-gray-600 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary"
+            @change="e => handleLocaleChange(e.target.value)"
+          >
+            <option
+              v-for="loc in locales"
+              :key="loc.code"
+              :value="loc.code"
+              :class="{ 'font-bold': loc.code === locale }"
+            >
+              {{ loc.name }}
+            </option>
+          </select> -->
+
           <NuxtLink
             to="/signin"
             class="text-primary hover:underline transition-colors duration-200"
@@ -191,10 +186,112 @@ watch(() => route.path, closeMenu)
             {{ $t('nav.signup') }}
           </LandingLink>
         </div>
-        <div
-          v-else
-          class="w-[240px] h-[38px] bg-gray-100 animate-pulse rounded"
-        ></div>
+        <div v-else class="flex items-center gap-4">
+          <el-select
+            :model-value="locale"
+            placeholder="Select"
+            size="large"
+            style="width: 130px"
+            @change="v => handleLocaleChange(v)"
+          >
+            <el-option
+              v-for="loc in locales"
+              :key="loc.code"
+              :label="loc.name"
+              :value="loc.code"
+              :class="{ 'font-bold': loc.code === locale }"
+            />
+          </el-select>
+          <!-- 语言选择器 -->
+          <!-- <select
+            :value="locale"
+            class="px-2 py-1 rounded-md text-sm text-gray-600 border border-gray-200 focus:outline-none focus:ring-1 focus:ring-primary"
+            @change="e => handleLocaleChange(e.target.value)"
+          >
+            <option
+              v-for="loc in locales"
+              :key="loc.code"
+              :value="loc.code"
+              :class="{ 'font-bold': loc.code === locale }"
+            >
+              {{ loc.name }}
+            </option>
+          </select> -->
+
+          <!-- 用户头像和下拉菜单 -->
+          <div
+            class="relative"
+            @mouseenter="showUserMenu = true"
+            @mouseleave="showUserMenu = false"
+          >
+            <div class="flex items-center gap-2 text-gray-600 cursor-pointer">
+              <div
+                v-if="getUserDisplay?.type === 'google'"
+                class="w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-primary transition-all duration-200"
+              >
+                <img
+                  :src="getUserDisplay.display"
+                  alt="custom stamp seals digital"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div
+                v-else-if="getUserDisplay?.type === 'email'"
+                class="user-initial-avatar hover:ring-2 hover:ring-primary transition-all duration-200"
+              >
+                {{ getUserDisplay.display }}
+              </div>
+            </div>
+
+            <!-- 下拉菜单 -->
+            <div
+              v-show="showUserMenu"
+              class="absolute right-0 top-full mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50"
+            >
+              <NuxtLink
+                to="/order"
+                class="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+                {{ $t('nav.myOrders') }}
+              </NuxtLink>
+              <button
+                class="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+                @click="handleLogout"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                  />
+                </svg>
+                {{ $t('nav.logout') }}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   </LandingContainer>

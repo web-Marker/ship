@@ -270,7 +270,7 @@ export default defineNuxtConfig({
   i18n: {
     baseUrl: 'https://sealsdigital.com',
     langDir: 'locales',
-    strategy: 'prefix',
+    strategy: 'prefix_except_default',
     defaultLocale: 'en',
     detectBrowserLanguage: false, // 禁用浏览器语言检测
 
